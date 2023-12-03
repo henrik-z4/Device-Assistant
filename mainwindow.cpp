@@ -7,7 +7,7 @@
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow) {
     ui->setupUi(this);
-    // Получение информации о характеристиках ПК
+    // Получение информации о характеристиках PC
     QString osInfo = "Операционная система: " + QSysInfo::prettyProductName();
     QString cpuInfo = "Архитектура: " + QSysInfo::currentCpuArchitecture();
     QString ramInfo = "Оперативная память: " + QString::number(QSysInfo::availableVirtualMemory() / (1024 * 1024)) + " Мегабайт";
