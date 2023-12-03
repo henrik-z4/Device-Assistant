@@ -2,7 +2,7 @@
 #include "ui_mainwindow.h"
 #include <QSysInfo>
 #include <QDebug>
-#include "gpuinfo.h"
+#include "systeminfo.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow) {
