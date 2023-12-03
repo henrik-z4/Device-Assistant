@@ -1,4 +1,4 @@
-#include "gpuinfo.h"
+#include "systeminfo.h"
 #define _WIN32_DCOM
 #include <iostream>
 #include <comdef.h>
@@ -15,7 +15,7 @@ void getGpuInfo()
     if (FAILED(hres))
     {
         std::cout << "Ошибка при инициализации COM. Error code = 0x" << std::hex << hres << std::endl;
-        return 1;
+        return;
     }
 
     // Настройка уровня безопасности COM.
@@ -34,7 +34,7 @@ void getGpuInfo()
     {
         std::cout << "Ошибка при настройке безопасности COM. Error code = 0x" << std::hex << hres << std::endl;
         CoUninitialize();
-        return 1;
+        return;
     }
 
     // Получение указателя на службу WMI.
@@ -50,7 +50,7 @@ void getGpuInfo()
     {
         std::cout << "Ошибка при создании экземпляра IWbemLocator. Error code = 0x" << std::hex << hres << std::endl;
         CoUninitialize();
-        return 1;
+        return;
     }
 
     // Подключение к пространству имен WMI.
@@ -71,7 +71,7 @@ void getGpuInfo()
         std::cout << "Ошибка при подключении к пространству имен WMI. Error code = 0x" << std::hex << hres << std::endl;
         pLoc->Release();
         CoUninitialize();
-        return 1;
+        return;
     }
 
     // Установка уровня безопасности для прокси WMI.
@@ -91,10 +91,10 @@ void getGpuInfo()
         pSvc->Release();
         pLoc->Release();
         CoUninitialize();
-        return 1;
+        return;
     }
 
-    // Использование WMI для получения информации о видеокарте.
+    // Используем WMI для получения информации о видеокарте.
     IEnumWbemClassObject* pEnumerator = NULL;
     hres = pSvc->ExecQuery(
         bstr_t("WQL"),
@@ -109,7 +109,7 @@ void getGpuInfo()
         pSvc->Release();
         pLoc->Release();
         CoUninitialize();
-        return 1;
+        return;
     }
 
     // Получение данных.
@@ -130,6 +130,62 @@ void getGpuInfo()
         // Получение имени видеокарты.
         hr = pclsObj->Get(L"Name", 0, &vtProp, 0, 0);
         std::wcout << "Видеокарта: " << vtProp.bstrVal << std::endl;
+        VariantClear(&vtProp);
+
+        pclsObj->Release();
+    }
+
+    // Получение информации о накопителе.
+    hres = pSvc->ExecQuery(
+        bstr_t("WQL"),
+        bstr_t("SELECT * FROM Win32_DiskDrive"),
+        WBEM_FLAG_FORWARD_ONLY | WBEM_FLAG_RETURN_IMMEDIATELY,
+        NULL,
+        &pEnumerator);
+
+    // Получение данных.
+    while (pEnumerator)
+    {
+        HRESULT hr = pEnumerator->Next(WBEM_INFINITE, 1, &pclsObj, &uReturn);
+
+        if (0 == uReturn)
+        {
+            break;
+        }
+
+        VARIANT vtProp;
+
+        // Получение имени накопителя.
+        hr = pclsObj->Get(L"Model", 0, &vtProp, 0, 0);
+        std::wcout << "Накопитель: " << vtProp.bstrVal << std::endl;
+        VariantClear(&vtProp);
+
+        pclsObj->Release();
+    }
+
+    // Получение информации о материнской плате.
+    hres = pSvc->ExecQuery(
+        bstr_t("WQL"),
+        bstr_t("SELECT * FROM Win32_BaseBoard"),
+        WBEM_FLAG_FORWARD_ONLY | WBEM_FLAG_RETURN_IMMEDIATELY,
+        NULL,
+        &pEnumerator);
+
+    // Получение данных.
+    while (pEnumerator)
+    {
+        HRESULT hr = pEnumerator->Next(WBEM_INFINITE, 1, &pclsObj, &uReturn);
+
+        if (0 == uReturn)
+        {
+            break;
+        }
+
+        VARIANT vtProp;
+
+        // Получение имени материнской платы.
+        hr = pclsObj->Get(L"Product", 0, &vtProp, 0, 0);
+        std::wcout << "Материнская плата: " << vtProp.bstrVal << std::endl;
         VariantClear(&vtProp);
 
         pclsObj->Release();
