@@ -4,9 +4,12 @@
 #include <QDebug>
 #include "systeminfo.h"
 
-MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent), ui(new Ui::MainWindow) {
+MainWindow::MainWindow(QWidget* parent) :
+    QMainWindow(parent),
+    ui(new Ui::MainWindow)
+{
     ui->setupUi(this);
+
     // Получение информации о характеристиках ПК
     QString osInfo = "Операционная система: " + QSysInfo::prettyProductName();
     QString cpuInfo = "Архитектура: " + QSysInfo::currentCpuArchitecture();
@@ -18,8 +21,11 @@ MainWindow::MainWindow(QWidget *parent)
     qDebug() << ramInfo;
 
     getGpuInfo(); //Тест функции получения названия видеокарты
+    getStorageInfo(); //Тест функции получения информации о накопителе
+    getMotherboardInfo(); //Тест функции получения информации о материнской плате
 }
 
-MainWindow::~MainWindow() {
+MainWindow::~MainWindow()
+{
     delete ui;
 }

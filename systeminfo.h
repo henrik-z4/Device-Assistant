@@ -2,5 +2,7 @@
 #define SYSTEMINFO_H
 
 void getGpuInfo();
+void getDiskInfo();
+void getMotherboardInfo();
 
 #endif

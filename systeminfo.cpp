@@ -1,21 +1,18 @@
-#include "systeminfo.h"
 #define _WIN32_DCOM
 #include <iostream>
 #include <comdef.h>
 #include <Wbemidl.h>
+#include "systeminfo.h"
 
 #pragma comment(lib, "wbemuuid.lib")
 
-void getGpuInfo()
-{
-    HRESULT hres;
-
+void initializeCOM(HRESULT& hres, IWbemLocator*& pLoc, IWbemServices*& pSvc) {
     // Инициализация COM.
     hres = CoInitializeEx(0, COINIT_MULTITHREADED);
     if (FAILED(hres))
     {
         std::cout << "Ошибка при инициализации COM. Error code = 0x" << std::hex << hres << std::endl;
-        return 1;
+        return;
     }
 
     // Настройка уровня безопасности COM.
@@ -34,28 +31,24 @@ void getGpuInfo()
     {
         std::cout << "Ошибка при настройке безопасности COM. Error code = 0x" << std::hex << hres << std::endl;
         CoUninitialize();
-        return 1;
+        return;
     }
 
     // Получение указателя на службу WMI.
-    IWbemLocator *pLoc = NULL;
-
     hres = CoCreateInstance(
         CLSID_WbemLocator,
         0,
         CLSCTX_INPROC_SERVER,
-        IID_IWbemLocator, (LPVOID *)&pLoc);
+        IID_IWbemLocator, (LPVOID*)&pLoc);
 
     if (FAILED(hres))
     {
         std::cout << "Ошибка при создании экземпляра IWbemLocator. Error code = 0x" << std::hex << hres << std::endl;
         CoUninitialize();
-        return 1;
+        return;
     }
 
     // Подключение к пространству имен WMI.
-    IWbemServices *pSvc = NULL;
-
     hres = pLoc->ConnectServer(
         _bstr_t(L"ROOT\\CIMV2"),
         NULL,
@@ -71,7 +64,7 @@ void getGpuInfo()
         std::cout << "Ошибка при подключении к пространству имен WMI. Error code = 0x" << std::hex << hres << std::endl;
         pLoc->Release();
         CoUninitialize();
-        return 1;
+        return;
     }
 
     // Установка уровня безопасности для прокси WMI.
@@ -91,8 +84,16 @@ void getGpuInfo()
         pSvc->Release();
         pLoc->Release();
         CoUninitialize();
-        return 1;
+        return;
     }
+}
+
+void getGpuInfo() {
+    HRESULT hres;
+    IWbemLocator* pLoc = NULL;
+    IWbemServices* pSvc = NULL;
+
+    initializeCOM(hres, pLoc, pSvc);
 
     // Используем WMI для получения информации о видеокарте.
     IEnumWbemClassObject* pEnumerator = NULL;
@@ -109,17 +110,15 @@ void getGpuInfo()
         pSvc->Release();
         pLoc->Release();
         CoUninitialize();
-        return 1;
+        return;
     }
 
     // Получение данных.
-    IWbemClassObject *pclsObj = NULL;
+    IWbemClassObject* pclsObj = NULL;
     ULONG uReturn = 0;
-
     while (pEnumerator)
     {
         HRESULT hr = pEnumerator->Next(WBEM_INFINITE, 1, &pclsObj, &uReturn);
-
         if (0 == uReturn)
         {
             break;
@@ -135,13 +134,32 @@ void getGpuInfo()
         pclsObj->Release();
     }
 
-    // Получение информации о накопителе.
+
+}
+
+void getDiskInfo() {
+    // Инфа о накопителе
+    HRESULT hres;
+    IWbemLocator* pLoc = NULL;
+    IWbemServices* pSvc = NULL;
+
+    initializeCOM(hres, pLoc, pSvc);
+
     hres = pSvc->ExecQuery(
         bstr_t("WQL"),
         bstr_t("SELECT * FROM Win32_DiskDrive"),
         WBEM_FLAG_FORWARD_ONLY | WBEM_FLAG_RETURN_IMMEDIATELY,
         NULL,
         &pEnumerator);
+
+    if (FAILED(hres))
+    {
+        std::cout << "Ошибка при выполнении запроса. Error code = 0x" << std::hex << hres << std::endl;
+        pSvc->Release();
+        pLoc->Release();
+        CoUninitialize();
+        return 1;
+    }
 
     // Получение данных.
     while (pEnumerator)
@@ -163,13 +181,31 @@ void getGpuInfo()
         pclsObj->Release();
     }
 
-    // Получение информации о материнской плате.
+}
+
+void getMotherboardInfo() {
+    // Материнская плата
+    HRESULT hres;
+    IWbemLocator* pLoc = NULL;
+    IWbemServices* pSvc = NULL;
+
+    initializeCOM(hres, pLoc, pSvc);
+
     hres = pSvc->ExecQuery(
         bstr_t("WQL"),
         bstr_t("SELECT * FROM Win32_BaseBoard"),
         WBEM_FLAG_FORWARD_ONLY | WBEM_FLAG_RETURN_IMMEDIATELY,
         NULL,
         &pEnumerator);
+
+    if (FAILED(hres))
+    {
+        std::cout << "Ошибка при выполнении запроса. Error code = 0x" << std::hex << hres << std::endl;
+        pSvc->Release();
+        pLoc->Release();
+        CoUninitialize();
+        return 1;
+    }
 
     // Получение данных.
     while (pEnumerator)
@@ -196,4 +232,6 @@ void getGpuInfo()
     pLoc->Release();
     pEnumerator->Release();
     CoUninitialize();
+
+
 }
