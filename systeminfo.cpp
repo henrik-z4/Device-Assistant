@@ -15,7 +15,7 @@ void getGpuInfo()
     if (FAILED(hres))
     {
         std::cout << "Ошибка при инициализации COM. Error code = 0x" << std::hex << hres << std::endl;
-        return;
+        return 1;
     }
 
     // Настройка уровня безопасности COM.
@@ -34,7 +34,7 @@ void getGpuInfo()
     {
         std::cout << "Ошибка при настройке безопасности COM. Error code = 0x" << std::hex << hres << std::endl;
         CoUninitialize();
-        return;
+        return 1;
     }
 
     // Получение указателя на службу WMI.
@@ -50,7 +50,7 @@ void getGpuInfo()
     {
         std::cout << "Ошибка при создании экземпляра IWbemLocator. Error code = 0x" << std::hex << hres << std::endl;
         CoUninitialize();
-        return;
+        return 1;
     }
 
     // Подключение к пространству имен WMI.
@@ -71,7 +71,7 @@ void getGpuInfo()
         std::cout << "Ошибка при подключении к пространству имен WMI. Error code = 0x" << std::hex << hres << std::endl;
         pLoc->Release();
         CoUninitialize();
-        return;
+        return 1;
     }
 
     // Установка уровня безопасности для прокси WMI.
@@ -91,7 +91,7 @@ void getGpuInfo()
         pSvc->Release();
         pLoc->Release();
         CoUninitialize();
-        return;
+        return 1;
     }
 
     // Используем WMI для получения информации о видеокарте.
@@ -109,7 +109,7 @@ void getGpuInfo()
         pSvc->Release();
         pLoc->Release();
         CoUninitialize();
-        return;
+        return 1;
     }
 
     // Получение данных.
