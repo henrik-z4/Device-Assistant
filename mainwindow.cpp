@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include <QSysInfo>
 #include <QDebug>
+#include "gpuinfo.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow) {
@@ -15,6 +16,8 @@ MainWindow::MainWindow(QWidget *parent)
     qDebug() << osInfo;
     qDebug() << cpuInfo;
     qDebug() << ramInfo;
+
+    getGpuInfo(); //Тест функции получения названия видеокарты
 }
 
 MainWindow::~MainWindow() {
