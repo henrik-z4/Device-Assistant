@@ -134,6 +134,11 @@ void getGpuInfo() {
         pclsObj->Release();
     }
 
+    // Очистка.
+    pSvc->Release();
+    pLoc->Release();
+    pEnumerator->Release();
+    CoUninitialize();
 
 }
 
@@ -180,6 +185,12 @@ void getDiskInfo() {
 
         pclsObj->Release();
     }
+
+    // Очистка.
+    pSvc->Release();
+    pLoc->Release();
+    pEnumerator->Release();
+    CoUninitialize();
 
 }
 
@@ -233,5 +244,58 @@ void getMotherboardInfo() {
     pEnumerator->Release();
     CoUninitialize();
 
+
+}
+
+
+void getProcessorInfo() {
+    // Процессор
+    HRESULT hres;
+    IWbemLocator* pLoc = NULL;
+    IWbemServices* pSvc = NULL;
+
+    initializeCOM(hres, pLoc, pSvc);
+
+    hres = pSvc->ExecQuery(
+        bstr_t("WQL"),
+        bstr_t("SELECT * FROM Win32_Processor"),
+        WBEM_FLAG_FORWARD_ONLY | WBEM_FLAG_RETURN_IMMEDIATELY,
+        NULL,
+        &pEnumerator);
+
+    if (FAILED(hres))
+    {
+        std::cout << "Ошибка при выполнении запроса. Error code = 0x" << std::hex << hres << std::endl;
+        pSvc->Release();
+        pLoc->Release();
+        CoUninitialize();
+        return 1;
+    }
+
+    // Получение данных.
+    while (pEnumerator)
+    {
+        HRESULT hr = pEnumerator->Next(WBEM_INFINITE, 1, &pclsObj, &uReturn);
+
+        if (0 == uReturn)
+        {
+            break;
+        }
+
+        VARIANT vtProp;
+
+        // Получение имени процессора.
+        hr = pclsObj->Get(L"Name", 0, &vtProp, 0, 0);
+        std::wcout << "Процессор: " << vtProp.bstrVal << std::endl;
+        VariantClear(&vtProp);
+
+        pclsObj->Release();
+    }
+
+    // Очистка.
+    pSvc->Release();
+    pLoc->Release();
+    pEnumerator->Release();
+    CoUninitialize();
 
 }

@@ -4,5 +4,6 @@
 void getGpuInfo();
 void getDiskInfo();
 void getMotherboardInfo();
+void getProcessorInfo();
 
 #endif

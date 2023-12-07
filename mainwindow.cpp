@@ -23,6 +23,7 @@ MainWindow::MainWindow(QWidget* parent) :
     getGpuInfo(); //Тест функции получения названия видеокарты
     getStorageInfo(); //Тест функции получения информации о накопителе
     getMotherboardInfo(); //Тест функции получения информации о материнской плате
+    getProcessorInfo(); //Тест функции получения информации о процессоре
 }
 
 MainWindow::~MainWindow()
