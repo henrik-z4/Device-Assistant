@@ -6,4 +6,4 @@ void getDiskInfo();
 void getMotherboardInfo();
 void getProcessorInfo();
 
-#endif
+#endif // SYSTEMINFO_H
