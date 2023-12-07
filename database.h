@@ -2,14 +2,15 @@
 #define DATABASE_H
 
 #include <QtSql/QSqlDatabase>
+#include <QMap>
 
 class DatabaseManager {
 public:
     DatabaseManager();
     ~DatabaseManager();
-    void createTable();
-    void insertData(const QString& name, int year, const QString& speed, const QString& memory, const QString& pci_e, int bitness, int cuda_cores, const QString& fp32, int price);
-    void printData();
+    void printData(const QString& tableName);
+    void deleteData(const QString& tableName, int id);
+    void updateData(const QString& tableName, int id, const QMap<QString, QVariant>& data);
 
 private:
     QSqlDatabase db;

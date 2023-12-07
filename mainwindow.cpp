@@ -31,7 +31,11 @@ MainWindow::MainWindow(QWidget* parent) :
     
     DatabaseManager dbManager;
     // Вывод таблицы БД
-    dbManager.printData();
+    dbManager.printData("gpu");
+    dbManager.printData("storage");
+    dbManager.printData("motherboard");
+    dbManager.printData("processor");
+    dbManager.printData("ram");
     
 }
 
