@@ -8,7 +8,7 @@ public:
     DatabaseManager();
     ~DatabaseManager();
     void createTable();
-    void insertData(const QString& name, const QString& description);
+    void insertData(const QString& name, int year, const QString& speed, const QString& memory, const QString& pci_e, int bitness, int cuda_cores, const QString& fp32, int price);
     void printData();
 
 private:
