@@ -9,11 +9,20 @@ set(CMAKE_AUTOMOC ON)
 
 find_package(Qt6 6.2 REQUIRED COMPONENTS Core Gui Qml Quick)
 
+
 if (Qt6_VERSION VERSION_GREATER_EQUAL 6.3)
     qt_standard_project_setup()
 endif()
 
-qt_add_executable(Device_AssistantApp src/main.cpp)
+qt_add_executable(Device_AssistantApp 
+    src/main.cpp
+    src/mainwindow.cpp
+    src/mainwindow.h
+    src/database.cpp
+    src/database.h
+    src/systeminfo.cpp
+    src/systeminfo.h
+)
 
 qt_add_resources(Device_AssistantApp "configuration"
     PREFIX "/"
@@ -26,6 +35,9 @@ target_link_libraries(Device_AssistantApp PRIVATE
     Qt6::Gui
     Qt6::Qml
     Qt6::Quick
+    Qt6::QuickControls2
+    Qt6::Sql
+    Qt6::Widgets
 )
 
 set(QT_QML_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/qml)
