@@ -17,9 +17,34 @@ DatabaseManager::DatabaseManager() {
         // Таблица видеокарт
         createTable("gpu", "id INTEGER PRIMARY KEY AUTOINCREMENT, brand TEXT, name TEXT, year INTEGER, speed TEXT, memory TEXT, pci_e TEXT, bitness INTEGER, cuda_cores INTEGER, fp32 TEXT, price INTEGER");
         QVariantList data_gpu;
-        data_gpu << "NVIDIA" << "NVIDIA GeForce RTX 4090" << 2023 << "2250 МГц" << "24 Гб GDDR6X" << "4.0" << 384 << 16384 << "82,6 TFLOPs" << 220000;
-        data_gpu << "NVIDIA" << "NVIDIA GeForce RTX 4080" << 2022 << "2205 МГц" << "16 Гб GDDR6X" << "4.0" << 256 << 9728 << "48,8 TFLOPs" << 150000;
+        data_gpu << "NVIDIA" << "NVIDIA GeForce RTX 4090" << 2023 << "2250 МГц" << "24 Гб GDDR6X" << "PCI-E 4.0" << 384 << 16384 << "82,6 TFLOPs" << 220000;
+        data_gpu << "NVIDIA" << "NVIDIA GeForce RTX 4080" << 2022 << "2205 МГц" << "16 Гб GDDR6X" << "PCI-E 4.0" << 256 << 9728 << "48,8 TFLOPs" << 150000;
         data_gpu << "NVIDIA" << "NVIDIA GeForce RTX 3090" << 2020 << "1695 МГц" << "24 ГБ" << "PCI-E 4.0" << 384 << 10496 << "35.6 TFLOPS" << 150000;
+        data_gpu << "NVIDIA" << "NVIDIA GeForce RTX 3080" << 2020 << "1710 МГц" << "10 ГБ" << "PCI-E 4.0" << 320 << 8704 << "29.8 TFLOPS" << 100000;
+        data_gpu << "NVIDIA" << "NVIDIA GeForce RTX 3070" << 2020 << "1500 МГц" << "8 ГБ" << "PCI-E 4.0" << 256 << 5888 << "20.4 TFLOPS" << 60000;
+        data_gpu << "NVIDIA" << "NVIDIA GeForce RTX 3060 Ti" << 2020 << "1410 МГц" << "8 ГБ" << "PCI-E 4.0" << 256 << 4864 << "16.2 TFLOPS" << 50000;
+        data_gpu << "NVIDIA" << "NVIDIA GeForce RTX 3060" << 2021 << "1320 МГц" << "12 ГБ" << "PCI-E 4.0" << 192 << 3584 << "12.7 TFLOPS" << 40000;
+        data_gpu << "NVIDIA" << "NVIDIA GeForce RTX 2080 Ti" << 2018 << "1350 МГц" << "11 ГБ" << "PCI-E 3.0" << 352 << 4352 << "13.4 TFLOPS" << 100000;
+        data_gpu << "NVIDIA" << "NVIDIA GeForce RTX 2080 Super" << 2019 << "1650 МГц" << "8 ГБ" << "PCI-E 3.0" << 256 << 3072 << "11.1 TFLOPS" << 80000;
+        data_gpu << "NVIDIA" << "NVIDIA GeForce RTX 2080" << 2018 << "1515 МГц" << "8 ГБ" << "PCI-E 3.0" << 256 << 2944 << "10.1 TFLOPS" << 70000;
+        data_gpu << "NVIDIA" << "NVIDIA GeForce RTX 2070 Super" << 2019 << "1605 МГц" << "8 ГБ" << "PCI-E 3.0" << 256 << 2560 << "9.1 TFLOPS" << 60000;
+        data_gpu << "NVIDIA" << "NVIDIA GeForce RTX 2070" << 2018 << "1410 МГц" << "8 ГБ" << "PCI-E 3.0" << 256 << 2304 << "7.5 TFLOPS" << 50000;
+        data_gpu << "NVIDIA" << "NVIDIA GeForce RTX 2060 Super" << 2019 << "1470 МГц" << "8 ГБ" << "PCI-E 3.0" << 256 << 2176 << "7.2 TFLOPS" << 40000;
+        data_gpu << "NVIDIA" << "NVIDIA GeForce RTX 2060" << 2019 << "1365 МГц" << "6 ГБ" << "PCI-E 3.0" << 192 << 1920 << "6.4 TFLOPS" << 30000;
+        data_gpu << "NVIDIA" << "NVIDIA GeForce GTX 1080 Ti" << 2017 << "1480 МГц" << "11 ГБ" << "PCI-E 3.0" << 352 << 3584 << "11.3 TFLOPS" << 70000;
+        data_gpu << "NVIDIA" << "NVIDIA GeForce GTX 1080" << 2016 << "1607 МГц" << "8 ГБ" << "PCI-E 3.0" << 256 << 2560 << "8.9 TFLOPS" << 50000;
+        data_gpu << "NVIDIA" << "NVIDIA GeForce GTX 1070 Ti" << 2017 << "1607 МГц" << "8 ГБ" << "PCI-E 3.0" << 256 << 2432 << "8.1 TFLOPS" << 40000;
+        data_gpu << "NVIDIA" << "NVIDIA GeForce GTX 1070" << 2016 << "1506 МГц" << "8 ГБ" << "PCI-E 3.0" << 256 << 1920 << "6.5 TFLOPS" << 30000;
+        data_gpu << "NVIDIA" << "NVIDIA GeForce GTX 1060 6GB" << 2016 << "1506 МГц" << "6 ГБ" << "PCI-E 3.0" << 192 << 1280 << "4.4 TFLOPS" << 20000;
+        data_gpu << "NVIDIA" << "NVIDIA GeForce GTX 1060 3GB" << 2016 << "1506 МГц" << "3 ГБ" << "PCI-E 3.0" << 192 << 1152 << "3.9 TFLOPS" << 15000;
+        data_gpu << "NVIDIA" << "NVIDIA GeForce GTX 1050 Ti" << 2016 << "1290 МГц" << "4 ГБ" << "PCI-E 3.0" << 128 << 768 << "2.1 TFLOPS" << 10000;
+        data_gpu << "NVIDIA" << "NVIDIA GeForce GTX 1050" << 2016 << "1354 МГц" << "2 ГБ" << "PCI-E 3.0" << 128 << 640 << "1.9 TFLOPS" << 8000;
+        data_gpu << "AMD" << "AMD Radeon RX 6900 XT" << 2020 << "2015 МГц" << "16 ГБ" << "PCI-E 4.0" << 256 << 5120 << "23.0 TFLOPS" << 100000;
+        data_gpu << "AMD" << "AMD Radeon RX 6800 XT" << 2020 << "2015 МГц" << "16 ГБ" << "PCI-E 4.0" << 256 << 4608 << "20.7 TFLOPS" << 80000;
+        data_gpu << "AMD" << "AMD Radeon RX 6800" << 2020 << "1815 МГц" << "16 ГБ" << "PCI-E 4.0" << 256 << 3840 << "16.2 TFLOPS" << 70000;
+        data_gpu << "AMD" << "AMD Radeon RX 6700 XT" << 2021 << "2424 МГц" << "12 ГБ" << "PCI-E 4.0" << 192 << 2560 << "13.2 TFLOPS" << 50000;
+        data_gpu << "AMD" << "AMD Radeon RX 5700 XT" << 2019 << "1605 МГц" << "8 ГБ" << "PCI-E 4.0" << 256 << 2560 << "9.8 TFLOPS" << 40000;
+        data_gpu << "AMD" << "AMD Radeon RX 5700" << 2019 << "1465 МГц" << "8 ГБ" << "PCI-E 4.0" << 256 << 2304 << "7.9 TFLOPS" << 30000;
         insertData("gpu", data_gpu);
 
         // Таблица накопителей
