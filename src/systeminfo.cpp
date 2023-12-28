@@ -150,6 +150,7 @@ void getDiskInfo() {
 
     initializeCOM(hres, pLoc, pSvc);
 
+    IEnumWbemClassObject* pEnumerator = NULL;
     hres = pSvc->ExecQuery(
         bstr_t("WQL"),
         bstr_t("SELECT * FROM Win32_DiskDrive"),
@@ -163,13 +164,17 @@ void getDiskInfo() {
         pSvc->Release();
         pLoc->Release();
         CoUninitialize();
-        return 1;
+        return;
     }
 
     // Получение данных.
     while (pEnumerator)
     {
-        HRESULT hr = pEnumerator->Next(WBEM_INFINITE, 1, &pclsObj, &uReturn);
+        HRESULT hr;
+        IWbemClassObject* pclsObj = NULL;
+        ULONG uReturn = 0;
+
+        hr = pEnumerator->Next(WBEM_INFINITE, 1, &pclsObj, &uReturn);
 
         if (0 == uReturn)
         {
@@ -202,6 +207,7 @@ void getMotherboardInfo() {
 
     initializeCOM(hres, pLoc, pSvc);
 
+    IEnumWbemClassObject* pEnumerator = NULL;
     hres = pSvc->ExecQuery(
         bstr_t("WQL"),
         bstr_t("SELECT * FROM Win32_BaseBoard"),
@@ -215,12 +221,14 @@ void getMotherboardInfo() {
         pSvc->Release();
         pLoc->Release();
         CoUninitialize();
-        return 1;
+        return; // Исправил return на void
     }
 
     // Получение данных.
     while (pEnumerator)
     {
+        IWbemClassObject* pclsObj = NULL;
+        ULONG uReturn = 0;
         HRESULT hr = pEnumerator->Next(WBEM_INFINITE, 1, &pclsObj, &uReturn);
 
         if (0 == uReturn)
@@ -256,6 +264,7 @@ void getProcessorInfo() {
 
     initializeCOM(hres, pLoc, pSvc);
 
+    IEnumWbemClassObject* pEnumerator = NULL;
     hres = pSvc->ExecQuery(
         bstr_t("WQL"),
         bstr_t("SELECT * FROM Win32_Processor"),
@@ -269,12 +278,14 @@ void getProcessorInfo() {
         pSvc->Release();
         pLoc->Release();
         CoUninitialize();
-        return 1;
+        return; // Исправил return на void
     }
 
     // Получение данных.
     while (pEnumerator)
     {
+        IWbemClassObject* pclsObj = NULL;
+        ULONG uReturn = 0;
         HRESULT hr = pEnumerator->Next(WBEM_INFINITE, 1, &pclsObj, &uReturn);
 
         if (0 == uReturn)
