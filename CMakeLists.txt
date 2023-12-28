@@ -1,3 +1,5 @@
+set(Qt6_DIR "C:/Qt/6.6.1/mingw_64/lib/cmake/Qt6")
+
 cmake_minimum_required(VERSION 3.21.1)
 
 option(LINK_INSIGHT "Link Qt Insight Tracker library" ON)
@@ -7,7 +9,7 @@ project(Device_AssistantApp LANGUAGES CXX)
 
 set(CMAKE_AUTOMOC ON)
 
-find_package(Qt6 6.2 REQUIRED COMPONENTS Core Gui Qml Quick)
+find_package(Qt6 6.6.1 REQUIRED COMPONENTS Core Gui Qml Quick Sql Widgets QuickControls2)
 
 
 if (Qt6_VERSION VERSION_GREATER_EQUAL 6.3)
@@ -18,8 +20,6 @@ qt_add_executable(Device_AssistantApp
     src/main.cpp
     src/mainwindow.cpp
     src/mainwindow.h
-    src/database.cpp
-    src/database.h
     src/systeminfo.cpp
     src/systeminfo.h
 )
@@ -35,9 +35,9 @@ target_link_libraries(Device_AssistantApp PRIVATE
     Qt6::Gui
     Qt6::Qml
     Qt6::Quick
-    Qt6::QuickControls2
     Qt6::Sql
     Qt6::Widgets
+    Qt6::QuickControls2
 )
 
 set(QT_QML_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/qml)
