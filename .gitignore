@@ -1,5 +1,7 @@
 .vscode/
+.vs/
 /build/
 /src/build/
 cmake-build-debug/
 cmake-build-debug-visual-studio/
+cmake-build-release/
