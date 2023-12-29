@@ -18,14 +18,19 @@ Rectangle {
 
     Button {
         id: button
-        text: qsTr("Press me")
+        text: qsTr("Get System Info")
         anchors.verticalCenter: parent.verticalCenter
         checkable: true
         anchors.horizontalCenter: parent.horizontalCenter
 
         Connections {
             target: button
-            onClicked: animation.start()
+            onClicked: {
+                sysInfo.getGpuInfo();
+                sysInfo.getDiskInfo();
+                sysInfo.getMotherboardInfo();
+                sysInfo.getProcessorInfo();
+            }
         }
     }
 

@@ -7,19 +7,26 @@ option(BUILD_QDS_COMPONENTS "Build design studio components" ON)
 
 project(Device_AssistantApp LANGUAGES CXX)
 
+if(MSVC)
+    add_compile_options(/Zc:__cplusplus /std:c++17)
+endif()
+
 set(CMAKE_AUTOMOC ON)
 
 find_package(Qt6 6.6.1 REQUIRED COMPONENTS Core Gui Qml Quick Sql Widgets QuickControls2)
 
+include_directories("C:/Qt/6.6.1/mingw_64/include")
 
 if (Qt6_VERSION VERSION_GREATER_EQUAL 6.3)
     qt_standard_project_setup()
 endif()
 
+if(MSVC)
+    add_compile_options(/permissive-)
+endif()
+
 qt_add_executable(Device_AssistantApp 
     src/main.cpp
-    src/mainwindow.cpp
-    src/mainwindow.h
     src/systeminfo.cpp
     src/systeminfo.h
 )
@@ -38,6 +45,7 @@ target_link_libraries(Device_AssistantApp PRIVATE
     Qt6::Sql
     Qt6::Widgets
     Qt6::QuickControls2
+    wbemuuid
 )
 
 set(QT_QML_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/qml)
