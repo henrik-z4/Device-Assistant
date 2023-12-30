@@ -60,16 +60,7 @@ Project {
     }
 
     Files {
-        filter: "*.json"
-    }
-
-    Files {
         filter: "*.mesh"
-        directory: "asset_imports"
-    }
-
-    Files {
-        filter: "*.qad"
         directory: "asset_imports"
     }
 
@@ -102,7 +93,7 @@ Project {
 
     qdsVersion: "4.3"
 
-    quickVersion: "6.5"
+    quickVersion: "6.2"
 
     /* If any modules the project imports require widgets (e.g. QtCharts), widgetApp must be true */
     widgetApp: true

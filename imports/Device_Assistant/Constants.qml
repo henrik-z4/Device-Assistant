@@ -1,5 +1,5 @@
 pragma Singleton
-import QtQuick 6.5
+import QtQuick 6.2
 import QtQuick.Studio.Application
 
 QtObject {

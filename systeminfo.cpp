@@ -8,7 +8,7 @@
 
 #pragma comment(lib, "wbemuuid.lib")
 
-SystemInfo::SystemInfo(QObject *parent) : QObject(parent) {
+systeminfo::systeminfo(QObject *parent) : QObject(parent) {
     HRESULT hres;
     IWbemLocator* pLoc = nullptr;
     IWbemServices* pSvc = nullptr;
@@ -27,10 +27,10 @@ BSTR ConvertStringToBSTR(const char *pSrc)
     return bstr;
 }
 
-void SystemInfo::initializeCOM(HRESULT& hres, IWbemLocator*& pLoc, IWbemServices*& pSvc) {
+void systeminfo::initializeCOM(HRESULT& hres, IWbemLocator*& pLoc, IWbemServices*& pSvc) {
     // Инициализация COM.
     hres = CoInitializeEx(nullptr, COINIT_MULTITHREADED);
-    if (FAILED(hres))
+    if (FAILED(hres) && hres != RPC_E_CHANGED_MODE)
     {
         std::cout << "Ошибка при инициализации COM. Error code = 0x" << std::hex << hres << std::endl;
         return;
@@ -48,7 +48,9 @@ void SystemInfo::initializeCOM(HRESULT& hres, IWbemLocator*& pLoc, IWbemServices
         EOAC_NONE,
         NULL);
 
-    if (FAILED(hres))
+    if(hres == RPC_E_TOO_LATE)
+        hres = S_OK;
+    else if (FAILED(hres))
     {
         std::cout << "Ошибка при настройке безопасности COM. Error code = 0x" << std::hex << hres << std::endl;
         CoUninitialize();
@@ -72,7 +74,7 @@ void SystemInfo::initializeCOM(HRESULT& hres, IWbemLocator*& pLoc, IWbemServices
     // Подключение к пространству имен WMI.
 
     hres = pLoc->ConnectServer(
-        ConvertStringToBSTR(reinterpret_cast<const char *>(L"ROOT\\CIMV2")),
+        ConvertStringToBSTR("ROOT\\CIMV2"),
         nullptr,
         nullptr,
         0,
@@ -110,14 +112,12 @@ void SystemInfo::initializeCOM(HRESULT& hres, IWbemLocator*& pLoc, IWbemServices
     }
 }
 
-Q_INVOKABLE void SystemInfo::getGpuInfo() { 
+Q_INVOKABLE QString systeminfo::getGpuInfo() {
     HRESULT hres;
     IWbemLocator* pLoc = NULL;
     IWbemServices* pSvc = NULL;
-
     initializeCOM(hres, pLoc, pSvc);
-
-    // Используем WMI для получения информации о видеокарте.
+    // Использование WMI для получения информации о видеокарте
     IEnumWbemClassObject* pEnumerator = NULL;
     hres = pSvc->ExecQuery(
         ConvertStringToBSTR("WQL"),
@@ -125,19 +125,18 @@ Q_INVOKABLE void SystemInfo::getGpuInfo() {
         WBEM_FLAG_FORWARD_ONLY | WBEM_FLAG_RETURN_IMMEDIATELY,
         NULL,
         &pEnumerator);
-
     if (FAILED(hres))
     {
-        std::cout << "Ошибка при выполнении запроса. Error code = 0x" << std::hex << hres << std::endl;
+        std::cout << "Query execution failed. Error code = 0x" << std::hex << hres << std::endl;
         pSvc->Release();
         pLoc->Release();
         CoUninitialize();
-        return;
+        return QString(); // В случае ошибки возвращает пустую строку
     }
-
-    // Получение данных.
+    
     IWbemClassObject* pclsObj = NULL;
     ULONG uReturn = 0;
+    QString gpuInfo;
     while (pEnumerator)
     {
         HRESULT hr = pEnumerator->Next(WBEM_INFINITE, 1, &pclsObj, &uReturn);
@@ -145,27 +144,23 @@ Q_INVOKABLE void SystemInfo::getGpuInfo() {
         {
             break;
         }
-
         VARIANT vtProp;
-
-        // Получение имени видеокарты.
+        // Получения названия видеокарты
         hr = pclsObj->Get(L"Name", 0, &vtProp, 0, 0);
-        qDebug() << "Видеокарта: " << QString::fromWCharArray(vtProp.bstrVal);
-
+        gpuInfo = QString::fromWCharArray(vtProp.bstrVal);
+        qDebug() << "GPU: " << gpuInfo;
         VariantClear(&vtProp);
-
         pclsObj->Release();
     }
-
-    // Очистка.
+    // Очистка
     pSvc->Release();
     pLoc->Release();
     pEnumerator->Release();
     CoUninitialize();
-
+    return gpuInfo;
 }
 
-Q_INVOKABLE void SystemInfo::getDiskInfo() {
+Q_INVOKABLE void systeminfo::getDiskInfo() {
     // Инфа о накопителе
     HRESULT hres;
     IWbemLocator* pLoc = NULL;
@@ -222,7 +217,7 @@ Q_INVOKABLE void SystemInfo::getDiskInfo() {
 
 }
 
-Q_INVOKABLE void SystemInfo::getMotherboardInfo() {
+Q_INVOKABLE void systeminfo::getMotherboardInfo() {
     // Материнская плата
     HRESULT hres;
     IWbemLocator* pLoc = NULL;
@@ -279,7 +274,7 @@ Q_INVOKABLE void SystemInfo::getMotherboardInfo() {
 }
 
 
-Q_INVOKABLE void SystemInfo::getProcessorInfo() {
+Q_INVOKABLE void systeminfo::getProcessorInfo() {
     // Процессор
     HRESULT hres;
     IWbemLocator* pLoc = NULL;

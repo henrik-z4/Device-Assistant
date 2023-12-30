@@ -1,12 +1,13 @@
+
+
 /*
 This is a UI file (.ui.qml) that is intended to be edited in Qt Design Studio only.
 It is supposed to be strictly declarative and only uses a subset of QML. If you edit
 this file manually, you might introduce QML code that is not supported by Qt Design Studio.
 Check out https://doc.qt.io/qtcreator/creator-quick-ui-forms.html for details on .ui.qml files.
 */
-
-import QtQuick 6.5
-import QtQuick.Controls 6.5
+import QtQuick 6.2
+import QtQuick.Controls 6.2
 import Device_Assistant
 
 Rectangle {
@@ -16,28 +17,9 @@ Rectangle {
 
     color: Constants.backgroundColor
 
-    Button {
-        id: button
-        text: qsTr("Get System Info")
-        anchors.verticalCenter: parent.verticalCenter
-        checkable: true
-        anchors.horizontalCenter: parent.horizontalCenter
-
-        Connections {
-            target: button
-            onClicked: {
-                sysInfo.getGpuInfo();
-                sysInfo.getDiskInfo();
-                sysInfo.getMotherboardInfo();
-                sysInfo.getProcessorInfo();
-            }
-        }
-    }
-
     Text {
         id: label
-        text: qsTr("Hello Device_Assistant")
-        anchors.top: button.bottom
+        text: qsTr("Device Assistant")
         font.family: Constants.font.family
         anchors.topMargin: 45
         anchors.horizontalCenter: parent.horizontalCenter
@@ -62,10 +44,21 @@ Rectangle {
             }
         }
     }
+
+    property alias gpuInfoField: gpuInfoField
+
+    TextArea {
+        id: gpuInfoField
+        x: 634
+        y: 373
+        width: 603
+        height: 83
+        enabled: false
+        placeholderText: qsTr("Text Area")
+    }
     states: [
         State {
             name: "clicked"
-            when: button.checked
 
             PropertyChanges {
                 target: label
