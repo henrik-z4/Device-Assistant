@@ -16,8 +16,9 @@ Window {
     }
 
     Component.onCompleted: {
-    mainScreen.gpuInfoField.text = sysInfo.getGpuInfo();
-}
+        mainScreen.gpuInfoField.text = sysInfo.getGpuInfo();
+        mainScreen.diskInfoField.text = sysInfo.getDiskInfo();
+    }
 
 }
 

@@ -14,7 +14,7 @@ class systeminfo : public QObject
 public:
     explicit systeminfo(QObject *parent = nullptr);
     Q_INVOKABLE QString getGpuInfo();
-    Q_INVOKABLE void getDiskInfo();
+    Q_INVOKABLE QString getDiskInfo();
     Q_INVOKABLE void getMotherboardInfo();
     Q_INVOKABLE void getProcessorInfo();
 

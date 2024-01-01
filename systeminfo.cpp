@@ -160,7 +160,7 @@ Q_INVOKABLE QString systeminfo::getGpuInfo() {
     return gpuInfo;
 }
 
-Q_INVOKABLE void systeminfo::getDiskInfo() {
+Q_INVOKABLE QString systeminfo::getDiskInfo() {
     // Инфа о накопителе
     HRESULT hres;
     IWbemLocator* pLoc = NULL;
@@ -182,17 +182,15 @@ Q_INVOKABLE void systeminfo::getDiskInfo() {
         pSvc->Release();
         pLoc->Release();
         CoUninitialize();
-        return;
+        return QString(); // В случае ошибки возвращает пустую строку
     }
 
     // Получение данных.
     while (pEnumerator)
     {
-        HRESULT hr;
         IWbemClassObject* pclsObj = NULL;
         ULONG uReturn = 0;
-
-        hr = pEnumerator->Next(WBEM_INFINITE, 1, &pclsObj, &uReturn);
+        HRESULT hr = pEnumerator->Next(WBEM_INFINITE, 1, &pclsObj, &uReturn);
 
         if (0 == uReturn)
         {
@@ -201,9 +199,9 @@ Q_INVOKABLE void systeminfo::getDiskInfo() {
 
         VARIANT vtProp;
 
-        // Получение имени накопителя.
+        // Получение названия накопителя.
         hr = pclsObj->Get(L"Model", 0, &vtProp, 0, 0);
-        qDebug() << "Накопитель: " << QString::fromWCharArray(vtProp.bstrVal);
+        qDebug() << "Storage: " << QString::fromWCharArray(vtProp.bstrVal); // Меняю дебаг на английский, чтобы не было проблем с кодировкой
         VariantClear(&vtProp);
 
         pclsObj->Release();
@@ -214,8 +212,9 @@ Q_INVOKABLE void systeminfo::getDiskInfo() {
     pLoc->Release();
     pEnumerator->Release();
     CoUninitialize();
-
+    return QString();
 }
+
 
 Q_INVOKABLE void systeminfo::getMotherboardInfo() {
     // Материнская плата
