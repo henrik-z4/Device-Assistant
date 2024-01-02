@@ -186,6 +186,7 @@ Q_INVOKABLE QString systeminfo::getDiskInfo() {
     }
 
     // Получение данных.
+    QString storageModel;
     while (pEnumerator)
     {
         IWbemClassObject* pclsObj = NULL;
@@ -201,7 +202,8 @@ Q_INVOKABLE QString systeminfo::getDiskInfo() {
 
         // Получение названия накопителя.
         hr = pclsObj->Get(L"Model", 0, &vtProp, 0, 0);
-        qDebug() << "Storage: " << QString::fromWCharArray(vtProp.bstrVal); // Меняю дебаг на английский, чтобы не было проблем с кодировкой
+        storageModel = QString::fromWCharArray(vtProp.bstrVal);
+        qDebug() << "Storage: " << storageModel;
         VariantClear(&vtProp);
 
         pclsObj->Release();
@@ -212,8 +214,9 @@ Q_INVOKABLE QString systeminfo::getDiskInfo() {
     pLoc->Release();
     pEnumerator->Release();
     CoUninitialize();
-    return QString();
+    return storageModel;
 }
+
 
 
 Q_INVOKABLE void systeminfo::getMotherboardInfo() {
