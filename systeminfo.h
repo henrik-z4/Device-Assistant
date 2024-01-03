@@ -15,8 +15,10 @@ public:
     explicit systeminfo(QObject *parent = nullptr);
     Q_INVOKABLE QString getGpuInfo();
     Q_INVOKABLE QString getDiskInfo();
-    Q_INVOKABLE void getMotherboardInfo();
-    Q_INVOKABLE void getProcessorInfo();
+    Q_INVOKABLE QString getMotherboardInfo();
+    Q_INVOKABLE QString getProcessorInfo();
+    Q_INVOKABLE QString getOSInfo();
+    Q_INVOKABLE QString getRAMInfo();
 
 private:
     void initializeCOM(HRESULT& hres, IWbemLocator*& pLoc, IWbemServices*& pSvc);

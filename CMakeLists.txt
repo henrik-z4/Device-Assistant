@@ -14,7 +14,9 @@ if (Qt6_VERSION VERSION_GREATER_EQUAL 6.3)
 endif()
 
 qt_add_executable(Device_AssistantApp src/main.cpp
-    systeminfo.h systeminfo.cpp)
+    systeminfo.h systeminfo.cpp
+    images.qrc
+)
 
 qt_add_resources(Device_AssistantApp "configuration"
     PREFIX "/"

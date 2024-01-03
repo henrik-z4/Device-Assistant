@@ -14,15 +14,15 @@ Rectangle {
     id: rectangle
     width: Constants.width
     height: Constants.height
-
     color: Constants.backgroundColor
+    property alias imageSource: image.source
 
     Rectangle {
         id: rectangle1
-        x: 616
+        x: 377
         y: 225
-        width: 772
-        height: 569
+        width: 1217
+        height: 701
         color: "#ffffff"
         radius: 20
 
@@ -35,99 +35,81 @@ Rectangle {
             font.styleName: "Semibold"
         }
 
+        Grid {
+            id: grid
+            x: 144
+            y: 124
+            width: 481
+            height: 316
+            spacing: 15
+            columns: 3
+
+            TextArea {
+                id: diskInfoField
+                width: 300
+                height: 70
+                placeholderText: qsTr("Носитель")
+                enabled: false
+            }
+
+            TextArea {
+                id: motherboardInfoField
+                width: 300
+                height: 70
+                placeholderText: qsTr("Материнская плата")
+                enabled: false
+            }
+
+            TextArea {
+                id: ramInfoField
+                width: 300
+                height: 70
+                placeholderText: qsTr("Оперативная память")
+                enabled: false
+            }
+
+            TextArea {
+                id: cpuInfoField
+                width: 300
+                height: 70
+                placeholderText: qsTr("Процессор")
+                enabled: false
+            }
+
+            TextArea {
+                id: gpuInfoField
+                width: 300
+                height: 70
+                enabled: false
+                placeholderText: qsTr("Видеокарта")
+            }
+
+            TextArea {
+                id: osInfoField
+                width: 300
+                height: 70
+                enabled: false
+                placeholderText: qsTr("Операционная система")
+            }
+        }
+
         Image {
             id: image
             x: 75
             y: 34
             width: 45
             height: 45
-            source: "../assets/Icons/pc-fluent.png"
+            source: "qrc:/images/assets/Icons/pc.svg"
             fillMode: Image.PreserveAspectFit
         }
     }
 
-    Text {
-        id: label
-        y: 90
-        text: qsTr("Добро пожаловать в device Assistant")
-        font.family: Constants.font.family
-        anchors.topMargin: 45
-        font.pointSize: 28
-        anchors.horizontalCenterOffset: 43
-        anchors.horizontalCenter: parent.horizontalCenter
-
-        SequentialAnimation {
-            id: animation
-
-            ColorAnimation {
-                id: colorAnimation1
-                target: rectangle
-                property: "color"
-                to: "#2294c6"
-                from: Constants.backgroundColor
-            }
-
-            ColorAnimation {
-                id: colorAnimation2
-                target: rectangle
-                property: "color"
-                to: Constants.backgroundColor
-                from: "#2294c6"
-            }
-        }
-    }
-
     property alias gpuInfoField: gpuInfoField
-
-    Grid {
-        id: grid
-        x: 762
-        y: 352
-        width: 481
-        height: 316
-        spacing: 15
-        columns: 3
-
-        TextArea {
-            id: diskInfoField
-            width: 150
-            height: 150
-            placeholderText: qsTr("Text Area")
-            enabled: false
-        }
-
-        TextArea {
-            id: motherboardInfoField
-            width: 150
-            height: 150
-            placeholderText: qsTr("Text Area")
-            enabled: false
-        }
-
-        TextArea {
-            id: ramInfoField
-            width: 150
-            height: 150
-            placeholderText: qsTr("Text Area")
-            enabled: false
-        }
-
-        TextArea {
-            id: cpuInfoField
-            width: 150
-            height: 150
-            placeholderText: qsTr("Text Area")
-            enabled: false
-        }
-
-        TextArea {
-            id: gpuInfoField
-            width: 150
-            height: 150
-            enabled: false
-            placeholderText: qsTr("Text Area")
-        }
-    }
+    property alias diskInfoField: diskInfoField
+    property alias motherboardInfoField: motherboardInfoField
+    property alias cpuInfoField: cpuInfoField
+    property alias osInfoField: osInfoField
+    property alias ramInfoField: ramInfoField
 
     Label {
         id: label1
@@ -136,6 +118,48 @@ Rectangle {
         width: 100
         text: qsTr("Главная")
         font.pointSize: 20
+    }
+
+    Rectangle {
+        id: rectangle2
+        x: 377
+        y: 98
+        width: 1217
+        height: 96
+        color: "#ffffff"
+        radius: 20
+
+        Text {
+            id: label
+            x: 0
+            y: 24
+            text: qsTr("Добро пожаловать в device Assistant")
+            font.family: Constants.font.family
+            anchors.topMargin: 45
+            font.pointSize: 28
+            anchors.horizontalCenterOffset: -258
+            anchors.horizontalCenter: parent.horizontalCenter
+
+            SequentialAnimation {
+                id: animation
+
+                ColorAnimation {
+                    id: colorAnimation1
+                    target: rectangle
+                    property: "color"
+                    to: "#2294c6"
+                    from: Constants.backgroundColor
+                }
+
+                ColorAnimation {
+                    id: colorAnimation2
+                    target: rectangle
+                    property: "color"
+                    to: Constants.backgroundColor
+                    from: "#2294c6"
+                }
+            }
+        }
     }
 
     states: [

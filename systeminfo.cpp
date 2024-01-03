@@ -5,6 +5,7 @@
 #include "systeminfo.h"
 
 #include <QDebug>
+#include <QString>
 
 #pragma comment(lib, "wbemuuid.lib")
 
@@ -219,7 +220,7 @@ Q_INVOKABLE QString systeminfo::getDiskInfo() {
 
 
 
-Q_INVOKABLE void systeminfo::getMotherboardInfo() {
+Q_INVOKABLE QString systeminfo::getMotherboardInfo() {
     // Материнская плата
     HRESULT hres;
     IWbemLocator* pLoc = NULL;
@@ -241,10 +242,11 @@ Q_INVOKABLE void systeminfo::getMotherboardInfo() {
         pSvc->Release();
         pLoc->Release();
         CoUninitialize();
-        return; // Исправил return на void
+        return QString(); // Возвращает пустую строку при ошибке
     }
 
     // Получение данных.
+    QString motherboardInfo;
     while (pEnumerator)
     {
         IWbemClassObject* pclsObj = NULL;
@@ -260,7 +262,8 @@ Q_INVOKABLE void systeminfo::getMotherboardInfo() {
 
         // Получение имени материнской платы.
         hr = pclsObj->Get(L"Product", 0, &vtProp, 0, 0);
-        qDebug() << "Материнская плата: " << QString::fromWCharArray(vtProp.bstrVal);
+        motherboardInfo = QString::fromWCharArray(vtProp.bstrVal);
+        qDebug() << "Motherboard: " << motherboardInfo;
         VariantClear(&vtProp);
 
         pclsObj->Release();
@@ -272,11 +275,11 @@ Q_INVOKABLE void systeminfo::getMotherboardInfo() {
     pEnumerator->Release();
     CoUninitialize();
 
-
+    return motherboardInfo;
 }
 
 
-Q_INVOKABLE void systeminfo::getProcessorInfo() {
+Q_INVOKABLE QString systeminfo::getProcessorInfo() {
     // Процессор
     HRESULT hres;
     IWbemLocator* pLoc = NULL;
@@ -298,10 +301,11 @@ Q_INVOKABLE void systeminfo::getProcessorInfo() {
         pSvc->Release();
         pLoc->Release();
         CoUninitialize();
-        return; // Исправил return на void
+        return QString(); // Возвращает пустую строку при ошибке
     }
 
     // Получение данных.
+    QString processorInfo;
     while (pEnumerator)
     {
         IWbemClassObject* pclsObj = NULL;
@@ -317,7 +321,8 @@ Q_INVOKABLE void systeminfo::getProcessorInfo() {
 
         // Получение имени процессора.
         hr = pclsObj->Get(L"Name", 0, &vtProp, 0, 0);
-        qDebug() << "Процессор: " << QString::fromWCharArray(vtProp.bstrVal);
+        processorInfo = QString::fromWCharArray(vtProp.bstrVal);
+        qDebug() << "CPU: " << processorInfo;
         VariantClear(&vtProp);
 
         pclsObj->Release();
@@ -329,4 +334,124 @@ Q_INVOKABLE void systeminfo::getProcessorInfo() {
     pEnumerator->Release();
     CoUninitialize();
 
+    return processorInfo;
 }
+
+Q_INVOKABLE QString systeminfo::getOSInfo() {
+    // ОС
+    HRESULT hres;
+    IWbemLocator* pLoc = NULL;
+    IWbemServices* pSvc = NULL;
+
+    initializeCOM(hres, pLoc, pSvc);
+
+    IEnumWbemClassObject* pEnumerator = NULL;
+    hres = pSvc->ExecQuery(
+        ConvertStringToBSTR("WQL"),
+        ConvertStringToBSTR("SELECT * FROM Win32_OperatingSystem"),
+        WBEM_FLAG_FORWARD_ONLY | WBEM_FLAG_RETURN_IMMEDIATELY,
+        NULL,
+        &pEnumerator);
+
+    if (FAILED(hres))
+    {
+        std::cout << "Ошибка при выполнении запроса. Error code = 0x" << std::hex << hres << std::endl;
+        pSvc->Release();
+        pLoc->Release();
+        CoUninitialize();
+        return QString(); // Возвращает пустую строку при ошибке
+    }
+
+    // Получение данных.
+    QString osInfo;
+    while (pEnumerator)
+    {
+        IWbemClassObject* pclsObj = NULL;
+        ULONG uReturn = 0;
+        HRESULT hr = pEnumerator->Next(WBEM_INFINITE, 1, &pclsObj, &uReturn);
+
+        if (0 == uReturn)
+        {
+            break;
+        }
+
+        VARIANT vtProp;
+
+        // Получение имени ОС.
+        hr = pclsObj->Get(L"Caption", 0, &vtProp, 0, 0);
+        osInfo = QString::fromWCharArray(vtProp.bstrVal);
+        qDebug() << "OS: " << osInfo;
+        VariantClear(&vtProp);
+
+        pclsObj->Release();
+    }
+
+    // Очистка.
+    pSvc->Release();
+    pLoc->Release();
+    pEnumerator->Release();
+    CoUninitialize();
+
+    return osInfo;
+}
+
+Q_INVOKABLE QString systeminfo::getRAMInfo() {
+    // Оперативка
+    HRESULT hres;
+    IWbemLocator* pLoc = NULL;
+    IWbemServices* pSvc = NULL;
+
+    initializeCOM(hres, pLoc, pSvc);
+
+    IEnumWbemClassObject* pEnumerator = NULL;
+    hres = pSvc->ExecQuery(
+        ConvertStringToBSTR("WQL"),
+        ConvertStringToBSTR("SELECT * FROM Win32_OperatingSystem"),
+        WBEM_FLAG_FORWARD_ONLY | WBEM_FLAG_RETURN_IMMEDIATELY,
+        NULL,
+        &pEnumerator);
+
+    if (FAILED(hres))
+    {
+        std::cout << "Ошибка при выполнении запроса. Error code = 0x" << std::hex << hres << std::endl;
+        pSvc->Release();
+        pLoc->Release();
+        CoUninitialize();
+        return QString(); // Возвращает пустую строку при ошибке
+    }
+
+    // Получение данных.
+    QString ramInfo;
+    while (pEnumerator)
+    {
+        IWbemClassObject* pclsObj = NULL;
+        ULONG uReturn = 0;
+        HRESULT hr = pEnumerator->Next(WBEM_INFINITE, 1, &pclsObj, &uReturn);
+
+        if (0 == uReturn)
+        {
+            break;
+        }
+
+        VARIANT vtProp;
+
+        // Получение общего объема оперативной памяти.
+        hr = pclsObj->Get(L"TotalVisibleMemorySize", 0, &vtProp, 0, 0);
+        unsigned long long totalMemorySize = _wtoi64(vtProp.bstrVal);
+        unsigned long long totalMemorySizeGB = totalMemorySize / (1024 * 1024);
+        ramInfo = QString::number(totalMemorySizeGB) + " ГБ";
+        qDebug() << "RAM: " << ramInfo;
+        VariantClear(&vtProp);
+
+        pclsObj->Release();
+    }
+
+    // Очистка.
+    pSvc->Release();
+    pLoc->Release();
+    pEnumerator->Release();
+    CoUninitialize();
+
+    return ramInfo;
+}
+
