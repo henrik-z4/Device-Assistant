@@ -8,6 +8,11 @@
 interface IWbemLocator;
 interface IWbemServices;
 
+/**
+ * Class systeminfo
+ *
+ * @package Device-Assistant
+ */
 class systeminfo : public QObject
 {
     Q_OBJECT
