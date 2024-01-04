@@ -4,6 +4,7 @@
 #include <comdef.h>
 #include <Wbemidl.h>
 #include "systeminfo.h"
+
 #include <QDebug>
 #include <QString>
 
