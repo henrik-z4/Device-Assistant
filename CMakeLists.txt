@@ -16,6 +16,7 @@ endif()
 qt_add_executable(Device_AssistantApp src/main.cpp
     systeminfo.h systeminfo.cpp
     images.qrc
+    gpt.h gpt.cpp
 )
 
 qt_add_resources(Device_AssistantApp "configuration"
