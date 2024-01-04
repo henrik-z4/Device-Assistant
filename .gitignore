@@ -5,3 +5,7 @@
 cmake-build-debug/
 cmake-build-debug-visual-studio/
 cmake-build-release/
+.idea/
+
+CMakeLists.txt.user.iDHBQv
+CMakeLists.txt.user
