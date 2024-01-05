@@ -26,5 +26,8 @@ def get_gpt4_response(prompt):
     return json.dumps(messages)  # Возвращаем ответ в виде JSON
 
 if __name__ == "__main__":
-    input_prompt = sys.argv[1]
-    print(get_gpt4_response(input_prompt))
+    if len(sys.argv) > 1:
+        input_prompt = sys.argv[1]
+        print(get_gpt4_response(input_prompt))
+    else:
+        print("Ошибка: не указан промпт для GPT-4. Инициализируйте скрипт с помощью gpt.cpp и предоставьте промпт. ")
