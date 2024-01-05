@@ -1,6 +1,7 @@
 import QtQuick 6.2
 import QtQuick.Controls 2.15
 import Device_Assistant
+import GPT 1.0
 
 Window {
     width: mainScreen.width
@@ -33,6 +34,22 @@ Window {
         onGoToAIScreenChanged: {
             if (goToAIScreen) {
                 stackView.replace(aiScreen);
+            }
+        }
+
+        GPT {
+            id: gpt
+        }
+
+        Button{
+            id: sendButton
+            onClicked: {
+                if (aiScreen.messageField.text !== "") {
+                    aiScreen.chatModel.append({message: "User: " + aiScreen.messageField.text});
+                    var response = gpt.getResponse(aiScreen.messageField.text);
+                    aiScreen.chatModel.append({message: "GPT-4: " + response});
+                    aiScreen.messageField.text = "";
+                }
             }
         }
     }

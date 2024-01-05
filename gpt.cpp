@@ -1,7 +1,20 @@
-#include "gpt.h"
+#if defined(slots)
+#undef slots
+#endif
+
 #include <Python.h>
 
+#ifndef slots
+#define slots Q_SLOTS
+#endif
+
+#include "gpt.h"
 #include <QProcess>
+#include <QCoreApplication>
+
+GPT::GPT(QObject *parent) : QObject(parent) {
+    // Конструктор класса GPT
+}
 
 QString GPT::getResponse(const QString &prompt) {
     // Получение ответа от GPT модели на основе заданного промпта
@@ -14,7 +27,13 @@ QString GPT::getResponse(const QString &prompt) {
 QString GPT::get_response_from_gpt(const QString &prompt) {
     Py_Initialize(); // Инициализация интерпретатора Python
     PyRun_SimpleString("import sys"); // Импорт модуля sys
-    PyRun_SimpleString("sys.path.append('./')"); // Добавление текущей директории в путь поиска модулей
+    PyRun_SimpleString("import os");
+
+    PyRun_SimpleString("print(os.getcwd())"); 
+    PyRun_SimpleString("print(sys.path)"); // Дебаг: вывод директорий, в которых ищет модули Python
+
+    QString pythonPathAddition = QString("sys.path.append('%1')").arg(QCoreApplication::applicationDirPath()); // Добавление пути к директории приложения в переменную pythonPathAddition
+    PyRun_SimpleString(pythonPathAddition.toStdString().c_str()); // Выполнение строки pythonPathAddition для добавления пути в sys.path
     PyObject *pName = PyUnicode_DecodeFSDefault("GPTWrapper"); // Создание объекта с именем модуля
     PyObject *pModule = PyImport_Import(pName); // Импорт модуля GPTWrapper
     Py_DECREF(pName); // Освобождение памяти, занятой объектом pName

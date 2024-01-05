@@ -9,6 +9,7 @@
 #include "import_qml_components_plugins.h"
 #include "import_qml_plugins.h"
 #include "../systeminfo.h"
+#include "../gpt.h"
 
 
 int main(int argc, char *argv[])
@@ -21,6 +22,10 @@ int main(int argc, char *argv[])
 
     systeminfo sysInfo;
     engine.rootContext()->setContextProperty("sysInfo", &sysInfo);
+
+    GPT gpt;
+    engine.rootContext()->setContextProperty("gpt", &gpt);
+    qmlRegisterType<GPT>("GPT", 1, 0, "GPT");
 
     const QUrl url(u"qrc:/qt/qml/Main/main.qml"_qs);
     QObject::connect(
