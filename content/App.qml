@@ -1,7 +1,5 @@
-// Copyright (C) 2021 The Qt Company Ltd.
-// SPDX-License-Identifier: LicenseRef-Qt-Commercial OR GPL-3.0-only
-
 import QtQuick 6.2
+import QtQuick.Controls 2.15
 import Device_Assistant
 
 Window {
@@ -13,6 +11,36 @@ Window {
 
     Screen01 {
         id: mainScreen
+        onGoToMainScreenChanged: {
+            if (goToMainScreen) {
+                stackView.replace(mainScreen);
+            }
+        }
+        onGoToAIScreenChanged: {
+            if (goToAIScreen) {
+                stackView.replace(aiScreen);
+            }
+        }
+    }
+
+    Screen02 {
+        id: aiScreen
+        onGoToMainScreenChanged: {
+            if (goToMainScreen) {
+                stackView.replace(mainScreen);
+            }
+        }
+        onGoToAIScreenChanged: {
+            if (goToAIScreen) {
+                stackView.replace(aiScreen);
+            }
+        }
+    }
+
+    StackView {
+        id: stackView
+        anchors.fill: parent
+        initialItem: mainScreen
     }
 
     Component.onCompleted: {
@@ -23,6 +51,4 @@ Window {
         mainScreen.osInfoField.text = sysInfo.getOSInfo();
         mainScreen.ramInfoField.text = sysInfo.getRAMInfo();
     }
-
 }
-

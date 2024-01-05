@@ -17,6 +17,9 @@ Rectangle {
     color: Constants.backgroundColor
     property alias imageSource: image.source
 
+    property bool goToMainScreen: false
+    property bool goToAIScreen: false
+
     Rectangle {
         id: rectangle1
         x: 377
@@ -111,15 +114,6 @@ Rectangle {
     property alias osInfoField: osInfoField
     property alias ramInfoField: ramInfoField
 
-    Label {
-        id: label1
-        x: 84
-        y: 225
-        width: 100
-        text: qsTr("Главная")
-        font.pointSize: 20
-    }
-
     Rectangle {
         id: rectangle2
         x: 377
@@ -128,6 +122,28 @@ Rectangle {
         height: 96
         color: "#ffffff"
         radius: 20
+        
+        Button {
+            id: button
+            x: -327
+            y: 96
+            width: 244
+            height: 100
+            text: qsTr("Главная")
+            highlighted: stackView.currentItem === mainScreen
+            onClicked: rectangle.goToMainScreen = !rectangle.goToMainScreen
+        }
+
+        Button {
+            id: button1
+            x: -327
+            y: 220
+            width: 244
+            height: 100
+            text: qsTr("AI")
+            highlighted: stackView.currentItem === aiScreen
+            onClicked: rectangle.goToAIScreen = !rectangle.goToAIScreen
+        }
 
         Text {
             id: label
