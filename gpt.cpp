@@ -12,6 +12,8 @@
 #include <QProcess>
 #include <QCoreApplication>
 
+#include <iostream>
+
 GPT::GPT(QObject *parent) : QObject(parent) {
     // Конструктор класса GPT
 }
@@ -26,6 +28,11 @@ QString GPT::getResponse(const QString &prompt) {
 // Функция get_response_from_gpt получает ответ от модели GPT на основе заданного промпта
 QString GPT::get_response_from_gpt(const QString &prompt) {
     Py_Initialize(); // Инициализация интерпретатора Python
+    
+    if (!Py_IsInitialized()) {
+        std::cout << "Python interpreter not initialized" << std::endl;
+    }
+
     PyRun_SimpleString("import sys"); // Импорт модуля sys
     PyRun_SimpleString("import os");
 
@@ -36,6 +43,11 @@ QString GPT::get_response_from_gpt(const QString &prompt) {
     PyRun_SimpleString(pythonPathAddition.toStdString().c_str()); // Выполнение строки pythonPathAddition для добавления пути в sys.path
     PyObject *pName = PyUnicode_DecodeFSDefault("GPTWrapper"); // Создание объекта с именем модуля
     PyObject *pModule = PyImport_Import(pName); // Импорт модуля GPTWrapper
+
+    if (pModule == nullptr) {
+        std::cout << "Failed to import module" << std::endl;
+    }   
+
     Py_DECREF(pName); // Освобождение памяти, занятой объектом pName
     if (pModule != nullptr) {
         PyObject *pFunc = PyObject_GetAttrString(pModule, "get_gpt4_response"); // Получение объекта функции get_gpt4_response
@@ -44,9 +56,15 @@ QString GPT::get_response_from_gpt(const QString &prompt) {
             PyObject *pValue = PyUnicode_FromString(prompt.toStdString().c_str()); // Преобразование QString в Python-строку
             PyTuple_SetItem(pArgs, 0, pValue); // Установка первого элемента кортежа аргументов
             PyObject *pResult = PyObject_CallObject(pFunc, pArgs); // Вызов функции get_gpt4_response с передачей аргументов
+
+            if (pResult == nullptr) {
+                std::cout << "Failed to call function" << std::endl;
+            }
+
             Py_DECREF(pArgs); // Освобождение памяти, занятой объектом pArgs
             if (pResult != nullptr) {
                 QString response = QString::fromUtf8(PyUnicode_AsUTF8(pResult)); // Преобразование Python-строки в QString
+                std::cout << response.toStdString() << std::endl; // Дебаг: вывод полученного ответа
                 Py_DECREF(pResult); // Освобождение памяти, занятой объектом pResult
                 return response; // Возврат полученного ответа
             }

@@ -3,6 +3,7 @@ import sys
 import json
 
 def get_gpt4_response(prompt):
+    print("get_gpt4_response called with prompt:", prompt)
     # Инициализация провайдера BING для GPT-4
     provider = g4f.Provider.Bing
 
@@ -23,6 +24,7 @@ def get_gpt4_response(prompt):
 
     # Получение ответа от GPT-4
     messages = [message for message in response]
+    print("response:", response)
     return json.dumps(messages)  # Возвращаем ответ в виде JSON
 
 if __name__ == "__main__":
