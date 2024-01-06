@@ -23,6 +23,7 @@ qt_add_executable(Device_AssistantApp src/main.cpp
 )
 
 configure_file(${CMAKE_SOURCE_DIR}/GPTWrapper.py ${CMAKE_BINARY_DIR}/GPTWrapper.py COPYONLY)
+configure_file(${CMAKE_SOURCE_DIR}/gpt4prompt.txt ${CMAKE_BINARY_DIR}/gpt4prompt.txt COPYONLY)
 
 qt_add_resources(Device_AssistantApp "configuration"
     PREFIX "/"

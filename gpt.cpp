@@ -28,7 +28,7 @@ QString GPT::getResponse(const QString &prompt) {
 // Функция get_response_from_gpt получает ответ от модели GPT на основе заданного промпта
 QString GPT::get_response_from_gpt(const QString &prompt) {
     Py_Initialize(); // Инициализация интерпретатора Python
-    
+
     if (!Py_IsInitialized()) {
         std::cout << "Python interpreter not initialized" << std::endl;
     }
@@ -53,12 +53,18 @@ QString GPT::get_response_from_gpt(const QString &prompt) {
         PyObject *pFunc = PyObject_GetAttrString(pModule, "get_gpt4_response"); // Получение объекта функции get_gpt4_response
         if (pFunc && PyCallable_Check(pFunc)) {
             PyObject *pArgs = PyTuple_New(1); // Создание кортежа аргументов
-            PyObject *pValue = PyUnicode_FromString(prompt.toStdString().c_str()); // Преобразование QString в Python-строку
+
+            std::string prompt_utf8 = prompt.toUtf8().constData(); // Преобразование промпта в UTF-8
+            PyObject *pValue = PyUnicode_FromString(prompt_utf8.c_str()); // Преобразование QString в Python-строку
+
+            std::cout << "Prompt: " << prompt_utf8<< std::endl;
+
             PyTuple_SetItem(pArgs, 0, pValue); // Установка первого элемента кортежа аргументов
             PyObject *pResult = PyObject_CallObject(pFunc, pArgs); // Вызов функции get_gpt4_response с передачей аргументов
 
             if (pResult == nullptr) {
                 std::cout << "Failed to call function" << std::endl;
+                PyErr_Print(); // Вывод ошибки в консоль
             }
 
             Py_DECREF(pArgs); // Освобождение памяти, занятой объектом pArgs

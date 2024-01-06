@@ -3,12 +3,12 @@ import sys
 import json
 
 def get_gpt4_response(prompt):
-    print("get_gpt4_response called with prompt:", prompt)
+    print("get_gpt4_response called with prompt:", prompt.encode('utf-8'))
     # Инициализация провайдера BING для GPT-4
     provider = g4f.Provider.Bing
 
     # Открытие файла с промптомом
-    with open("gpt4prompt.txt", "r") as file:
+    with open("gpt4prompt.txt", "r", encoding='utf-8') as file:
         file_content = file.read()
 
     # Запуск модели GPT-4
@@ -16,20 +16,27 @@ def get_gpt4_response(prompt):
         model="gpt-4",
         provider=provider,
         messages=[
-            {"role": "user", "content": prompt + "\n"},
-            {"role": "system", "content": file_content}
+            {"role": "system", "content": file_content},
+            {"role": "user", "content": prompt}
         ],
         stream=True,
     )
 
     # Получение ответа от GPT-4
-    messages = [message for message in response]
-    print("response:", response)
-    return json.dumps(messages)  # Возвращаем ответ в виде JSON
+    ai_response = ''
+    print("GPT-4: ", end='', flush=True)
+    for token in response:
+        ai_response += token
+        print(token.encode('utf-8'), end='', flush=True) 
+
+    print()
+    messages = [{"role": "ai", "content": ai_response}]
+    return messages[0]['content']
 
 if __name__ == "__main__":
     if len(sys.argv) > 1:
         input_prompt = sys.argv[1]
-        print(get_gpt4_response(input_prompt))
+        response = get_gpt4_response(input_prompt)
+        print(response) 
     else:
         print("Ошибка: не указан промпт для GPT-4. Инициализируйте скрипт с помощью gpt.cpp и предоставьте промпт. ")
