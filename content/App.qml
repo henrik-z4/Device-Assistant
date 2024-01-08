@@ -41,17 +41,17 @@ Window {
             id: gpt
         }
 
-        Button{
-            id: sendButton
-            onClicked: {
+        Component.onCompleted: {
+            aiScreen.sendButton.clicked.connect(function() {
                 if (aiScreen.messageField.text !== "") {
                     aiScreen.chatModel.append({message: "User: " + aiScreen.messageField.text});
                     var response = gpt.getResponse(aiScreen.messageField.text);
                     aiScreen.chatModel.append({message: "GPT-4: " + response});
                     aiScreen.messageField.text = "";
                 }
-            }
+            });
         }
+
     }
 
     StackView {
