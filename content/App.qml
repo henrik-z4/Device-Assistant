@@ -12,28 +12,44 @@ Window {
 
     Screen01 {
         id: mainScreen
+
         onGoToMainScreenChanged: {
             if (goToMainScreen) {
                 stackView.replace(mainScreen);
             }
         }
+
         onGoToAIScreenChanged: {
             if (goToAIScreen) {
                 stackView.replace(aiScreen);
+            }
+        }
+
+        onGoToSettingsScreenChanged: {
+            if (goToSettingsScreen) {
+                stackView.replace(settingsScreen);
             }
         }
     }
 
     Screen02 {
         id: aiScreen
+
         onGoToMainScreenChanged: {
             if (goToMainScreen) {
                 stackView.replace(mainScreen);
             }
         }
+
         onGoToAIScreenChanged: {
             if (goToAIScreen) {
                 stackView.replace(aiScreen);
+            }
+        }
+
+        onGoToSettingsScreenChanged: {
+            if (goToSettingsScreen) {
+                stackView.replace(settingsScreen);
             }
         }
 
@@ -44,7 +60,7 @@ Window {
         Component.onCompleted: {
             aiScreen.sendButton.clicked.connect(function() {
                 if (aiScreen.messageField.text !== "") {
-                    aiScreen.chatModel.append({message: "User: " + aiScreen.messageField.text});
+                    aiScreen.chatModel.append({message: "Вы: " + aiScreen.messageField.text});
                     var response = gpt.getResponse(aiScreen.messageField.text);
                     aiScreen.chatModel.append({message: "GPT-4: " + response});
                     aiScreen.messageField.text = "";
@@ -52,6 +68,38 @@ Window {
             });
         }
 
+    }
+
+    Screen03 {
+        id: settingsScreen
+
+        onGoToMainScreenChanged: {
+            if (goToMainScreen) {
+                stackView.replace(mainScreen);
+            }
+        }
+
+        onGoToAIScreenChanged: {
+            if (goToAIScreen) {
+                stackView.replace(aiScreen);
+            }
+        }
+
+        onGoToSettingsScreenChanged: {
+            if (goToSettingsScreen) {
+                stackView.replace(settingsScreen);
+            }
+        }
+
+        onGoToDarkmodeChanged: {
+            if (goToDarkmode) {
+                settingsScreen.color = "#292626";
+                settingsScreen.rectangle2.color = "#3f3c3c";
+            } else {
+                settingsScreen.color = "#eaeaea";
+                settingsScreen.rectangle2.color = "#ffffff";
+            }
+        }
     }
 
     StackView {

@@ -14,11 +14,19 @@ Rectangle {
     id: rectangle
     width: Constants.width
     height: Constants.height
-    color: Constants.backgroundColor
+    color: "#eaeaea"
     property alias imageSource: image.source
 
     property bool goToMainScreen: false
     property bool goToAIScreen: false
+    property bool goToSettingsScreen: false
+
+    property alias gpuInfoField: gpuInfoField
+    property alias diskInfoField: diskInfoField
+    property alias motherboardInfoField: motherboardInfoField
+    property alias cpuInfoField: cpuInfoField
+    property alias osInfoField: osInfoField
+    property alias ramInfoField: ramInfoField
 
     Rectangle {
         id: rectangle1
@@ -107,13 +115,6 @@ Rectangle {
         }
     }
 
-    property alias gpuInfoField: gpuInfoField
-    property alias diskInfoField: diskInfoField
-    property alias motherboardInfoField: motherboardInfoField
-    property alias cpuInfoField: cpuInfoField
-    property alias osInfoField: osInfoField
-    property alias ramInfoField: ramInfoField
-
     Rectangle {
         id: rectangle2
         x: 377
@@ -137,12 +138,23 @@ Rectangle {
         Button {
             id: button1
             x: -327
-            y: 220
+            y: 202
             width: 244
             height: 100
             text: qsTr("AI")
             highlighted: stackView.currentItem === aiScreen
             onClicked: rectangle.goToAIScreen = !rectangle.goToAIScreen
+        }
+
+        Button {
+            id: button2
+            x: -327
+            y: 308
+            width: 244
+            height: 100
+            text: qsTr("Настройки")
+            onClicked: rectangle.goToSettingsScreen = !rectangle.goToSettingsScreen
+            highlighted: stackView.currentItem === settingsScreen
         }
 
         Text {
