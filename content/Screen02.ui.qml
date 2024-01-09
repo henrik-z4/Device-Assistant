@@ -6,10 +6,12 @@ Rectangle {
     id: rectangle
     width: Constants.width
     height: Constants.height
-    color: Constants.backgroundColor
+    color: "#eaeaea"
 
     property bool goToMainScreen: false
     property bool goToAIScreen: false
+    property bool goToSettingsScreen: false
+
     property alias chatModel: chatView.model
     property alias messageField: messageField
     property alias sendButton: sendButton
@@ -28,7 +30,7 @@ Rectangle {
     Button {
         id: button1
         x: 43
-        y: 361
+        y: 318
         width: 244
         height: 100
         text: qsTr("AI")
@@ -36,10 +38,30 @@ Rectangle {
         onClicked: rectangle.goToAIScreen = !rectangle.goToAIScreen
     }
 
+    Button {
+        id: button2
+        x: 43
+        y: 424
+        width: 244
+        height: 100
+        text: qsTr("Настройки")
+        onClicked: rectangle.goToSettingsScreen = !rectangle.goToSettingsScreen
+        highlighted: stackView.currentItem === settingsScreen
+    }
+
+    Button {
+        id: sendButton
+        x: 886
+        y: 841
+        width: 244
+        height: 100
+        text: qsTr("Отправить")
+    }
+
     ListView {
         id: chatView
-        x: 536
-        y: 124
+        x: 545
+        y: 229
         width: 927
         height: 470
         model: ListModel {
@@ -51,21 +73,52 @@ Rectangle {
     }
     TextField {
         id: messageField
-        x: 691
-        y: 582
+        x: 699
+        y: 596
         width: 617
         height: 100
         anchors.bottom: sendButton.top
-        anchors.bottomMargin: -6
+        anchors.bottomMargin: 14
         placeholderText: qsTr("Введите сообщение для GPT-4")
     }
 
-    Button {
-        id: sendButton
-        x: 878
-        y: 710
-        width: 244
-        height: 100
-        text: qsTr("Отправить")
+    Rectangle {
+        id: rectangle2
+        x: 377
+        y: 98
+        width: 1217
+        height: 96
+        color: "#ffffff"
+        radius: 20
+
+        Text {
+            id: label
+            x: 0
+            y: 23
+            text: qsTr("Искусственный интеллект")
+            anchors.topMargin: 45
+            font.pointSize: 28
+            font.family: Constants.font.family
+            SequentialAnimation {
+                id: animation
+                ColorAnimation {
+                    id: colorAnimation1
+                    target: rectangle
+                    property: "color"
+                    to: "#2294c6"
+                    from: Constants.backgroundColor
+                }
+
+                ColorAnimation {
+                    id: colorAnimation2
+                    target: rectangle
+                    property: "color"
+                    to: Constants.backgroundColor
+                    from: "#2294c6"
+                }
+            }
+            anchors.horizontalCenterOffset: -368
+            anchors.horizontalCenter: parent.horizontalCenter
+        }
     }
 }
