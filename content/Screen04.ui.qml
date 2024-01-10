@@ -11,6 +11,7 @@ Rectangle {
     property bool goToMainScreen: false
     property bool goToAIScreen: false
     property bool goToSettingsScreen: false
+    property bool goToDbScreen: false
 
     property bool goToDarkmode: false
 
@@ -49,9 +50,20 @@ Rectangle {
         }
 
         Button {
+            id: button3
+            x: -327
+            y: 305
+            width: 244
+            height: 100
+            text: qsTr("База")
+            onClicked: rectangle.goToDbScreen = !rectangle.goToDbScreen
+            highlighted: stackView.currentItem === dbScreen
+        }
+
+        Button {
             id: button2
             x: -327
-            y: 308
+            y: 415
             width: 244
             height: 100
             text: qsTr("Настройки")
@@ -98,4 +110,5 @@ Rectangle {
         checked: false
         onCheckedChanged: rectangle.goToDarkmode = !rectangle.goToDarkmode
     }
+
 }

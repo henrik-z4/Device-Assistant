@@ -1,6 +1,5 @@
 import QtQuick 6.2
 import QtQuick.Controls 2.15
-import QtQuick.LocalStorage 2.15
 import Device_Assistant
 import GPT 1.0
 
@@ -31,12 +30,6 @@ Window {
                 stackView.replace(settingsScreen);
             }
         }
-
-        onGoToDbScreenChanged: {
-            if (goToDbScreen){
-                stackView.replace(dbScreen);
-            }
-        }
     }
 
     Screen02 {
@@ -59,7 +52,6 @@ Window {
                 stackView.replace(settingsScreen);
             }
         }
-
         onGoToDbScreenChanged: {
             if (goToDbScreen){
                 stackView.replace(dbScreen);
@@ -83,7 +75,7 @@ Window {
 
     }
 
-    Screen03 {
+    Screen03{
         id: dbScreen
         onGoToMainScreenChanged: {
             if (goToMainScreen) {
@@ -102,42 +94,13 @@ Window {
                 stackView.replace(settingsScreen);
             }
         }
-
         onGoToDbScreenChanged: {
             if (goToDbScreen){
                 stackView.replace(dbScreen);
             }
         }
 
-        ListModel {
-            id: gpuListModel
-        }
-
-        Component.onCompleted: {
-            var dbPath = applicationDirPath + "/data/gpu_database.db";
-            console.log("Database path: " + dbPath);
-            var db = LocalStorage.openDatabaseSync(dbPath, "", "GPU Database", 1000000);
-            db.transaction(function(tx) {
-                var results = tx.executeSql('SELECT * FROM gpu');
-                if (tx.lastError) {
-                    console.log("SQL error: " + tx.lastError.message);
-                } else {
-                    for (var i = 0; i < results.rows.length; i++) {
-                        gpuListModel.append(results.rows.item(i));
-                    }
-                }
-            });
-        }
-
-        onCurrentTabChanged: {
-            switch (dbScreen.currentTab) {
-                case 0: stackView.push("GpuList.qml"); break;
-                // Сделать все остальные
-                default: break;
-        }
-
     }
-}
 
     Screen04 {
         id: settingsScreen

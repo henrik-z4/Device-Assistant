@@ -4,12 +4,15 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
+#include <QDir>
 
 #include "app_environment.h"
 #include "import_qml_components_plugins.h"
 #include "import_qml_plugins.h"
 #include "../systeminfo.h"
 #include "../gpt.h"
+#include "../databasemanager.h"
+#include "../gpu_db_model.h"
 
 
 int main(int argc, char *argv[])
@@ -20,12 +23,21 @@ int main(int argc, char *argv[])
 
     QQmlApplicationEngine engine;
 
+    engine.rootContext()->setContextProperty("applicationDirPath", QDir::toNativeSeparators(QCoreApplication::applicationDirPath()));
+
     systeminfo sysInfo;
     engine.rootContext()->setContextProperty("sysInfo", &sysInfo);
 
     GPT gpt;
     engine.rootContext()->setContextProperty("gpt", &gpt);
     qmlRegisterType<GPT>("GPT", 1, 0, "GPT");
+
+    databasemanager dbManager;
+    dbManager.loadDataFromFile();
+    dbManager.queryData();
+
+    gpu_db_model gpuModel;
+    engine.rootContext()->setContextProperty("gpuModel", &gpuModel);
 
     const QUrl url(u"qrc:/qt/qml/Main/main.qml"_qs);
     QObject::connect(

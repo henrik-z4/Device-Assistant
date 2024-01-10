@@ -1,0 +1,245 @@
+Name: Видеокарта KFA2 GeForce 210 [21GGF4HI00NK] [PCI-E 2.0 1 ГБ GDDR3, 64 бит, DVI-I, HDMI, VGA (D-Sub), GPU 520 МГц] || Price: 3 799
+Name: Видеокарта MSI GeForce 210 [N210-1GD3/LP] [PCI-E 2.0 1 ГБ GDDR3, 64 бит, DVI-I, HDMI, VGA (D-Sub), GPU 460 МГц] || Price: 3 899
+Name: Видеокарта INNO3D GeForce GT 710 Silent LP [N710-1SDV-D3BX] [PCI-E 2.0 1 ГБ GDDR3, 64 бит, DVI-D, HDMI, VGA (D-Sub), GPU 954 МГц] || Price: 4 4994 899
+Name: Видеокарта KFA2 GeForce GT 710 [71GPF4HI00GK] [PCI-E 2.0 2 ГБ GDDR3, 64 бит, DVI-D, HDMI, VGA (D-Sub), GPU 954 МГц] || Price: 4 899
+Name: Видеокарта MSI GeForce GT 710 Silent LP [GT 710 2GD3H LP] [PCI-E 2.0 2 ГБ GDDR3, 64 бит, DVI-D, HDMI, VGA (D-Sub), GPU 954 МГц] || Price: 4 899
+Name: Видеокарта INNO3D GeForce GT 710 Silent LP [N710-1SDV-E3BX] [PCI-E 2.0 2 ГБ GDDR3, 64 бит, DVI-D, HDMI, VGA (D-Sub), GPU 954 МГц] || Price: 5 099
+Name: Видеокарта ASUS GeForce GT 710 Silent LP EVO [GT710-SL-2GD3-BRK-EVO] [PCI-E 2.0 2 ГБ GDDR3, 64 бит, DVI-D, HDMI, VGA (D-Sub), GPU 954 МГц] || Price: 5 299
+Name: Видеокарта KFA2 GeForce GT 730 [73GQF8HX00HK] [PCI-E 2.0 4 ГБ DDR3, 128 бит, DVI-I, HDMI, VGA (D-Sub), GPU 700 МГц] || Price: 5 399
+Name: Видеокарта GIGABYTE GeForce GT 730 [GV-N730D3-2GI] [PCI-E 2.0 2 ГБ DDR3, 64 бит, DVI-D, HDMI, VGA (D-Sub), GPU 902 МГц] || Price: 5 499
+Name: Видеокарта MSI GeForce GT 730 [N730-2GD3V3] [PCI-E 2.0 2 ГБ GDDR3, 128 бит, DVI-I, HDMI, VGA (D-Sub), GPU 700 МГц] || Price: 5 599
+Name: Видеокарта PowerColor AMD Radeon R7 240 [AXR7 240 2GBD5-HLEV2] [PCI-E 3.0 2 ГБ GDDR5, 64 бит, DVI-D, HDMI, GPU 730 МГц] || Price: 5 599
+Name: Видеокарта GIGABYTE GeForce GT 710 LP (rev. 2.0) [GV-N710D3-2GL Rev2.0] [PCI-E 2.0 2 ГБ GDDR3, 64 бит, DVI-D, HDMI, VGA (D-Sub), GPU 954 МГц] || Price: 5 699
+Name: Видеокарта GIGABYTE GeForce GT 710 Silent LP [GV-N710D5SL-2GL] [PCI-E 2.0 2 ГБ GDDR5, 64 бит, DVI-I, HDMI, GPU 954 МГц] || Price: 5 799
+Name: Видеокарта ASUS GeForce GT 730 Silent LP EVO [GT730-SL-2GD3-BRK-EVO] [PCI-E 2.0 2 ГБ GDDR3, 64 бит, DVI-D, HDMI, VGA (D-Sub), GPU 902 МГц] || Price: 5 999
+Name: Видеокарта MSI GeForce GT 730 Silent LP [N730K-2GD3H/LP] [PCI-E 2.0 2 ГБ GDDR3, 64 бит, DVI-D, HDMI, VGA (D-Sub), GPU 902 МГц] || Price: 6 099
+Name: Видеокарта GIGABYTE GeForce GT 710 LP D5 [GV-N710D5-2GIL] [PCI-E 2.0 2 ГБ GDDR5, 64 бит, DVI-D, HDMI, VGA (D-Sub), GPU 954 МГц] || Price: 6 799
+Name: Видеокарта GIGABYTE GeForce GT 1030 Low Profile D4 2G [GV-N1030D4-2GL] [PCI-E 3.0 2 ГБ DDR4, 64 бит, DVI-D, HDMI, GPU 1151 МГц] || Price: 7 399
+Name: Видеокарта KFA2 GeForce GT 1030 [30NPH4HVQ4SK] [PCI-E 3.0 2 ГБ GDDR5, 64 бит, DVI-D, HDMI, GPU 1227 МГц] || Price: 7 899
+Name: Видеокарта ASRock AMD Radeon RX 550 Phantom Gaming [PHANTOM G R RX550 4G] [PCI-E 3.0 4 ГБ GDDR5, 128 бит, DisplayPort, DVI-D, HDMI, GPU 1100 МГц] || Price: 8 099
+Name: Видеокарта Palit GeForce GT 1030 [NEC103000646-1082F] [PCI-E 3.0 2 ГБ DDR4, 64 бит, DVI-D, HDMI, GPU 1151 МГц] || Price: 8 099
+Name: Видеокарта INNO3D GeForce GT 730 Silent LP [N730-1SDV-D3BX] [PCI-E 2.0 1 ГБ GDDR3, 64 бит, DVI-I, HDMI, VGA (D-Sub), GPU 902 МГц] || Price: 8 199
+Name: Видеокарта Sapphire AMD Radeon RX 550 PULSE OC [11268-01-20G] [PCI-E 3.0 4 ГБ GDDR5, 128 бит, DisplayPort, DVI-D, HDMI, GPU 1100 МГц] || Price: 8 799
+Name: Видеокарта GIGABYTE GeForce GT 1030 [GV-N1030D5-2GL] [PCI-E 3.0 2 ГБ GDDR5, 64 бит, DVI-D, HDMI, GPU 1227 МГц] || Price: 8 899
+Name: Видеокарта ASUS GeForce GT 730 Silent LP [GT730-SL-2GD5-BRK] [PCI-E 2.0 2 ГБ GDDR5, 64 бит, DVI-D, HDMI, VGA (D-Sub), GPU 902 МГц] || Price: 9 099
+Name: Видеокарта ASUS GeForce GT 1030 Phoenix [PH-GT1030-O2G] [PCI-E 3.0 2 ГБ GDDR5, 64 бит, DVI-D, HDMI, GPU 1252 МГц] || Price: 9 499
+Name: Видеокарта PowerColor AMD Radeon RX 550 Red Dragon OC [AXRX 550 4GBD5-DHV2/OC] [PCI-E 3.0 4 ГБ GDDR5, 128 бит, DisplayPort, DVI-D, HDMI, GPU 1100 МГц] || Price: 9 999
+Name: Видеокарта GIGABYTE GeForce GT 1030 OC [GV-N1030OC-2GI] [PCI-E 3.0 2 ГБ GDDR5, 64 бит, DVI-D, HDMI, GPU 1265 МГц] || Price: 10 499
+Name: Видеокарта PowerColor AMD Radeon 550 [AXRX 550 2GBD5-HLEV2] [PCI-E 3.0 2 ГБ GDDR5, 64 бит, DVI-D, HDMI, GPU 1100 МГц] || Price: 10 699
+Name: Видеокарта ASRock Intel Arc A310 Low Profile [A310 LP 4G] [PCI-E 4.0 4 ГБ GDDR6, 64 бит, DisplayPort, HDMI, GPU 2000 МГц] || Price: 11 999
+Name: Видеокарта ASUS GeForce GT 1030 LP [GT1030-2G-BRK] [PCI-E 3.0 2 ГБ GDDR5, 64 бит, DisplayPort, HDMI, GPU 1228 МГц] || Price: 12 199
+Name: Видеокарта PowerColor AMD Radeon RX 550 Red Dragon LP [AXRX 550 4GBD5-HLE] [PCI-E 3.0 4 ГБ GDDR5, 128 бит, DVI-D, HDMI, GPU 1071 МГц] || Price: 12 799
+Name: Видеокарта ASRock Intel Arc A380 Challenger ITX OC [A380 CLI 6GO] [PCI-E 4.0 6 ГБ GDDR6, 96 бит, DisplayPort x3, HDMI, GPU 2000 МГц] || Price: 12 99914 999
+Name: Видеокарта GIGABYTE Intel Arc A310 WINDFORCE [GV-IA310WF2-4GD] [PCI-E 4.0 4 ГБ GDDR6, 64 бит, DisplayPort x2, HDMI x2, GPU 2000 МГц] || Price: 13 999
+Name: Видеокарта ASRock Radeon RX 6400 Challenger ITX [RX6400 CLI 4G] [PCI-E 4.0 4 ГБ GDDR6, 64 бит, DisplayPort, HDMI, GPU 1923 МГц] || Price: 14 499
+Name: Видеокарта Sapphire AMD Radeon RX 6400 PULSE [11315-01-20G] [PCI-E 4.0 4 ГБ GDDR6, 64 бит, DisplayPort, HDMI, GPU 1923 МГц] || Price: 14 799
+Name: Видеокарта MSI AMD Radeon RX 6400 AERO ITX [RX 6400 AERO ITX 4G] [PCI-E 4.0 4 ГБ GDDR6, 64 бит, DisplayPort, HDMI, GPU 1923 МГц] || Price: 14 899
+Name: Видеокарта ASUS GeForce GTX 1630 Phoenix EVO [PH-GTX1630-4G-EVO] [PCI-E 3.0 4 ГБ GDDR6, 64 бит, DisplayPort, DVI-D, HDMI, GPU 1740 МГц] || Price: 14 999
+Name: Видеокарта KFA2 GeForce GTX 1650 X Black [65SQL8DS93EK] [PCI-E 3.0 4 ГБ GDDR6, 128 бит, DisplayPort, DVI-D, HDMI, GPU 1410 МГц] || Price: 15 899
+Name: Видеокарта INNO3D GeForce GTX 1650 TWIN X2 OC V3 [N16502-04D6X-171330N] [PCI-E 3.0 4 ГБ GDDR6, 128 бит, DisplayPort x3, HDMI, GPU 1485 МГц] || Price: 15 999
+Name: Видеокарта MSI GeForce GTX 1650 D6 VENTUS XS OCV3 [GeForce GTX 1650 D6 VENTUS XS OCV3] [PCI-E 3.0 4 ГБ GDDR6, 128 бит, DisplayPort, DVI-D, HDMI, GPU 1485 МГц] || Price: 15 99917 499
+Name: Видеокарта INNO3D GeForce GTX 1650 TWIN X2 OC [N16502-04D6X-1713VA32R] [PCI-E 3.0 4 ГБ GDDR6, 128 бит, DisplayPort x3, HDMI, GPU 1410 МГц] || Price: 16 999
+Name: Видеокарта GIGABYTE AMD Radeon RX 6400 D6 LOW PROFILE [GV-R64D6-4GL] [PCI-E 4.0 4 ГБ GDDR6, 64 бит, DisplayPort, HDMI, GPU 1923 МГц] || Price: 17 299
+Name: Видеокарта GIGABYTE Intel Arc A380 WINDFORCE OC [GV-IA380WF2OC-6GD] [PCI-E 4.0 6 ГБ GDDR6, 96 бит, DisplayPort x2, HDMI x2, GPU 2000 МГц] || Price: 17 399
+Name: Видеокарта ASRock AMD Radeon RX 6500 XT Phantom Gaming D OC [RX6500XT PGD 4GO] [PCI-E 4.0 4 ГБ GDDR6, 64 бит, DisplayPort, HDMI, GPU 2365 МГц] || Price: 18 299
+Name: Видеокарта ASUS GeForce GTX 1650 Dual EVO OC Edition [DUAL-GTX1650-O4GD6-P-EVO] [PCI-E 3.0 4 ГБ GDDR6, 128 бит, DisplayPort, DVI-D, HDMI, GPU 1410 МГц] || Price: 18 999
+Name: Видеокарта ASUS GeForce GTX 1650 TUF Gaming V2 OC Edition [TUF-GTX1650-O4GD6-P-V2-GAMING] [PCI-E 3.0 4 ГБ GDDR6, 128 бит, DisplayPort, DVI-D, HDMI, GPU 1410 МГц] || Price: 18 999
+Name: Видеокарта PowerColor AMD Radeon RX 6500 XT ITX [AXRX 6500XT 4GBD6-DH] [PCI-E 4.0 4 ГБ GDDR6, 64 бит, DisplayPort, HDMI, GPU 2310 МГц] || Price: 19 999
+Name: Видеокарта Sapphire AMD Radeon RX 6500 XT PULSE OC [11314-01-20G] [PCI-E 4.0 4 ГБ GDDR6, 64 бит, DisplayPort, HDMI, GPU 2310 МГц] || Price: 20 299
+Name: Видеокарта GIGABYTE GeForce GTX 1650 D6 OC (rev. 2.0) [GV-N1656OC-4GD rev2.0] [PCI-E 3.0 4 ГБ GDDR6, 128 бит, DisplayPort, DVI-D, HDMI, GPU 1410 МГц] || Price: 20 999
+Name: Видеокарта MSI AMD Radeon RX 6500 XT MECH 2X OC [RX 6500 XT MECH 2X 4G OC] [PCI-E 4.0 4 ГБ GDDR6, 64 бит, DisplayPort, HDMI, GPU 2310 МГц] || Price: 21 699
+Name: Видеокарта GIGABYTE AMD Radeon RX 6500 XT EAGLE [GV-R65XTEAGLE-4GD] [PCI-E 4.0 4 ГБ GDDR6, 64 бит, DisplayPort, HDMI, GPU 2310 МГц] || Price: 22 999
+Name: Видеокарта NVIDIA Quadro T400 [Quadro T400] [PCI-E 3.0 4 ГБ GDDR6, 64 бит, Mini DisplayPort x3, GPU 420 МГц] || Price: 23 599
+Name: Видеокарта PNY Quadro T400 [VCNT400-4GB-PB] [PCI-E 3.0 4 ГБ GDDR6, 64 бит, Mini DisplayPort x3, GPU 1070 МГц] || Price: 23 999
+Name: Видеокарта GIGABYTE AMD Radeon RX 6500 XT GAMING OC [GV-R65XTGAMING OC-4GD] [PCI-E 4.0 4 ГБ GDDR6, 64 бит, DisplayPort, HDMI, GPU 2310 МГц] || Price: 24 499
+Name: Видеокарта Sapphire AMD Radeon RX 6600 PULSE [11310-01-20G] [PCI-E 4.0 8 ГБ GDDR6, 128 бит, DisplayPort x3, HDMI, GPU 1626 МГц] || Price: 24 99927 699
+Name: Видеокарта INNO3D GeForce RTX 3050 TWIN X2 [N30502-08D6-1711VA41] [PCI-E 4.0 8 ГБ GDDR6, 128 бит, DisplayPort, DVI-D, HDMI, GPU 1552 МГц] || Price: 25 999
+Name: Видеокарта Palit GeForce GTX 1660 SUPER GamingPro [NE6166S018J9-1160A-1] [PCI-E 3.0 6 ГБ GDDR6, 192 бит, DisplayPort, DVI-D, HDMI, GPU 1530 МГц] || Price: 25 999
+Name: Видеокарта Palit GeForce RTX 3050 Dual [NE63050018P1-1070D] [PCI-E 4.0 8 ГБ GDDR6, 128 бит, DisplayPort, DVI-D, HDMI, GPU 1552 МГц] || Price: 25 999
+Name: Видеокарта ASRock AMD Radeon RX 6600 Challenger D [RX6600 CLD 8G] [PCI-E 4.0 8 ГБ GDDR6, 128 бит, DisplayPort x3, HDMI, GPU 1626 МГц] || Price: 26 699
+Name: Видеокарта KFA2 GeForce RTX 3050 X Black [35NSL8MD6YEK] [PCI-E 4.0 8 ГБ GDDR6, 128 бит, DisplayPort x3, HDMI, GPU 1552 МГц] || Price: 26 999
+Name: Видеокарта KFA2 GeForce RTX 3050 X White [35NSL8MD5WEK] [PCI-E 4.0 8 ГБ GDDR6, 128 бит, DisplayPort x3, HDMI, GPU 1552 МГц] || Price: 26 999
+Name: Видеокарта PowerColor AMD Radeon RX 6600 Fighter [AXRX 6600 8GBD6-3DH] [PCI-E 4.0 8 ГБ GDDR6, 128 бит, DisplayPort x3, HDMI, GPU 1626 МГц] || Price: 26 999
+Name: Видеокарта PowerColor AMD Radeon RX 6650 XT FIGHTER [AXRX 6650 XT 8GBD6-3DH] [PCI-E 4.0 8 ГБ GDDR6, 128 бит, DisplayPort x3, HDMI, GPU 2055 МГц] || Price: 27 499
+Name: Видеокарта ASUS GeForce RTX 3050 Dual V2 OC Edition [DUAL-RTX3050-O8G-V2] [PCI-E 4.0 8 ГБ GDDR6, 128 бит, DisplayPort, DVI-D, HDMI, GPU 1552 МГц] || Price: 27 999
+Name: Видеокарта GIGABYTE GeForce GTX 1660 SUPER D6 [GV-N166SD6-6GD] [PCI-E 3.0 6 ГБ GDDR6, 192 бит, DisplayPort x3, HDMI, GPU 1530 МГц] || Price: 27 999
+Name: Видеокарта GIGABYTE GeForce RTX 3050 WINDFORCE OC V2 [GV-N3050WF2OCV2-8GD] [PCI-E 4.0 8 ГБ GDDR6, 128 бит, DisplayPort x2, HDMI x2, GPU 1552 МГц] || Price: 27 999
+Name: Видеокарта MSI GeForce RTX 3050 VENTUS 2X XS OC [RTX 3050 VENTUS 2X XS 8G OC] [PCI-E 4.0 8 ГБ GDDR6, 128 бит, DisplayPort, DVI-D, HDMI, GPU 1552 МГц] || Price: 27 999
+Name: Видеокарта Palit GeForce RTX 3050 StormX [NE63050018P1-1070F] [PCI-E 4.0 8 ГБ GDDR6, 128 бит, DisplayPort, DVI-D, HDMI, GPU 1552 МГц] || Price: 28 799
+Name: Видеокарта ASRock Intel Arc A750 Challenger D OC [A750 CLD 8GO] [PCI-E 4.0 8 ГБ GDDR6, 256 бит, DisplayPort x2, HDMI x2, GPU 2050 МГц] || Price: 28 999
+Name: Видеокарта Sapphire AMD Radeon RX 7600 PULSE GAMING OC [11324-01-20G] [PCI-E 4.0 8 ГБ GDDR6, 128 бит, DisplayPort x3, HDMI, GPU 1720 МГц] || Price: 28 99932 999
+Name: Видеокарта MSI AMD Radeon RX 6650 XT MECH 2X OC [RX 6650 XT MECH 2X 8G OC] [PCI-E 4.0 8 ГБ GDDR6, 128 бит, DisplayPort x3, HDMI, GPU 2055 МГц] || Price: 29 99932 299
+Name: Видеокарта ASUS GeForce RTX 3050 Dual OC Edition [DUAL-RTX3050-O8G] [PCI-E 4.0 8 ГБ GDDR6, 128 бит, DisplayPort x3, HDMI, GPU 1552 МГц] || Price: 30 499
+Name: Видеокарта ASRock AMD Radeon RX 6650 XT Challenger D [RX6650XT CLD 8GO] [PCI-E 4.0 8 ГБ GDDR6, 128 бит, DisplayPort x3, HDMI, GPU 2106 МГц] || Price: 30 999
+Name: Видеокарта GIGABYTE GeForce RTX 3050 EAGLE OC [GV-N3050EAGLE OC-8GD] [PCI-E 4.0 8 ГБ GDDR6, 128 бит, DisplayPort x2, HDMI x2, GPU 1552 МГц] || Price: 31 999
+Name: Видеокарта GIGABYTE GeForce RTX 3050 WINDFORCE OC [GV-N3050WF2OC-8GD] [PCI-E 4.0 8 ГБ GDDR6, 128 бит, DisplayPort, DVI-D, HDMI, GPU 1552 МГц] || Price: 31 999
+Name: Видеокарта ASUS AMD Radeon RX 7600 DUAL OC V2 [DUAL-RX7600-O8G-V2] [PCI-E 4.0 8 ГБ GDDR6, 128 бит, DisplayPort x3, HDMI, GPU 1720 МГц] || Price: 33 999
+Name: Видеокарта ASRock AMD Radeon RX 7600 Challenger OC [RX7600 CL 8GO] [PCI-E 4.0 8 ГБ GDDR6, 128 бит, DisplayPort x3, HDMI, GPU 1770 МГц] || Price: 34 999
+Name: Видеокарта INNO3D GeForce RTX 4060 COMPACT [N40601-08D6-173050N] [PCI-E 4.0 8 ГБ GDDR6, 128 бит, DisplayPort x3, HDMI, GPU 1830 МГц] || Price: 34 999
+Name: Видеокарта INNO3D GeForce RTX 4060 TWIN X2 [N40602-08D6-173051N] [PCI-E 4.0 8 ГБ GDDR6, 128 бит, DisplayPort x3, HDMI, GPU 1830 МГц] || Price: 35 999
+Name: Видеокарта GIGABYTE GeForce RTX 4060 D6 [GV-N4060D6-8GD] [PCI-E 4.0 8 ГБ GDDR6, 128 бит, DisplayPort x2, HDMI x2, GPU 1830 МГц] || Price: 36 499
+Name: Видеокарта Palit GeForce RTX 4060 StormX [NE64060019P1-1070F] [PCI-E 4.0 8 ГБ GDDR6, 128 бит, DisplayPort x3, HDMI, GPU 1830 МГц] || Price: 36 999
+Name: Видеокарта MSI GeForce RTX 3050 GAMING X [RTX 3050 GAMING X 8G] [PCI-E 4.0 8 ГБ GDDR6, 128 бит, DisplayPort x3, HDMI, GPU 1552 МГц] || Price: 37 499
+Name: Видеокарта KFA2 GeForce RTX 4060 CORE Black [46NSL8MD8LOK] [PCI-E 4.0 8 ГБ GDDR6, 128 бит, DisplayPort x3, HDMI, GPU 1830 МГц] || Price: 37 999
+Name: Видеокарта KFA2 GeForce RTX 4060 X Black [46NSL8MD8MEK] [PCI-E 4.0 8 ГБ GDDR6, 128 бит, DisplayPort x3, HDMI, GPU 1830 МГц] || Price: 38 499
+Name: Видеокарта MSI GeForce RTX 4060 VENTUS 2X BLACK OC [GeForce RTX 4060 VENTUS 2X] [PCI-E 4.0 8 ГБ GDDR6, 128 бит, DisplayPort x3, HDMI, GPU 1830 МГц] || Price: 39 299
+Name: Видеокарта Palit GeForce RTX 4060 Dual [NE64060019P1-1070D] [PCI-E 4.0 8 ГБ GDDR6, 128 бит, DisplayPort x3, HDMI, GPU 1830 МГц] || Price: 39 799
+Name: Видеокарта ASUS GeForce RTX 4060 Dual OC Edition [DUAL-RTX4060-O8G] [PCI-E 4.0 8 ГБ GDDR6, 128 бит, DisplayPort x3, HDMI, GPU 1830 МГц] || Price: 39 999
+Name: Видеокарта KFA2 GeForce RTX 3060 X Black (LHR) [36NOL7MD2NEK] [PCI-E 4.0 12 ГБ GDDR6, 192 бит, DisplayPort x3, HDMI, GPU 1320 МГц] || Price: 39 999
+Name: Видеокарта KFA2 GeForce RTX 4060 X White [46NSL8MD8NWK] [PCI-E 4.0 8 ГБ GDDR6, 128 бит, DisplayPort x3, HDMI, GPU 1830 МГц] || Price: 39 999
+Name: Видеокарта MSI GeForce RTX 4060 GAMING X [GeForce RTX 4060 GAMING X 8G] [PCI-E 4.0 8 ГБ GDDR6, 128 бит, DisplayPort x3, HDMI, GPU 1830 МГц] || Price: 39 99945 499
+Name: Видеокарта MSI GeForce RTX 4060 VENTUS 2X WHITE OC VTS [GeForce RTX 4060 VENTUS 2X WHITE 8G OC VTS] [PCI-E 4.0 8 ГБ GDDR6, 128 бит, DisplayPort x3, HDMI, GPU 1830 МГц] || Price: 39 999
+Name: Видеокарта ASUS GeForce RTX 4060 Dual White OC Edition [DUAL-RTX4060-O8G-WHITE] [PCI-E 4.0 8 ГБ GDDR6, 128 бит, DisplayPort x3, HDMI, GPU 1830 МГц] || Price: 40 999
+Name: Видеокарта ASUS GeForce RTX 4060 ProArt OC edition [PROART-RTX4060-O8G] [PCI-E 4.0 8 ГБ GDDR6, 128 бит, DisplayPort x3, HDMI, GPU 1830 МГц] || Price: 40 999
+Name: Видеокарта GIGABYTE AMD Radeon RX 7600 GAMING OC [GV-R76GAMING OC-8GD] [PCI-E 4.0 8 ГБ GDDR6, 128 бит, DisplayPort x2, HDMI x2, GPU 1720 МГц] || Price: 40 999
+Name: Видеокарта MSI GeForce RTX 4060 GAMING X MLG [GeForce RTX 4060 GAMING X MLG 8G] [PCI-E 4.0 8 ГБ GDDR6, 128 бит, DisplayPort x3, HDMI, GPU 1830 МГц] || Price: 40 999
+Name: Видеокарта MSI GeForce RTX 4060 VENTUS 2X WHITE VTS [GeForce RTX 4060 VENTUS 2X WHITE 8G VTS] [PCI-E 4.0 8 ГБ GDDR6, 128 бит, DisplayPort x3, HDMI, GPU 1830 МГц] || Price: 40 999
+Name: Видеокарта Palit GeForce RTX 4060 Dual OC [NE64060T19P1-1070D] [PCI-E 4.0 8 ГБ GDDR6, 128 бит, DisplayPort x3, HDMI, GPU 1830 МГц] || Price: 40 999
+Name: Видеокарта Palit GeForce GTX 1660 SUPER GamingPro OC [NE6166SS18J9-1160A-1] [PCI-E 3.0 6 ГБ GDDR6, 192 бит, DisplayPort, DVI-D, HDMI, GPU 1530 МГц] || Price: 41 499
+Name: Видеокарта GIGABYTE GeForce RTX 4060 OC Low Profile [GV-N4060OC-8GL] [PCI-E 4.0 8 ГБ GDDR6, 128 бит, DisplayPort x2, HDMI x2, GPU 1830 МГц] || Price: 41 999
+Name: Видеокарта MSI GeForce RTX 4060 VENTUS 3X OC [GeForce RTX 4060 VENTUS 3X 8G ] [PCI-E 4.0 8 ГБ GDDR6, 128 бит, DisplayPort x3, HDMI, GPU 1830 МГц] || Price: 41 999
+Name: Видеокарта GIGABYTE GeForce RTX 4060 WINDFORCE OC [GV-N4060WF2OC-8GD] [PCI-E 4.0 8 ГБ GDDR6, 128 бит, DisplayPort x2, HDMI x2, GPU 1830 МГц] || Price: 42 299
+Name: Видеокарта ASRock Intel Arc A770 Phantom Gaming D OC [A770 PG 16GO] [PCI-E 4.0 16 ГБ GDDR6, 256 бит, DisplayPort x3, HDMI, GPU 2100 МГц] || Price: 42 499
+Name: Видеокарта GIGABYTE GeForce RTX 4060 EAGLE OC [GV-N4060EAGLE OC-8GD] [PCI-E 4.0 8 ГБ GDDR6, 128 бит, DisplayPort x2, HDMI x2, GPU 1830 МГц] || Price: 42 499
+Name: Видеокарта ASRock AMD Radeon RX 6700 XT Challenger D OC [RX6700XT CLD 12GO] [PCI-E 4.0 12 ГБ GDDR6, 192 бит, DisplayPort x3, HDMI, GPU 2321 МГц] || Price: 42 999
+Name: Видеокарта Palit GeForce RTX 4060 Ti Dual OC [NE6406TT19P1-1060D] [PCI-E 4.0 8 ГБ GDDR6, 128 бит, DisplayPort x3, HDMI, GPU 2310 МГц] || Price: 43 49948 499
+Name: Видеокарта PowerColor AMD Radeon RX 6700 XT Fighter [AXRX 6700XT 12GBD6-3DH] [PCI-E 4.0 12 ГБ GDDR6, 192 бит, DisplayPort x3, HDMI, GPU 2321 МГц] || Price: 43 999
+Name: Видеокарта GIGABYTE GeForce RTX 4060 GAMING OC [GV-N4060GAMING OC-8GD] [PCI-E 4.0 8 ГБ GDDR6, 128 бит, DisplayPort x2, HDMI x2, GPU 1830 МГц] || Price: 44 499
+Name: Видеокарта MSI GeForce RTX 4060 Ti VENTUS 2X BLACK OC [GeForce RTX 4060 Ti VENTUS 2X BLACK 8G OC] [PCI-E 4.0 8 ГБ GDDR6, 128 бит, DisplayPort x3, HDMI, GPU 2310 МГц] || Price: 44 99947 499
+Name: Видеокарта PNY Quadro T1000 [VCNT1000-SB] [PCI-E 3.0 4 ГБ GDDR6, 128 бит, Mini DisplayPort x4, GPU 1065 МГц] || Price: 44 999
+Name: Видеокарта Sapphire AMD Radeon RX 6700 XT PULSE [11306-02-20G] [PCI-E 4.0 12 ГБ GDDR6, 192 бит, DisplayPort x3, HDMI, GPU 2321 МГц] || Price: 45 999
+Name: Видеокарта ASUS GeForce RTX 4060 Ti Dual White OC Edition [DUAL-RTX4060TI-O8G-WHITE] [PCI-E 4.0 8 ГБ GDDR6, 128 бит, DisplayPort x3, HDMI, GPU 2310 МГц] || Price: 46 999
+Name: Видеокарта KFA2 GeForce RTX 4060 Ti CORE [46ISL8MD8COK] [PCI-E 4.0 8 ГБ GDDR6, 128 бит, DisplayPort x3, HDMI, GPU 2310 МГц] || Price: 46 999
+Name: Видеокарта GIGABYTE GeForce RTX 4060 AERO OC [GV-N4060AERO OC-8GD] [PCI-E 4.0 8 ГБ GDDR6, 128 бит, DisplayPort x2, HDMI x2, GPU 1830 МГц] || Price: 47 299
+Name: Видеокарта INNO3D GeForce RTX 4060 Ti TWIN X2 [N406T2-08D6-171153N] [PCI-E 4.0 8 ГБ GDDR6, 128 бит, DisplayPort x3, HDMI, GPU 2310 МГц] || Price: 47 999
+Name: Видеокарта MSI GeForce RTX 4060 Ti VENTUS 3X E OC [GeForce RTX 4060 Ti VENTUS 3X E 8G OC] [PCI-E 4.0 8 ГБ GDDR6, 128 бит, DisplayPort x3, HDMI, GPU 2310 МГц] || Price: 47 999
+Name: Видеокарта KFA2 GeForce RTX 4060 Ti X Black [46ISL8MD8AEK] [PCI-E 4.0 8 ГБ GDDR6, 128 бит, DisplayPort x3, HDMI, GPU 2310 МГц] || Price: 48 299
+Name: Видеокарта KFA2 GeForce RTX 4060 Ti X White [46ISL8MD8BWK] [PCI-E 4.0 8 ГБ GDDR6, 128 бит, DisplayPort x3, HDMI, GPU 2310 МГц] || Price: 48 299
+Name: Видеокарта Palit GeForce RTX 4060 Ti Dual [NE6406T019P1-1060D] [PCI-E 4.0 8 ГБ GDDR6, 128 бит, DisplayPort x3, HDMI, GPU 2310 МГц] || Price: 48 299
+Name: Видеокарта GIGABYTE GeForce RTX 4060 Ti WINDFORCE OC [GV-N406TWF2OC-8GD] [PCI-E 4.0 8 ГБ GDDR6, 128 бит, DisplayPort x2, HDMI x2, GPU 2310 МГц] || Price: 48 499
+Name: Видеокарта MSI AMD Radeon RX 6750 XT GAMING X TRIO [RX 6750 XT GAMING X TRIO 12G] [PCI-E 4.0 12 ГБ GDDR6, 192 бит, DisplayPort x3, HDMI, GPU 2150 МГц] || Price: 49 999
+Name: Видеокарта MSI GeForce RTX 4060 Ti GAMING X SLIM WHITE [GeForce RTX 4060 Ti GAMING X SLIM WHITE 8G] [PCI-E 4.0 8 ГБ GDDR6, 128 бит, DisplayPort x3, HDMI, GPU 2310 МГц] || Price: 49 99956 999
+Name: Видеокарта MSI GeForce RTX 4060 Ti VENTUS 3X OC [GeForce RTX 4060 Ti VENTUS 3X 8G OC] [PCI-E 4.0 8 ГБ GDDR6, 128 бит, DisplayPort x3, HDMI, GPU 2310 МГц] || Price: 49 999
+Name: Видеокарта GIGABYTE GeForce RTX 4060 AORUS ELITE [GV-N4060AORUS E-8GD] [PCI-E 4.0 8 ГБ GDDR6, 128 бит, DisplayPort x2, HDMI x2, GPU 1830 МГц] || Price: 50 499
+Name: Видеокарта Sapphire AMD Radeon RX 7700 XT PURE [11335-03-20G] [PCI-E 4.0 12 ГБ GDDR6, 192 бит, DisplayPort x2, HDMI x2] || Price: 51 99957 999
+Name: Видеокарта GIGABYTE GeForce RTX 4060 Ti EAGLE OC [GV-N406TEAGLE OC-8GD] [PCI-E 4.0 8 ГБ GDDR6, 128 бит, DisplayPort x2, HDMI x2, GPU 2310 МГц] || Price: 52 999
+Name: Видеокарта NVIDIA Quadro T1000 [Quadro T1000 8GB] [PCI-E 3.0 8 ГБ GDDR6, 128 бит, Mini DisplayPort x4, GPU 1065 МГц] || Price: 53 499
+Name: Видеокарта GIGABYTE GeForce RTX 4060 Ti EAGLE [GV-N406TEAGLE-8GD] [PCI-E 4.0 8 ГБ GDDR6, 128 бит, DisplayPort x2, HDMI x2, GPU 2310 МГц] || Price: 53 799
+Name: Видеокарта ASUS GeForce RTX 4060 Ti Dual OC Edition [DUAL-RTX4060TI-O8G ] [PCI-E 4.0 8 ГБ GDDR6, 128 бит, DisplayPort x3, HDMI, GPU 2310 МГц] || Price: 53 999
+Name: Видеокарта MSI AMD Radeon RX 6700 XT MECH 2X OC [RX 6700 XT MECH 2X 12G OC] [PCI-E 4.0 12 ГБ GDDR6, 192 бит, DisplayPort x3, HDMI, GPU 2321 МГц] || Price: 54 299
+Name: Видеокарта ASUS GeForce RTX 4060 Ti Dual OC Edition [DUAL-RTX4060TI-O16G] [PCI-E 4.0 16 ГБ GDDR6, 128 бит, DisplayPort x3, HDMI, GPU 2310 МГц] || Price: 54 999
+Name: Видеокарта PowerColor AMD Radeon RX 7700 XT Fighter [RX7700XT 12G-F/OC] [PCI-E 4.0 12 ГБ GDDR6, 192 бит, DisplayPort x3, HDMI] || Price: 54 999
+Name: Видеокарта ASUS GeForce RTX 4060 Ti ProArt OC edition [PROART-RTX4060TI-O16G] [PCI-E 4.0 16 ГБ GDDR6, 128 бит, DisplayPort x3, HDMI, GPU 2310 МГц] || Price: 55 999
+Name: Видеокарта GIGABYTE GeForce RTX 4060 Ti WINDFORCE OC [GV-N406TWF2OC-16GD] [PCI-E 4.0 16 ГБ GDDR6, 128 бит, DisplayPort x2, HDMI x2, GPU 2310 МГц] || Price: 55 999
+Name: Видеокарта MSI GeForce RTX 4060 Ti GAMING X SLIM [GeForce RTX 4060 Ti GAMING X SLIM 8G] [PCI-E 4.0 8 ГБ GDDR6, 128 бит, DisplayPort x3, HDMI, GPU 2310 МГц] || Price: 55 999
+Name: Видеокарта MSI GeForce RTX 4060 Ti GAMING X [GeForce RTX 4060 Ti GAMING X 8G] [PCI-E 4.0 8 ГБ GDDR6, 128 бит, DisplayPort x3, HDMI, GPU 2310 МГц] || Price: 55 999
+Name: Видеокарта MSI GeForce RTX 4060 Ti VENTUS 2X BLACK OC [GeForce RTX 4060 Ti VENTUS 2X BLACK 16G OC] [PCI-E 4.0 16 ГБ GDDR6, 128 бит, DisplayPort x3, HDMI, GPU 2310 МГц] || Price: 55 99960 799
+Name: Видеокарта ASUS AMD Radeon RX 6700 XT Dual [DUAL-RX6700XT-12G] [PCI-E 4.0 12 ГБ GDDR6, 192 бит, DisplayPort x3, HDMI, GPU 2321 МГц] || Price: 56 499
+Name: Видеокарта KFA2 GeForce RTX 4060 Ti X Black [46IZL8MD8YEK] [PCI-E 4.0 16 ГБ GDDR6, 128 бит, DisplayPort x3, HDMI, GPU 2310 МГц] || Price: 56 499
+Name: Видеокарта Sapphire AMD Radeon RX 7700 XT PULSE [11335-04] [PCI-E 4.0 12 ГБ GDDR6, 192 бит, DisplayPort x2, HDMI x2] || Price: 56 999
+Name: Видеокарта GIGABYTE GeForce RTX 4060 Ti AERO OC [GV-N406TAERO OC-8GD] [PCI-E 4.0 8 ГБ GDDR6, 128 бит, DisplayPort x2, HDMI x2, GPU 2310 МГц] || Price: 57 799
+Name: Видеокарта ASUS GeForce RTX 4060 Ti TUF Gaming OC Edition [TUF-RTX4060TI-O8G-GAMING] [PCI-E 4.0 8 ГБ GDDR6, 128 бит, DisplayPort x3, HDMI, GPU 2310 МГц] || Price: 57 999
+Name: Видеокарта Palit GeForce RTX 4060 Ti JetStream [NE6406T019T1-1061J] [PCI-E 4.0 16 ГБ GDDR6, 128 бит, DisplayPort x3, HDMI, GPU 2310 МГц] || Price: 57 999
+Name: Видеокарта GIGABYTE GeForce RTX­­ 4060 Ti GAMING OC [GV-N406TGAMING OC-8GD] [PCI-E 4.0 8 ГБ GDDR6, 128 бит, DisplayPort x2, HDMI x2, GPU 2310 МГц] || Price: 58 299
+Name: Видеокарта GIGABYTE AMD Radeon RX 7700 XT GAMING OC [GV-R77XTGAMING OC-12GD] [PCI-E 4.0 12 ГБ GDDR6, 192 бит, DisplayPort x2, HDMI x2] || Price: 58 999
+Name: Видеокарта MSI GeForce RTX 4060 Ti GAMING X SLIM WHITE [GeForce RTX 4060 Ti GAMING X SLIM WHITE 16G] [PCI-E 4.0 16 ГБ GDDR6, 128 бит, DisplayPort x3, HDMI, GPU 2310 МГц] || Price: 59 99966 999
+Name: Видеокарта GIGABYTE GeForce RTX 4060 Ti AERO OC [GV-N406TAERO OC-16GD] [PCI-E 4.0 16 ГБ GDDR6, 128 бит, DisplayPort x2, HDMI x2, GPU 2310 МГц] || Price: 60 499
+Name: Видеокарта GIGABYTE GeForce RTX­­ 4060 Ti GAMING OC [GV-N406TGAMING OC-16GD] [PCI-E 4.0 16 ГБ GDDR6, 128 бит, DisplayPort x2, HDMI x2, GPU 2310 МГц] || Price: 60 499
+Name: Видеокарта GIGABYTE AMD Radeon RX 6750 XT AORUS ELITE [GV-R675XTAORUS E-12GD] [PCI-E 4.0 12 ГБ GDDR6, 192 бит, DisplayPort x2, HDMI x2, GPU 2150 МГц] || Price: 60 799
+Name: Видеокарта INNO3D GeForce RTX 4060 Ti TWIN X2 OC [N406T2-16D6X-178055N] [PCI-E 4.0 16 ГБ GDDR6, 128 бит, DisplayPort x3, HDMI, GPU 2310 МГц] || Price: 60 999
+Name: Видеокарта MSI GeForce RTX 4060 Ti VENTUS 3X OC [GeForce RTX 4060 Ti VENTUS 3X 16G OC] [PCI-E 4.0 16 ГБ GDDR6, 128 бит, DisplayPort x3, HDMI, GPU 2310 МГц] || Price: 60 999
+Name: Видеокарта Palit GeForce RTX 4060 Ti JetStream [NE6406TU19T1-1061J] [PCI-E 4.0 16 ГБ GDDR6, 128 бит, DisplayPort x3, HDMI, GPU 2310 МГц] || Price: 60 999
+Name: Видеокарта Sapphire AMD Radeon RX 7700 XT NITRO+ [11335-02] [PCI-E 4.0 12 ГБ GDDR6, 192 бит, DisplayPort x2, HDMI x2] || Price: 60 999
+Name: Видеокарта MSI GeForce RTX 4070 VENTUS 2X E OC [GeForce RTX 4070 VENTUS 2X E 12G OC] [PCI-E 4.0 12 ГБ GDDR6X, 192 бит, DisplayPort x3, HDMI, GPU 1920 МГц] || Price: 61 99967 299
+Name: Видеокарта PNY Quadro T1000 [VCNT1000-8GB-PB] [PCI-E 3.0 8 ГБ GDDR6, 128 бит, Mini DisplayPort x4, GPU 1065 МГц] || Price: 61 999
+Name: Видеокарта ASRock AMD Radeon RX 6800 XT Phantom Gaming OC [RX6800XT PG 16GO] [PCI-E 4.0 16 ГБ GDDR6, 256 бит, DisplayPort x3, HDMI, GPU 1875 МГц] || Price: 63 999
+Name: Видеокарта KFA2 GeForce RTX 4070 CORE Black [47NOM7MD8DDK] [PCI-E 4.0 12 ГБ GDDR6X, 192 бит, DisplayPort x3, HDMI, GPU 1920 МГц] || Price: 63 999
+Name: Видеокарта MSI GeForce RTX 4060 Ti GAMING X SLIM [GeForce RTX 4060 Ti GAMING X SLIM 16G] [PCI-E 4.0 16 ГБ GDDR6, 128 бит, DisplayPort x3, HDMI, GPU 2310 МГц] || Price: 64 999
+Name: Видеокарта MSI GeForce RTX 4070 VENTUS 2X WHITE OC [GeForce RTX 4070 VENTUS 2X WHITE 12G OC] [PCI-E 4.0 12 ГБ GDDR6X, 192 бит, DisplayPort x3, HDMI, GPU 1920 МГц] || Price: 65 999
+Name: Видеокарта Sapphire AMD Radeon RX 7800 XT PULSE [11330-02-20G] [PCI-E 4.0 16 ГБ GDDR6, 256 бит, DisplayPort x2, HDMI x2] || Price: 65 999
+Name: Видеокарта INNO3D GeForce RTX 4070 TWIN X2 [N40702-126X-185252N] [PCI-E 4.0 12 ГБ GDDR6X, 192 бит, DisplayPort x3, HDMI, GPU 1920 МГц] || Price: 67 999
+Name: Видеокарта MSI GeForce RTX 4060 Ti GAMING X [GeForce RTX 4060 Ti GAMING X 16G] [PCI-E 4.0 16 ГБ GDDR6, 128 бит, DisplayPort x3, HDMI, GPU 2310 МГц] || Price: 68 299
+Name: Видеокарта KFA2 GeForce RTX 4070 X 3FAN Black [47NOM7MD7JEK] [PCI-E 4.0 12 ГБ GDDR6X, 192 бит, DisplayPort x3, HDMI, GPU 1920 МГц] || Price: 69 299
+Name: Видеокарта GIGABYTE AMD Radeon RX 7800 XT GAMING OC [GV-R78XTGAMING OC-16GD] [PCI-E 4.0 16 ГБ GDDR6, 256 бит, DisplayPort x2, HDMI x2] || Price: 69 999
+Name: Видеокарта Sapphire AMD Radeon RX 7800 XT PURE [11330-03] [PCI-E 4.0 16 ГБ GDDR6, 256 бит, DisplayPort x2, HDMI x2] || Price: 69 999
+Name: Видеокарта KFA2 GeForce RTX 4070 CORE 3 FAN Black [47NOM7MD7QOK] [PCI-E 4.0 12 ГБ GDDR6X, 192 бит, DisplayPort x3, HDMI, GPU 1920 МГц] || Price: 70 299
+Name: Видеокарта Sapphire AMD Radeon RX 7800 XT NITRO+ [11330-01-20G] [PCI-E 4.0 16 ГБ GDDR6, 256 бит, DisplayPort x2, HDMI x2] || Price: 71 999
+Name: Видеокарта GIGABYTE GeForce RTX 4070 WINDFORCE OC 12G [GV-N4070WF3OC-12GD] [PCI-E 4.0 12 ГБ GDDR6X, 192 бит, DisplayPort x3, HDMI, GPU 1920 МГц] || Price: 72 499
+Name: Видеокарта MSI GeForce RTX 4070 GAMING X SLIM [GeForce RTX 4070 GAMING X SLIM 12G] [PCI-E 4.0 12 ГБ GDDR6X, 192 бит, DisplayPort x3, HDMI, GPU 1920 МГц] || Price: 72 99979 999
+Name: Видеокарта MSI GeForce RTX 4070 VENTUS 2X OC [GeForce RTX 4070 VENTUS 2X 12G] [PCI-E 4.0 12 ГБ GDDR6X, 192 бит, DisplayPort x3, HDMI, GPU 1920 МГц] || Price: 73 799
+Name: Видеокарта MSI GeForce RTX 4070 VENTUS 3X E OC [GeForce RTX 4070 VENTUS 3X E 12G OC] [PCI-E 4.0 12 ГБ GDDR6X, 192 бит, DisplayPort x3, HDMI, GPU 1920 МГц] || Price: 73 999
+Name: Видеокарта MSI GeForce RTX 4070 GAMING X SLIM WHITE [GeForce RTX 4070 GAMING X SLIM WHITE 12G] [PCI-E 4.0 12 ГБ GDDR6X, 192 бит, DisplayPort x3, HDMI, GPU 1920 МГц] || Price: 74 999
+Name: Видеокарта Palit GeForce RTX 4070 Dual [NED4070019K9-1047D] [PCI-E 4.0 12 ГБ GDDR6X, 192 бит, DisplayPort x3, HDMI, GPU 1920 МГц] || Price: 74 999
+Name: Видеокарта KFA2 GeForce RTX 4070 X 3FAN White [47NOM7MD7KWK] [PCI-E 4.0 12 ГБ GDDR6X, 192 бит, DisplayPort x3, HDMI, GPU 1920 МГц] || Price: 75 799
+Name: Видеокарта Palit GeForce RTX 4070 Dual OC [NED4070S19K9-1047D] [PCI-E 4.0 12 ГБ GDDR6X, 192 бит, DisplayPort x3, HDMI, GPU 1920 МГц] || Price: 77 999
+Name: Видеокарта ASUS GeForce RTX 4070 Dual [DUAL-RTX4070-12G] [PCI-E 4.0 12 ГБ GDDR6X, 192 бит, DisplayPort x3, HDMI, GPU 1920 МГц] || Price: 78 999
+Name: Видеокарта GIGABYTE GeForce RTX 4070 AERO OC 12G [GV-N4070AERO OC-12GD] [PCI-E 4.0 12 ГБ GDDR6X, 192 бит, DisplayPort x3, HDMI, GPU 1920 МГц] || Price: 78 999
+Name: Видеокарта ASUS AMD Radeon RX 6900 XT ROG Strix LC [STRIX-LC-RX6900XT-T16G-GAMING] [PCI-E 4.0 16 ГБ GDDR6, 256 бит, DisplayPort x2, HDMI, USB-C, GPU 1825 МГц] || Price: 79 999280 999
+Name: Видеокарта ASUS GeForce RTX 4070 Dual OC Edition [DUAL-RTX4070-O12G] [PCI-E 4.0 12 ГБ GDDR6X, 192 бит, DisplayPort x3, HDMI, GPU 1920 МГц] || Price: 79 999
+Name: Видеокарта ASUS GeForce RTX 4070 Dual White OC Edition [DUAL-RTX4070-O12G-WHITE] [PCI-E 4.0 12 ГБ GDDR6X, 192 бит, DisplayPort x3, HDMI, GPU 1920 МГц] || Price: 79 999
+Name: Видеокарта GIGABYTE GeForce RTX 4070 GAMING OC 12G [GV-N4070GAMING OC-12GD] [PCI-E 4.0 12 ГБ GDDR6X, 192 бит, DisplayPort x3, HDMI, GPU 1920 МГц] || Price: 79 999
+Name: Видеокарта Palit GeForce RTX 4070 JetStream [NED4070019K9-1047J] [PCI-E 4.0 12 ГБ GDDR6X, 192 бит, DisplayPort x3, HDMI, GPU 1920 МГц] || Price: 80 999
+Name: Видеокарта PNY Quadro RTX A2000 [VCNRTXA2000-12GB-SB] [PCI-E 4.0 12 ГБ GDDR6, 192 бит, Mini DisplayPort x4, GPU 562 МГц] || Price: 81 299
+Name: Видеокарта GIGABYTE GeForce RTX 4070 EAGLE OC 12G [GV-N4070EAGLE OC-12GD] [PCI-E 4.0 12 ГБ GDDR6X, 192 бит, DisplayPort x3, HDMI, GPU 1920 МГц] || Price: 81 999
+Name: Видеокарта ASUS GeForce RTX 4070 TUF Gaming OC Edition [TUF-RTX4070-O12G-GAMING] [PCI-E 4.0 12 ГБ GDDR6X, 192 бит, DisplayPort x3, HDMI, GPU 1920 МГц] || Price: 84 999
+Name: Видеокарта MSI GeForce RTX 4070 Ti VENTUS 2X OC [RTX 4070 Ti VENTUS 2X 12G OC] [PCI-E 4.0 12 ГБ GDDR6X, 192 бит, DisplayPort x3, HDMI, GPU 2310 МГц] || Price: 89 999
+Name: Видеокарта Palit GeForce RTX 4070 Ti JetStream [NED407T019K9-1043J] [PCI-E 4.0 12 ГБ GDDR6X, 192 бит, DisplayPort x3, HDMI, GPU 2310 МГц] || Price: 89 99999 999
+Name: Видеокарта GIGABYTE GeForce RTX 4070 AORUS MASTER 12G [GV-N4070AORUS M-12GD] [PCI-E 4.0 12 ГБ GDDR6X, 192 бит, DisplayPort x3, HDMI, GPU 1920 МГц] || Price: 90 999
+Name: Видеокарта GIGABYTE AMD Radeon RX 7900 XT GAMING OC [GV-R79XTGAMING OC-20GD] [PCI-E 4.0 20 ГБ GDDR6, 320 бит, DisplayPort x2, HDMI x2, GPU 1500 МГц] || Price: 91 799
+Name: Видеокарта KFA2 GeForce RTX 4070 Ti X 3FAN RGB Black [47IOM7MD7ADK] [PCI-E 4.0 12 ГБ GDDR6X, 192 бит, DisplayPort x3, HDMI, GPU 2310 МГц] || Price: 93 499
+Name: Видеокарта PNY GeForce RTX 4070 VERTO Blower Edition [VCG407112BLX-SI1] [PCI-E 4.0 12 ГБ GDDR6X, 192 бит, DisplayPort x3, HDMI, GPU 1920 МГц] || Price: 94 999
+Name: Видеокарта Sapphire AMD Radeon RX 7900 XT PULSE OC [11323-02-20G] [PCI-E 4.0 20 ГБ GDDR6, 320 бит, DisplayPort x2, HDMI x2, GPU 1500 МГц] || Price: 94 999
+Name: Видеокарта INNO3D GeForce RTX 4070 Ti X3 [N407T3-126X-186148N] [PCI-E 4.0 12 ГБ GDDR6X, 192 бит, DisplayPort x3, HDMI, GPU 2310 МГц] || Price: 95 499
+Name: Видеокарта Palit GeForce RTX 4070 Ti GamingPro OC [NED407TT19K9-1043A] [PCI-E 4.0 12 ГБ GDDR6X, 192 бит, DisplayPort x3, HDMI, GPU 2310 МГц] || Price: 95 499
+Name: Видеокарта Palit GeForce RTX 4070 Ti GamingPro [NED407T019K9-1043A] [PCI-E 4.0 12 ГБ GDDR6X, 192 бит, DisplayPort x3, HDMI, GPU 2310 МГц] || Price: 95 799
+Name: Видеокарта PNY GeForce RTX 4070 Ti VERTO LED Triple Fan [VCG4070T12TFXPB1] [PCI-E 4.0 12 ГБ GDDR6X, 192 бит, DisplayPort x3, HDMI, GPU 2310 МГц] || Price: 96 999
+Name: Видеокарта MSI GeForce RTX 4070 Ti VENTUS 3X E OC [GeForce RTX 4070 Ti VENTUS 3X E 12G OC] [PCI-E 4.0 12 ГБ GDDR6X, 192 бит, DisplayPort x3, HDMI, GPU 2310 МГц] || Price: 97 999
+Name: Видеокарта GIGABYTE GeForce RTX 4070 Ti WINDFORCE [GV-N407TWF3-12GD] [PCI-E 4.0 12 ГБ GDDR6X, 192 бит, DisplayPort x3, HDMI, GPU 2310 МГц] || Price: 99 999
+Name: Видеокарта MSI GeForce RTX 4070 Ti GAMING X SLIM WHITE [GeForce RTX 4070 Ti GAMING X SLIM WHITE 12G] [PCI-E 4.0 12 ГБ GDDR6X, 192 бит, DisplayPort x3, HDMI, GPU 2310 МГц] || Price: 99 999
+Name: Видеокарта ASUS GeForce RTX 4070Ti ProArt OC Edition [PROART-RTX4070TI-O12G] [PCI-E 4.0 12 ГБ GDDR6X, 192 бит, DisplayPort x3, HDMI, GPU 2310 МГц] || Price: 102 999
+Name: Видеокарта Sapphire AMD Radeon RX 7900 XT NITRO+ Vapor-X [11323-01] [PCI-E 4.0 20 ГБ GDDR6, 320 бит, DisplayPort x2, HDMI x2, GPU 1500 МГц] || Price: 103 999
+Name: Видеокарта GIGABYTE GeForce RTX 4070 Ti GAMING OC [GV-N407TGAMING OC-12GD] [PCI-E 4.0 12 ГБ GDDR6X, 192 бит, DisplayPort x3, HDMI, GPU 2310 МГц] || Price: 104 999
+Name: Видеокарта GIGABYTE GeForce RTX 4070 Ti GAMING OC V2 [GV-N407TGAMING OCV2-12GD] [PCI-E 4.0 12 ГБ GDDR6X, 192 бит, DisplayPort x3, HDMI, GPU 2310 МГц] || Price: 105 999
+Name: Видеокарта INNO3D GeForce RTX 4070 Ti X3 OC [N407T3-126XX-186148N] [PCI-E 4.0 12 ГБ GDDR6X, 192 бит, DisplayPort x3, HDMI, GPU 2310 МГц] || Price: 106 499
+Name: Видеокарта GIGABYTE GeForce RTX 4070 Ti WINDFORCE OC [GV-N407TWF3OC-12GD] [PCI-E 4.0 12 ГБ GDDR6X, 192 бит, DisplayPort x3, HDMI, GPU 2310 МГц] || Price: 106 999
+Name: Видеокарта PowerColor AMD Radeon RX 6800 Fighter [AXRX 6800 16GBD6-3DH/OC] [PCI-E 4.0 16 ГБ GDDR6, 256 бит, DisplayPort x3, HDMI, GPU 1700 МГц] || Price: 107 499
+Name: Видеокарта ASUS GeForce RTX 4070 Ti TUF Gaming OC Edition [TUF-RTX4070TI-O12G-GAMING] [PCI-E 4.0 12 ГБ GDDR6X, 192 бит, DisplayPort x3, HDMI x2, GPU 2310 МГц] || Price: 109 999
+Name: Видеокарта Palit GeForce RTX 4070 Ti GamingPro White OC [NED407TV19K9-1043W] [PCI-E 4.0 12 ГБ GDDR6X, 192 бит, DisplayPort x3, HDMI, GPU 2310 МГц] || Price: 109 999
+Name: Видеокарта GIGABYTE GeForce RTX 4070 Ti EAGLE OC [GV-N407TEAGLE OC-12GD] [PCI-E 4.0 12 ГБ GDDR6X, 192 бит, DisplayPort x3, HDMI, GPU 2310 МГц] || Price: 110 999
+Name: Видеокарта Palit GeForce RTX 4070 Ti GameRock OC [NED407TU19K9-1045G] [PCI-E 4.0 12 ГБ GDDR6X, 192 бит, DisplayPort x3, HDMI, GPU 2310 МГц] || Price: 110 999
+Name: Видеокарта GIGABYTE GeForce RTX 4070 Ti AERO OC [GV-N407TAERO OCV2-12GD] [PCI-E 4.0 12 ГБ GDDR6X, 192 бит, DisplayPort x3, HDMI, GPU 2310 МГц] || Price: 112 999
+Name: Видеокарта Sapphire AMD Radeon RX 7900 XTX PULSE OC [11322-02-20G] [PCI-E 4.0 24 ГБ GDDR6, 384 бит, DisplayPort x2, HDMI x2, GPU 1900 МГц] || Price: 114 999128 499
+Name: Видеокарта GIGABYTE AMD Radeon RX 7900 XTX GAMING OC [GV-R79XTXGAMING OC-24GD] [PCI-E 4.0 24 ГБ GDDR6, 384 бит, DisplayPort x2, HDMI x2, GPU 1900 МГц] || Price: 116 999
+Name: Видеокарта GIGABYTE GeForce RTX 4070 Ti AORUS ELITE [GV-N407TAORUS E-12GD] [PCI-E 4.0 12 ГБ GDDR6X, 192 бит, DisplayPort x3, HDMI, GPU 2310 МГц] || Price: 116 999
+Name: Видеокарта GIGABYTE GeForce RTX 4070Ti AORUS XTREME WATERFORCE WB [GV-N407TAORUSX WB-12GD] [PCI-E 4.0 12 ГБ GDDR6X, 192 бит, DisplayPort x3, HDMI, GPU 2310 МГц] || Price: 117 999
+Name: Видеокарта GIGABYTE GeForce RTX 4070 Ti AORUS MASTER [GV-N407TAORUS M-12GD] [PCI-E 4.0 12 ГБ GDDR6X, 192 бит, DisplayPort x3, HDMI, GPU 2310 МГц] || Price: 118 499
+Name: Видеокарта MSI AMD Radeon RX 7900 XTX GAMING TRIO CLASSIC [RX 7900 XTX GAMING TRIO CLASSIC] [PCI-E 4.0 24 ГБ GDDR6, 384 бит, DisplayPort x3, HDMI, GPU 1900 МГц] || Price: 119 999
+Name: Видеокарта INNO3D GeForce RTX 4070 Ti ICHILL X3 [C407T3-126XX-186148H] [PCI-E 4.0 12 ГБ GDDR6X, 192 бит, DisplayPort x3, HDMI, GPU 2310 МГц] || Price: 120 999
+Name: Видеокарта KFA2 GeForce RTX 4080 SG [48NZM6MD6LSK] [PCI-E 4.0 16 ГБ GDDR6X, 256 бит, DisplayPort x3, HDMI, GPU 2210 МГц] || Price: 123 999
+Name: Видеокарта ASRock AMD Radeon RX 7900 XTX Taichi OC [RX7900XTX TC 24GO] [PCI-E 4.0 24 ГБ GDDR6, 384 бит, DisplayPort x3, HDMI, GPU 1900 МГц] || Price: 125 499
+Name: Графический адаптер Matrox Mura MPX-4/0 [MURA-MPX40HF] [PCI-E 2.0 2 ГБ, KX-20] || Price: 127 499
+Name: Видеокарта Sapphire AMD Radeon RX 7900 XTX NITRO+ Vapor-X [11322-01] [PCI-E 4.0 24 ГБ GDDR6, 384 бит, DisplayPort x2, HDMI x2, GPU 1900 МГц] || Price: 127 999
+Name: Видеокарта Palit GeForce RTX 4080 JetStream [NED4080019T2-1032J] [PCI-E 4.0 16 ГБ GDDR6X, 256 бит, DisplayPort x3, HDMI, GPU 2205 МГц] || Price: 129 999144 999
+Name: Видеокарта MSI GeForce RTX 4080 VENTUS 3X OC [RTX 4080 16GB VENTUS 3X OC] [PCI-E 4.0 16 ГБ GDDR6X, 256 бит, DisplayPort x3, HDMI, GPU 2210 МГц] || Price: 139 999
+Name: Видеокарта GIGABYTE GeForce RTX 4080 AERO OC [GV-N4080AERO OC-16GD] [PCI-E 4.0 16 ГБ GDDR6X, 256 бит, DisplayPort x3, HDMI, GPU 2210 МГц] || Price: 140 499
+Name: Видеокарта GIGABYTE GeForce RTX 4080 EAGLE OC [GV-N4080EAGLE OC-16GD] [PCI-E 4.0 16 ГБ GDDR6X, 256 бит, DisplayPort x3, HDMI, GPU 2210 МГц] || Price: 142 999
+Name: Видеокарта GIGABYTE GeForce RTX 4080 GAMING OC [GV-N4080GAMING OC-16GD] [PCI-E 4.0 16 ГБ GDDR6X, 256 бит, DisplayPort x3, HDMI, GPU 2210 МГц] || Price: 146 999
+Name: Видеокарта GIGABYTE GeForce RTX 4080 AERO [GV-N4080AERO-16GD] [PCI-E 4.0 16 ГБ GDDR6X, 256 бит, DisplayPort x3, HDMI, GPU 2210 МГц] || Price: 149 999
+Name: Видеокарта MSI GeForce RTX 4080 GAMING X TRIO [RTX 4080 16GB GAMING X TRIO] [PCI-E 4.0 16 ГБ GDDR6X, 256 бит, DisplayPort x3, HDMI, GPU 2210 МГц] || Price: 151 999
+Name: Видеокарта MSI GeForce RTX 4080 GAMING X SLIM WHITE [GeForce RTX 4080 16GB GAMING X SLIM WHITE] [PCI-E 4.0 16 ГБ GDDR6X, 256 бит, DisplayPort x2, HDMI x2, GPU 2210 МГц] || Price: 155 999
+Name: Видеокарта Palit GeForce RTX 4080 GameRock [NED4080019T2-1030G] [PCI-E 4.0 16 ГБ GDDR6X, 256 бит, DisplayPort x3, HDMI, GPU 2205 МГц] || Price: 155 999
+Name: Видеокарта ASUS GeForce RTX 4080 TUF Gaming OC Edition [TUF-RTX4080-O16G-GAMING] [PCI-E 4.0 16 ГБ GDDR6X, 256 бит, DisplayPort x3, HDMI x2, GPU 2210 МГц] || Price: 157 999
+Name: Видеокарта GIGABYTE GeForce RTX 4080 AORUS MASTER [GV-N4080AORUS M-16GD] [PCI-E 4.0 16 ГБ GDDR6X, 256 бит, DisplayPort x3, HDMI, GPU 2210 МГц] || Price: 162 999
+Name: Видеокарта ASUS GeForce RTX 4080 Noctua OC Edition [RTX4080-O16G-NOCTUA] [PCI-E 4.0 16 ГБ GDDR6X, 256 бит, DisplayPort x3, HDMI x2, GPU 2210 МГц] || Price: 182 999
+Name: Видеокарта ASUS GeForce RTX 4080 ProArt OC edition [PROART-RTX4080-O16G] [PCI-E 4.0 16 ГБ GDDR6X, 256 бит, DisplayPort x3, HDMI, GPU 2210 МГц] || Price: 182 999
+Name: Видеокарта INNO3D GeForce RTX 4080 iCHILL BLACK [C4080B-166XX-18700006] [PCI-E 4.0 16 ГБ GDDR6X, 256 бит, DisplayPort x3, HDMI, GPU 2205 МГц] || Price: 186 999
+Name: Видеокарта ASUS GeForce RTX 4080 ROG Strix OC Edition [ROG-STRIX-RTX4080-O16G-GAMING] [PCI-E 4.0 16 ГБ GDDR6X, 256 бит, DisplayPort x3, HDMI x2, GPU 2210 МГц] || Price: 187 999
+Name: Видеокарта Palit GeForce RTX 4090 GameRock [NED4090019SB-1020G] [PCI-E 4.0 24 ГБ GDDR6X, 384 бит, DisplayPort x3, HDMI, GPU 2235 МГц] || Price: 208 999
+Name: Видеокарта GIGABYTE GeForce RTX 4090 WINDFORCE V2 [GV-N4090WF3V2-24GD] [PCI-E 4.0 24 ГБ GDDR6X, 384 бит, DisplayPort x3, HDMI, GPU 2230 МГц] || Price: 215 999
+Name: Видеокарта GIGABYTE GeForce RTX 4090 GAMING OC [GV-N4090GAMING OC-24GD] [PCI-E 4.0 24 ГБ GDDR6X, 384 бит, DisplayPort x3, HDMI, GPU 2230 МГц] || Price: 227 999
+Name: Видеокарта MSI GeForce RTX 4090 SUPRIM X [RTX 4090 SUPRIM X 24G] [PCI-E 4.0 24 ГБ GDDR6X, 384 бит, DisplayPort x3, HDMI, GPU 2235 МГц] || Price: 235 999
+Name: Видеокарта GIGABYTE GeForce RTX 4090 AERO OC [GV-N4090AERO OC-24GD] [PCI-E 4.0 24 ГБ GDDR6X, 384 бит, DisplayPort x3, HDMI, GPU 2235 МГц] || Price: 237 999
+Name: Видеокарта ASUS GeForce RTX 4090 TUF Gaming OC Edition [TUF-RTX4090-O24G-GAMING] [PCI-E 4.0 24 ГБ GDDR6X, 384 бит, DisplayPort x3, HDMI x2, GPU 2230 МГц] || Price: 248 999
+Name: Видеокарта NVIDIA Tesla A10 [Tesla A10] [PCI-E 4.0 24 ГБ GDDR6, 384 бит, GPU 885 МГц] || Price: 254 999
+Name: Видеокарта GIGABYTE GeForce RTX 4090 AORUS MASTER [GV-N4090AORUS M-24GD] [PCI-E 4.0 24 ГБ GDDR6X, 384 бит, DisplayPort x3, HDMI, GPU 2230 МГц] || Price: 257 999
+Name: Видеокарта MSI GeForce RTX 4090 SUPRIM LIQUID X [RTX 4090 SUPRIM LIQUID X 24G] [PCI-E 4.0 24 ГБ GDDR6X, 384 бит, DisplayPort x3, HDMI, GPU 2230 МГц] || Price: 261 999

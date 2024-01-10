@@ -20,6 +20,7 @@ Rectangle {
     property bool goToMainScreen: false
     property bool goToAIScreen: false
     property bool goToSettingsScreen: false
+    property bool goToDbScreen: false
 
     property alias gpuInfoField: gpuInfoField
     property alias diskInfoField: diskInfoField
@@ -123,7 +124,7 @@ Rectangle {
         height: 96
         color: "#ffffff"
         radius: 20
-        
+
         Button {
             id: button
             x: -327
@@ -147,9 +148,20 @@ Rectangle {
         }
 
         Button {
+            id: button3
+            x: -327
+            y: 305
+            width: 244
+            height: 100
+            text: qsTr("База")
+            onClicked: rectangle.goToDbScreen = !rectangle.goToDbScreen
+            highlighted: stackView.currentItem === dbScreen
+        }
+
+        Button {
             id: button2
             x: -327
-            y: 308
+            y: 410
             width: 244
             height: 100
             text: qsTr("Настройки")
@@ -188,6 +200,7 @@ Rectangle {
                 }
             }
         }
+
     }
 
     states: [

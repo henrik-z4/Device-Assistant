@@ -7,7 +7,7 @@ project(Device_AssistantApp LANGUAGES CXX)
 
 set(CMAKE_AUTOMOC ON)
 
-find_package(Qt6 6.2 REQUIRED COMPONENTS Core Gui Qml Quick)
+find_package(Qt6 6.2 REQUIRED COMPONENTS Core Gui Qml Quick Sql)
 
 find_package(PythonLibs REQUIRED)
 include_directories(${PYTHON_INCLUDE_DIRS})
@@ -20,10 +20,13 @@ qt_add_executable(Device_AssistantApp src/main.cpp
     systeminfo.h systeminfo.cpp
     images.qrc
     gpt.h gpt.cpp GPTWrapper.py __init__.py
+    databasemanager.h databasemanager.cpp
+    gpu_db_model.h gpu_db_model.cpp
 )
 
 configure_file(${CMAKE_SOURCE_DIR}/GPTWrapper.py ${CMAKE_BINARY_DIR}/GPTWrapper.py COPYONLY)
 configure_file(${CMAKE_SOURCE_DIR}/gpt4prompt.txt ${CMAKE_BINARY_DIR}/gpt4prompt.txt COPYONLY)
+configure_file(${CMAKE_SOURCE_DIR}/tools/Parser/gpu_parsed.txt ${CMAKE_BINARY_DIR}/tools/Parser/gpu_parsed.txt COPYONLY)
 
 qt_add_resources(Device_AssistantApp "configuration"
     PREFIX "/"
@@ -36,6 +39,7 @@ target_link_libraries(Device_AssistantApp PRIVATE
     Qt6::Gui
     Qt6::Qml
     Qt6::Quick
+    Qt6::Sql
     wbemuuid
     ${PYTHON_LIBRARIES}
 )

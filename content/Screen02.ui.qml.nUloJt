@@ -41,13 +41,13 @@ Rectangle {
 
     Button {
         id: button3
-        x: 43
-        y: 422
+        x: -327
+        y: 305
         width: 244
         height: 100
         text: qsTr("База")
         onClicked: rectangle.goToDbScreen = !rectangle.goToDbScreen
-        highlighted: stackView.currentItem === dbScreen
+        highlighted: stackView.currentItem === aiScreen
     }
 
     Button {
@@ -132,5 +132,15 @@ Rectangle {
             anchors.horizontalCenterOffset: -368
             anchors.horizontalCenter: parent.horizontalCenter
         }
+    }
+
+    Button {
+        id: button3
+        x: 43
+        y: 424
+        width: 244
+        height: 100
+        text: qsTr("База")
+        highlighted: stackView.currentItem === aiScreen
     }
 }
