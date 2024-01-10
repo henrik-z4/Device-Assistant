@@ -117,12 +117,19 @@ Window {
             var dbPath = applicationDirPath + "/data/gpu_database.db";
             console.log("Database path: " + dbPath);
             var db = LocalStorage.openDatabaseSync(dbPath, "", "GPU Database", 1000000);
+            if (db) {
+                console.log("Database opened successfully");
+            } else {
+                console.log("Failed to open database");
+            }
             db.transaction(function(tx) {
                 var results = tx.executeSql('SELECT * FROM gpu');
                 if (tx.lastError) {
                     console.log("SQL error: " + tx.lastError.message);
                 } else {
+                    console.log("Number of rows returned by SELECT query: " + results.rows.length);
                     for (var i = 0; i < results.rows.length; i++) {
+                        console.log("Row " + i + ": " + JSON.stringify(results.rows.item(i)));
                         gpuListModel.append(results.rows.item(i));
                     }
                 }

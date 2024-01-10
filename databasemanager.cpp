@@ -72,6 +72,7 @@ void databasemanager::loadDataFromFile() {
             insertData(gpuName, price);
         }
     }
+    QSqlDatabase::database().commit();
 }
 
 void databasemanager::insertData(const QString &gpuName, double price) {
