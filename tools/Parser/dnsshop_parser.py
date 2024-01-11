@@ -69,7 +69,7 @@ def get_gpu_data():
 def print_table(gpu_data):
     with open('gpu_parsed.txt', 'w') as f:
         for gpu in gpu_data:
-            line = "Name: " + gpu['name'] + ", Price: " + gpu['price'] + "\n"
+            line = "Name: " + gpu['name'] + " || Price: " + gpu['price'] + "\n"
             f.write(line)
 
 gpu_data = get_gpu_data()
