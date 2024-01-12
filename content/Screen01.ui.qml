@@ -17,6 +17,11 @@ Rectangle {
     color: "#eaeaea"
     property alias imageSource: image.source
 
+    property alias rectangle1: rectangle1
+    property alias rectangle2: rectangle2
+    property alias label: label
+    property alias text1: text1
+
     property bool goToMainScreen: false
     property bool goToAIScreen: false
     property bool goToSettingsScreen: false
@@ -123,7 +128,7 @@ Rectangle {
         height: 96
         color: "#ffffff"
         radius: 20
-        
+
         Button {
             id: button
             x: -327
@@ -160,12 +165,12 @@ Rectangle {
         Text {
             id: label
             x: 0
-            y: 24
-            text: qsTr("Добро пожаловать в device Assistant")
+            y: 23
+            text: qsTr("Добро пожаловать в Device Assistant")
             font.family: Constants.font.family
             anchors.topMargin: 45
             font.pointSize: 28
-            anchors.horizontalCenterOffset: -258
+            anchors.horizontalCenterOffset: -219
             anchors.horizontalCenter: parent.horizontalCenter
 
             SequentialAnimation {

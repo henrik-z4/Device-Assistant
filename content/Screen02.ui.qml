@@ -12,6 +12,9 @@ Rectangle {
     property bool goToAIScreen: false
     property bool goToSettingsScreen: false
 
+    property alias label: label
+    property alias rectangle2: rectangle2
+
     property alias chatModel: chatView.model
     property alias messageField: messageField
     property alias sendButton: sendButton
