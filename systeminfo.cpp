@@ -4,6 +4,7 @@
 #include <comdef.h>
 #include <Wbemidl.h>
 #include "systeminfo.h"
+#include <windows.h>
 
 #include <QDebug>
 #include <QString>
@@ -509,4 +510,36 @@ Q_INVOKABLE QString systeminfo::getRAMInfo()
     CoUninitialize();
 
     return ramInfo;
+}
+
+
+
+/**
+ * Получение имени компьютера
+ *
+ * @return @QString
+ */
+Q_INVOKABLE QString systeminfo::getPcName()
+{
+    char buffer[256];
+    DWORD size = 256;
+    GetComputerNameA(buffer,&size);
+    return buffer;
+}
+
+
+
+/**
+ * Получение частоты обновления димплея
+ *
+ * @return @QString
+ */
+Q_INVOKABLE QString systeminfo::getDisplayRefreshRate()
+{
+    HDC hDCScreen = GetDC(NULL);
+    int refresh  = GetDeviceCaps(hDCScreen, VREFRESH);
+    ReleaseDC(NULL,  hDCScreen);
+    QString refreshRate = QString::number(refresh) + " Гц";
+    qDebug() << "Hertz: " << refreshRate;
+    return refreshRate;
 }

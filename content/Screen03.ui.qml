@@ -11,7 +11,6 @@ Rectangle {
     property bool goToMainScreen: false
     property bool goToAIScreen: false
     property bool goToSettingsScreen: false
-
     property bool goToDarkmode: false
 
     property alias label: label

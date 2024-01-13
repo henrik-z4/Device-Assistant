@@ -114,6 +114,8 @@ Window {
                 mainScreen.cpuInfoField.color = "#ffffff";
                 mainScreen.osInfoField.color = "#ffffff";
                 mainScreen.ramInfoField.color = "#ffffff";
+                mainScreen.pcNameField.color = "#ffffff"
+                mainScreen.displayRefreshRateField.color = "#ffffff"
             } else {
                 settingsScreen.color = "#eaeaea";
                 settingsScreen.rectangle2.color = "#ffffff";
@@ -136,6 +138,8 @@ Window {
                 mainScreen.cpuInfoField.color = "#000000";
                 mainScreen.osInfoField.color = "#000000";
                 mainScreen.ramInfoField.color = "#000000";
+                mainScreen.pcNameField.color = "#000000"
+                mainScreen.displayRefreshRateField.color = "#000000"
             }
         }
     }
@@ -153,5 +157,7 @@ Window {
         mainScreen.motherboardInfoField.text = sysInfo.getMotherboardInfo();
         mainScreen.osInfoField.text = sysInfo.getOSInfo();
         mainScreen.ramInfoField.text = sysInfo.getRAMInfo();
+        mainScreen.pcNameField.text = sysInfo.getPcName();
+        mainScreen.displayRefreshRateField.text = sysInfo.getDisplayRefreshRate();
     }
 }

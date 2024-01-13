@@ -32,11 +32,13 @@ Rectangle {
     property alias cpuInfoField: cpuInfoField
     property alias osInfoField: osInfoField
     property alias ramInfoField: ramInfoField
+    property alias pcNameField: pcNameField
+    property alias displayRefreshRateField: displayRefreshRateField
 
     Rectangle {
         id: rectangle1
         x: 377
-        y: 225
+        y: 223
         width: 1217
         height: 701
         color: "#ffffff"
@@ -106,6 +108,22 @@ Rectangle {
                 height: 70
                 enabled: false
                 placeholderText: qsTr("Операционная система")
+            }
+
+            TextArea {
+                id: pcNameField
+                width: 300
+                height: 70
+                placeholderText: qsTr("Имя компьютера")
+                enabled: false
+            }
+
+            TextArea {
+                id: displayRefreshRateField
+                width: 300
+                height: 70
+                placeholderText: qsTr("Частота обновления экрана")
+                enabled: false
             }
         }
 
