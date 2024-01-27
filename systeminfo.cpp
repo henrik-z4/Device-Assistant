@@ -7,6 +7,7 @@
 
 #include <QDebug>
 #include <QString>
+#include <QVariant>
 
 #pragma comment(lib, "wbemuuid.lib")
 
@@ -135,7 +136,7 @@ void systeminfo::initializeCOM(HRESULT& hres, IWbemLocator*& pLoc, IWbemServices
  *
  * @return @QString
  */
-Q_INVOKABLE QString systeminfo::getGpuInfo()
+Q_INVOKABLE QVariantList systeminfo::getGpuInfo()
 {
     HRESULT hres;
     IWbemLocator* pLoc = NULL;
@@ -157,13 +158,14 @@ Q_INVOKABLE QString systeminfo::getGpuInfo()
         pSvc->Release();
         pLoc->Release();
         CoUninitialize();
-        return QString(); // В случае ошибки возвращает пустую строку
+        return QVariantList(); // В случае ошибки возвращает пустую строку
     }
 
     IWbemClassObject* pclsObj = NULL;
     ULONG uReturn = 0;
     QString gpuInfo;
 
+    QVariantList gpuList;
     while (pEnumerator) {
         HRESULT hr = pEnumerator->Next(WBEM_INFINITE, 1, &pclsObj, &uReturn);
 
@@ -176,8 +178,9 @@ Q_INVOKABLE QString systeminfo::getGpuInfo()
 
         // Получения названия видеокарты
         hr = pclsObj->Get(L"Name", 0, &vtProp, 0, 0);
-        gpuInfo = QString::fromWCharArray(vtProp.bstrVal);
+        QString gpuInfo = QString::fromWCharArray(vtProp.bstrVal);
         qDebug() << "GPU: " << gpuInfo;
+        gpuList.append(QVariant::fromValue(gpuInfo));
         VariantClear(&vtProp);
         pclsObj->Release();
     }
@@ -188,7 +191,7 @@ Q_INVOKABLE QString systeminfo::getGpuInfo()
     pLoc->Release();
     pEnumerator->Release();
     CoUninitialize();
-    return gpuInfo;
+    return gpuList;
 }
 
 

@@ -13,4 +13,5 @@ qt6_add_qml_module(content
         Screen03.ui.qml
     RESOURCES
         fonts/fonts.txt
+        QML_FILES SystemInfoList.qml
 )

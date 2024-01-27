@@ -150,14 +150,5 @@ Window {
         initialItem: mainScreen
     }
 
-    Component.onCompleted: {
-        mainScreen.gpuInfoField.text = sysInfo.getGpuInfo();
-        mainScreen.diskInfoField.text = sysInfo.getDiskInfo();
-        mainScreen.cpuInfoField.text = sysInfo.getProcessorInfo();
-        mainScreen.motherboardInfoField.text = sysInfo.getMotherboardInfo();
-        mainScreen.osInfoField.text = sysInfo.getOSInfo();
-        mainScreen.ramInfoField.text = sysInfo.getRAMInfo();
-        mainScreen.pcNameField.text = sysInfo.getPcName();
-        mainScreen.displayRefreshRateField.text = sysInfo.getDisplayRefreshRate();
-    }
 }
+
