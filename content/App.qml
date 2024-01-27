@@ -95,9 +95,51 @@ Window {
             if (goToDarkmode) {
                 settingsScreen.color = "#292626";
                 settingsScreen.rectangle2.color = "#3f3c3c";
+                settingsScreen.label.color = "#ffffff";
+
+                aiScreen.color = "#292626";
+                aiScreen.rectangle2.color = "#3f3c3c";
+                aiScreen.label.color = "#ffffff";
+                aiScreen.messageField.placeholderTextColor = "#ffffff";
+
+                mainScreen.color = "#292626";
+                mainScreen.rectangle1.color = "#3f3c3c";
+                mainScreen.rectangle2.color = "#3f3c3c";
+                mainScreen.label.color = "#ffffff";
+                mainScreen.text1.color = "#ffffff";
+
+                mainScreen.gpuInfoField.color = "#ffffff";
+                mainScreen.diskInfoField.color = "#ffffff";
+                mainScreen.motherboardInfoField.color = "#ffffff";
+                mainScreen.cpuInfoField.color = "#ffffff";
+                mainScreen.osInfoField.color = "#ffffff";
+                mainScreen.ramInfoField.color = "#ffffff";
+                mainScreen.pcNameField.color = "#ffffff"
+                mainScreen.displayRefreshRateField.color = "#ffffff"
             } else {
                 settingsScreen.color = "#eaeaea";
                 settingsScreen.rectangle2.color = "#ffffff";
+                settingsScreen.label.color = "#000000";
+
+                aiScreen.color = "#eaeaea";
+                aiScreen.rectangle2.color = "#ffffff";
+                aiScreen.label.color = "#000000";
+                aiScreen.messageField.placeholderTextColor = "#000000";
+
+                mainScreen.color = "#eaeaea";
+                mainScreen.rectangle1.color = "#ffffff";
+                mainScreen.rectangle2.color = "#ffffff";
+                mainScreen.label.color = "#000000";
+                mainScreen.text1.color = "#000000";
+
+                mainScreen.gpuInfoField.color = "#000000";
+                mainScreen.diskInfoField.color = "#000000";
+                mainScreen.motherboardInfoField.color = "#000000";
+                mainScreen.cpuInfoField.color = "#000000";
+                mainScreen.osInfoField.color = "#000000";
+                mainScreen.ramInfoField.color = "#000000";
+                mainScreen.pcNameField.color = "#000000"
+                mainScreen.displayRefreshRateField.color = "#000000"
             }
         }
     }
@@ -115,5 +157,7 @@ Window {
         mainScreen.motherboardInfoField.text = sysInfo.getMotherboardInfo();
         mainScreen.osInfoField.text = sysInfo.getOSInfo();
         mainScreen.ramInfoField.text = sysInfo.getRAMInfo();
+        mainScreen.pcNameField.text = sysInfo.getPcName();
+        mainScreen.displayRefreshRateField.text = sysInfo.getDisplayRefreshRate();
     }
 }

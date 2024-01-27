@@ -493,7 +493,7 @@ Q_INVOKABLE QString systeminfo::getRAMInfo()
         hr = pclsObj->Get(L"TotalVisibleMemorySize", 0, &vtProp, 0, 0);
         
         unsigned long long totalMemorySize = _wtoi64(vtProp.bstrVal);
-        unsigned long long totalMemorySizeGB = totalMemorySize / (1024 * 1024);
+        unsigned long long totalMemorySizeGB = totalMemorySize / (1000 * 1000);
 
         ramInfo = QString::number(totalMemorySizeGB) + " ГБ";
         qDebug() << "RAM: " << ramInfo;
@@ -509,4 +509,130 @@ Q_INVOKABLE QString systeminfo::getRAMInfo()
     CoUninitialize();
 
     return ramInfo;
+}
+
+/** Получение имени компьютера
+ * 
+ * @return QString
+ */
+
+Q_INVOKABLE QString systeminfo::getPcName()
+{
+    HRESULT hres;
+    IWbemLocator* pLoc = NULL;
+    IWbemServices* pSvc = NULL;
+
+    initializeCOM(hres, pLoc, pSvc);
+
+    IEnumWbemClassObject* pEnumerator = NULL;
+    hres = pSvc->ExecQuery(
+        ConvertStringToBSTR("WQL"),
+        ConvertStringToBSTR("SELECT * FROM Win32_OperatingSystem"),
+        WBEM_FLAG_FORWARD_ONLY | WBEM_FLAG_RETURN_IMMEDIATELY,
+        NULL,
+        &pEnumerator);
+
+    if (FAILED(hres)) {
+        std::cout << "Ошибка при выполнении запроса. Error code = 0x" << std::hex << hres << std::endl;
+        pSvc->Release();
+        pLoc->Release();
+        CoUninitialize();
+        return QString(); // Возвращает пустую строку при ошибке
+    }
+
+    // Получение данных.
+    QString pcName;
+    while (pEnumerator) {
+        IWbemClassObject* pclsObj = NULL;
+        ULONG uReturn = 0;
+        HRESULT hr = pEnumerator->Next(WBEM_INFINITE, 1, &pclsObj, &uReturn);
+
+        if (0 == uReturn) {
+            break;
+        }
+
+        VARIANT vtProp;
+
+        // Получение имени компьютера.
+        hr = pclsObj->Get(L"CSName", 0, &vtProp, 0, 0);
+        pcName = QString::fromWCharArray(vtProp.bstrVal);
+        qDebug() << "PC name: " << pcName;
+        VariantClear(&vtProp);
+
+        pclsObj->Release();
+    }
+
+    // Очистка.
+    pSvc->Release();
+    pLoc->Release();
+    pEnumerator->Release();
+    CoUninitialize();
+
+    return pcName;
+}
+
+
+/**
+ * Получение частоты обновления дисплея
+ *
+ * @return @QString
+ */
+Q_INVOKABLE QString systeminfo::getDisplayRefreshRate()
+{
+    HRESULT hres;
+    IWbemLocator* pLoc = NULL;
+    IWbemServices* pSvc = NULL;
+
+    initializeCOM(hres, pLoc, pSvc);
+
+    IEnumWbemClassObject* pEnumerator = NULL;
+    hres = pSvc->ExecQuery(
+        ConvertStringToBSTR("WQL"),
+        ConvertStringToBSTR("SELECT * FROM Win32_VideoController"),
+        WBEM_FLAG_FORWARD_ONLY | WBEM_FLAG_RETURN_IMMEDIATELY,
+        NULL,
+        &pEnumerator);
+
+    if (FAILED(hres)) {
+        std::cout << "Ошибка при выполнении запроса. Error code = 0x" << std::hex << hres << std::endl;
+        pSvc->Release();
+        pLoc->Release();
+        CoUninitialize();
+        return QString(); // Возвращает пустую строку при ошибке
+    }
+
+    // Получение данных.
+    QString refreshRate;
+    while (pEnumerator) {
+        IWbemClassObject* pclsObj = NULL;
+        ULONG uReturn = 0;
+        HRESULT hr = pEnumerator->Next(WBEM_INFINITE, 1, &pclsObj, &uReturn);
+
+        if (0 == uReturn) {
+            break;
+        }
+
+        VARIANT vtProp;
+
+        // Получение частоты обновления дисплея.
+        hr = pclsObj->Get(L"CurrentRefreshRate", 0, &vtProp, 0, 0);
+        if (vtProp.uintVal != 0) {
+            refreshRate = QString::number(vtProp.uintVal) + " Гц";
+            qDebug() << "Hertz: " << refreshRate;
+            VariantClear(&vtProp);
+            pclsObj->Release();
+            break;
+        }
+
+        VariantClear(&vtProp);
+        pclsObj->Release();
+    }
+
+    // Очистка.
+    pSvc->Release();
+    pLoc->Release();
+    pEnumerator->Release();
+    CoUninitialize();
+
+    return refreshRate;
 }

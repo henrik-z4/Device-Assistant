@@ -17,6 +17,11 @@ Rectangle {
     color: "#eaeaea"
     property alias imageSource: image.source
 
+    property alias rectangle1: rectangle1
+    property alias rectangle2: rectangle2
+    property alias label: label
+    property alias text1: text1
+
     property bool goToMainScreen: false
     property bool goToAIScreen: false
     property bool goToSettingsScreen: false
@@ -27,11 +32,13 @@ Rectangle {
     property alias cpuInfoField: cpuInfoField
     property alias osInfoField: osInfoField
     property alias ramInfoField: ramInfoField
+    property alias pcNameField: pcNameField
+    property alias displayRefreshRateField: displayRefreshRateField
 
     Rectangle {
         id: rectangle1
         x: 377
-        y: 225
+        y: 223
         width: 1217
         height: 701
         color: "#ffffff"
@@ -102,6 +109,22 @@ Rectangle {
                 enabled: false
                 placeholderText: qsTr("Операционная система")
             }
+
+            TextArea {
+                id: pcNameField
+                width: 300
+                height: 70
+                placeholderText: qsTr("Имя компьютера")
+                enabled: false
+            }
+
+            TextArea {
+                id: displayRefreshRateField
+                width: 300
+                height: 70
+                placeholderText: qsTr("Частота обновления экрана")
+                enabled: false
+            }
         }
 
         Image {
@@ -123,7 +146,7 @@ Rectangle {
         height: 96
         color: "#ffffff"
         radius: 20
-        
+
         Button {
             id: button
             x: -327
@@ -160,12 +183,12 @@ Rectangle {
         Text {
             id: label
             x: 0
-            y: 24
-            text: qsTr("Добро пожаловать в device Assistant")
+            y: 23
+            text: qsTr("Добро пожаловать в Device Assistant")
             font.family: Constants.font.family
             anchors.topMargin: 45
             font.pointSize: 28
-            anchors.horizontalCenterOffset: -258
+            anchors.horizontalCenterOffset: -219
             anchors.horizontalCenter: parent.horizontalCenter
 
             SequentialAnimation {

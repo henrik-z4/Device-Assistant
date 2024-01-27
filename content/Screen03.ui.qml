@@ -11,9 +11,9 @@ Rectangle {
     property bool goToMainScreen: false
     property bool goToAIScreen: false
     property bool goToSettingsScreen: false
-
     property bool goToDarkmode: false
 
+    property alias label: label
     property alias rectangle2: rectangle2
     property alias switch1: switch1
 
@@ -85,7 +85,7 @@ Rectangle {
                     from: "#2294c6"
                 }
             }
-            anchors.horizontalCenterOffset: -497
+            anchors.horizontalCenterOffset: -486
             anchors.horizontalCenter: parent.horizontalCenter
         }
     }
