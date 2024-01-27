@@ -512,21 +512,65 @@ Q_INVOKABLE QString systeminfo::getRAMInfo()
     return ramInfo;
 }
 
-
-
-/**
- * Получение имени компьютера
- *
- * @return @QString
+/** Получение имени компьютера
+ * 
+ * @return QString
  */
+
 Q_INVOKABLE QString systeminfo::getPcName()
 {
-    char buffer[256];
-    DWORD size = 256;
-    GetComputerNameA(buffer,&size);
-    return buffer;
-}
+    HRESULT hres;
+    IWbemLocator* pLoc = NULL;
+    IWbemServices* pSvc = NULL;
 
+    initializeCOM(hres, pLoc, pSvc);
+
+    IEnumWbemClassObject* pEnumerator = NULL;
+    hres = pSvc->ExecQuery(
+        ConvertStringToBSTR("WQL"),
+        ConvertStringToBSTR("SELECT * FROM Win32_OperatingSystem"),
+        WBEM_FLAG_FORWARD_ONLY | WBEM_FLAG_RETURN_IMMEDIATELY,
+        NULL,
+        &pEnumerator);
+
+    if (FAILED(hres)) {
+        std::cout << "Ошибка при выполнении запроса. Error code = 0x" << std::hex << hres << std::endl;
+        pSvc->Release();
+        pLoc->Release();
+        CoUninitialize();
+        return QString(); // Возвращает пустую строку при ошибке
+    }
+
+    // Получение данных.
+    QString pcName;
+    while (pEnumerator) {
+        IWbemClassObject* pclsObj = NULL;
+        ULONG uReturn = 0;
+        HRESULT hr = pEnumerator->Next(WBEM_INFINITE, 1, &pclsObj, &uReturn);
+
+        if (0 == uReturn) {
+            break;
+        }
+
+        VARIANT vtProp;
+
+        // Получение имени компьютера.
+        hr = pclsObj->Get(L"CSName", 0, &vtProp, 0, 0);
+        pcName = QString::fromWCharArray(vtProp.bstrVal);
+        qDebug() << "PC name: " << pcName;
+        VariantClear(&vtProp);
+
+        pclsObj->Release();
+    }
+
+    // Очистка.
+    pSvc->Release();
+    pLoc->Release();
+    pEnumerator->Release();
+    CoUninitialize();
+
+    return pcName;
+}
 
 
 /**
