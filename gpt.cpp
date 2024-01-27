@@ -1,3 +1,7 @@
+/* Данный код лицензирован GNU General Public Licence v3.0
+Автор: Мурадян Генрик
+По всем вопросам обращайтесь: muradyango@student.bmstu.ru */
+
 #if defined(slots)
 #undef slots
 #endif

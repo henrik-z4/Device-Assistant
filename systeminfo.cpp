@@ -1,3 +1,7 @@
+/* Данный код лицензирован GNU General Public Licence v3.0
+Автор: Мурадян Генрик, редакция: Курчин Михаил
+По всем вопросам обращайтесь: muradyango@student.bmstu.ru */
+
 #define _WIN32_DCOM
 
 #include <iostream>
