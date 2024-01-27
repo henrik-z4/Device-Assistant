@@ -4,7 +4,6 @@
 #include <comdef.h>
 #include <Wbemidl.h>
 #include "systeminfo.h"
-#include <windows.h>
 
 #include <QDebug>
 #include <QString>
@@ -574,16 +573,66 @@ Q_INVOKABLE QString systeminfo::getPcName()
 
 
 /**
- * Получение частоты обновления димплея
+ * Получение частоты обновления дисплея
  *
  * @return @QString
  */
 Q_INVOKABLE QString systeminfo::getDisplayRefreshRate()
 {
-    HDC hDCScreen = GetDC(NULL);
-    int refresh  = GetDeviceCaps(hDCScreen, VREFRESH);
-    ReleaseDC(NULL,  hDCScreen);
-    QString refreshRate = QString::number(refresh) + " Гц";
-    qDebug() << "Hertz: " << refreshRate;
+    HRESULT hres;
+    IWbemLocator* pLoc = NULL;
+    IWbemServices* pSvc = NULL;
+
+    initializeCOM(hres, pLoc, pSvc);
+
+    IEnumWbemClassObject* pEnumerator = NULL;
+    hres = pSvc->ExecQuery(
+        ConvertStringToBSTR("WQL"),
+        ConvertStringToBSTR("SELECT * FROM Win32_VideoController"),
+        WBEM_FLAG_FORWARD_ONLY | WBEM_FLAG_RETURN_IMMEDIATELY,
+        NULL,
+        &pEnumerator);
+
+    if (FAILED(hres)) {
+        std::cout << "Ошибка при выполнении запроса. Error code = 0x" << std::hex << hres << std::endl;
+        pSvc->Release();
+        pLoc->Release();
+        CoUninitialize();
+        return QString(); // Возвращает пустую строку при ошибке
+    }
+
+    // Получение данных.
+    QString refreshRate;
+    while (pEnumerator) {
+        IWbemClassObject* pclsObj = NULL;
+        ULONG uReturn = 0;
+        HRESULT hr = pEnumerator->Next(WBEM_INFINITE, 1, &pclsObj, &uReturn);
+
+        if (0 == uReturn) {
+            break;
+        }
+
+        VARIANT vtProp;
+
+        // Получение частоты обновления дисплея.
+        hr = pclsObj->Get(L"CurrentRefreshRate", 0, &vtProp, 0, 0);
+        if (vtProp.uintVal != 0) {
+            refreshRate = QString::number(vtProp.uintVal) + " Гц";
+            qDebug() << "Hertz: " << refreshRate;
+            VariantClear(&vtProp);
+            pclsObj->Release();
+            break;
+        }
+
+        VariantClear(&vtProp);
+        pclsObj->Release();
+    }
+
+    // Очистка.
+    pSvc->Release();
+    pLoc->Release();
+    pEnumerator->Release();
+    CoUninitialize();
+
     return refreshRate;
 }
