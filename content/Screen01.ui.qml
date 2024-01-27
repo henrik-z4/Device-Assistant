@@ -8,6 +8,7 @@ Check out https://doc.qt.io/qtcreator/creator-quick-ui-forms.html for details on
 */
 import QtQuick 6.2
 import QtQuick.Controls 6.2
+import QtQuick.Layouts 1.3
 import Device_Assistant
 
 Rectangle {
@@ -26,14 +27,7 @@ Rectangle {
     property bool goToAIScreen: false
     property bool goToSettingsScreen: false
 
-    property alias gpuInfoField: gpuInfoField
-    property alias diskInfoField: diskInfoField
-    property alias motherboardInfoField: motherboardInfoField
-    property alias cpuInfoField: cpuInfoField
-    property alias osInfoField: osInfoField
-    property alias ramInfoField: ramInfoField
-    property alias pcNameField: pcNameField
-    property alias displayRefreshRateField: displayRefreshRateField
+    property alias systemInfoList: systemInfoListInstance
 
     Rectangle {
         id: rectangle1
@@ -53,78 +47,12 @@ Rectangle {
             font.styleName: "Semibold"
         }
 
-        Grid {
-            id: grid
+        SystemInfoList{
+            id: systemInfoListInstance
             x: 144
             y: 124
-            width: 481
-            height: 316
-            spacing: 15
-            columns: 3
-
-            TextArea {
-                id: diskInfoField
-                width: 300
-                height: 70
-                placeholderText: qsTr("Носитель")
-                enabled: false
-            }
-
-            TextArea {
-                id: motherboardInfoField
-                width: 300
-                height: 70
-                placeholderText: qsTr("Материнская плата")
-                enabled: false
-            }
-
-            TextArea {
-                id: ramInfoField
-                width: 300
-                height: 70
-                placeholderText: qsTr("Оперативная память")
-                enabled: false
-            }
-
-            TextArea {
-                id: cpuInfoField
-                width: 300
-                height: 70
-                placeholderText: qsTr("Процессор")
-                enabled: false
-            }
-
-            TextArea {
-                id: gpuInfoField
-                width: 300
-                height: 70
-                enabled: false
-                placeholderText: qsTr("Видеокарта")
-            }
-
-            TextArea {
-                id: osInfoField
-                width: 300
-                height: 70
-                enabled: false
-                placeholderText: qsTr("Операционная система")
-            }
-
-            TextArea {
-                id: pcNameField
-                width: 300
-                height: 70
-                placeholderText: qsTr("Имя компьютера")
-                enabled: false
-            }
-
-            TextArea {
-                id: displayRefreshRateField
-                width: 300
-                height: 70
-                placeholderText: qsTr("Частота обновления экрана")
-                enabled: false
-            }
+            width: parent.width
+            height: parent.height
         }
 
         Image {

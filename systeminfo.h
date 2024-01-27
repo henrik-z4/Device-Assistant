@@ -2,6 +2,7 @@
 #define SYSTEMINFO_H
 
 #include <QObject>
+#include <QVariant>
 #include <comdef.h>
 #include <Wbemidl.h>
 
@@ -18,7 +19,7 @@ class systeminfo : public QObject
     Q_OBJECT
 public:
     explicit systeminfo(QObject *parent = nullptr);
-    Q_INVOKABLE QString getGpuInfo();
+    Q_INVOKABLE QVariantList getGpuInfo();
     Q_INVOKABLE QString getDiskInfo();
     Q_INVOKABLE QString getMotherboardInfo();
     Q_INVOKABLE QString getProcessorInfo();
