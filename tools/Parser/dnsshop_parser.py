@@ -1,3 +1,11 @@
+# Данный код лицензирован GNU General Public Licence v3.0
+# Автор: Мурадян Генрик
+# По всем вопросам обращайтесь: muradyango@student.bmstu.ru
+#
+# 
+# Этот парсер извлекает данные о видеокартах, такие как название и цену, с сайта DNS Shop. Обходит защиту QRATOR с помощью куки, юзер-агентов и полной репликации поведения пользователя с помощью библиотек Selenium.
+
+
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
