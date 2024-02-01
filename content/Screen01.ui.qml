@@ -28,6 +28,7 @@ Rectangle {
     property bool goToSettingsScreen: false
 
     property alias systemInfoList: systemInfoListInstance
+    property alias recommendations: recommendations
 
     Rectangle {
         id: rectangle1
@@ -47,7 +48,7 @@ Rectangle {
             font.styleName: "Semibold"
         }
 
-        SystemInfoList{
+        SystemInfoList {
             id: systemInfoListInstance
             x: 144
             y: 124
@@ -138,6 +139,15 @@ Rectangle {
                     from: "#2294c6"
                 }
             }
+        }
+
+        Text {
+            id: recommendations
+            x: 73
+            y: 484
+            width: 1097
+            height: 298
+            text: ""
         }
     }
 
