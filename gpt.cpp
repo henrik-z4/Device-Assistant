@@ -38,8 +38,17 @@ QString GPT::getResponse(const QString &prompt) {
 
 QString GPT::getRecommendations() {
     // Получение рекомендаций от GPT модели на основе характеристик ПК
+    
+    QString gpuInfoStr;
+    auto gpuInfoList = sysInfo.getGpuInfo();
+    for (const auto& gpuInfo : gpuInfoList) {
+        if (!gpuInfoStr.isEmpty())
+            gpuInfoStr += ", ";
+        gpuInfoStr += gpuInfo.toString();
+    }
+
     QString systemInfoStr = QString("GPU: %1\nCPU: %2\nMotherboard: %3\nOS: %4\nRAM: %5\nDisk: %6")
-    .arg(sysInfo.getGpuInfo()[0].toString())
+    .arg(gpuInfoStr)
     .arg(sysInfo.getProcessorInfo())
     .arg(sysInfo.getMotherboardInfo())
     .arg(sysInfo.getOSInfo())
@@ -47,9 +56,9 @@ QString GPT::getRecommendations() {
     .arg(sysInfo.getDiskInfo());
 
     std::string systemInfoString = systemInfoStr.toStdString(); // На всякий случай пусть пока будет, может пригодиться
-    QString info_prompt = "The following is the info about user's hardware. Please use that info and provide personal recommendations on what can be upgraded/improved. Return only a list of recommendations: " + systemInfoStr;
+    QString info_prompt = "Ниже приведена информация об аппаратном обеспечении пользователя. Пожалуйста, используйте эту информацию и дайте персональные рекомендации о том, что можно обновить/улучшить. Ответьте только списком рекомендаций, ничего лишнего, отвечайте на русском языке: " + systemInfoStr;
     QString recommendations = get_response_from_gpt(info_prompt);
-
+    return recommendations;
 }
 
 // Функция get_response_from_gpt получает ответ от модели GPT на основе заданного промпта

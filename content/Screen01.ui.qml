@@ -143,6 +143,7 @@ Rectangle {
 
         Text {
             id: recommendations
+            font.family: "Arial"
             x: 73
             y: 484
             width: 1097
