@@ -16,11 +16,15 @@
 #endif
 
 #include "gpt.h"
+#include "systeminfo.h"
 #include <QProcess>
 #include <QCoreApplication>
+#include <QString>
+#include <QVariant>
 
 #include <iostream>
 
+systeminfo sysInfo;
 GPT::GPT(QObject *parent) : QObject(parent) {
     // Конструктор класса GPT
 }
@@ -30,6 +34,31 @@ QString GPT::getResponse(const QString &prompt) {
     QString response = get_response_from_gpt(prompt);
     emit responseReceived(response);
     return response;
+}
+
+QString GPT::getRecommendations() {
+    // Получение рекомендаций от GPT модели на основе характеристик ПК
+    
+    QString gpuInfoStr;
+    auto gpuInfoList = sysInfo.getGpuInfo();
+    for (const auto& gpuInfo : gpuInfoList) {
+        if (!gpuInfoStr.isEmpty())
+            gpuInfoStr += ", ";
+        gpuInfoStr += gpuInfo.toString();
+    }
+
+    QString systemInfoStr = QString("GPU: %1\nCPU: %2\nMotherboard: %3\nOS: %4\nRAM: %5\nDisk: %6")
+    .arg(gpuInfoStr)
+    .arg(sysInfo.getProcessorInfo())
+    .arg(sysInfo.getMotherboardInfo())
+    .arg(sysInfo.getOSInfo())
+    .arg(sysInfo.getRAMInfo())
+    .arg(sysInfo.getDiskInfo());
+
+    std::string systemInfoString = systemInfoStr.toStdString(); // На всякий случай пусть пока будет, может пригодиться
+    QString info_prompt = "Ниже приведена информация об аппаратном обеспечении пользователя. Пожалуйста, используйте эту информацию и дайте персональные рекомендации о том, что можно обновить/улучшить. Ответьте только списком рекомендаций, ничего лишнего, отвечайте на русском языке: " + systemInfoStr;
+    QString recommendations = get_response_from_gpt(info_prompt);
+    return recommendations;
 }
 
 // Функция get_response_from_gpt получает ответ от модели GPT на основе заданного промпта
@@ -64,7 +93,7 @@ QString GPT::get_response_from_gpt(const QString &prompt) {
             std::string prompt_utf8 = prompt.toUtf8().constData(); // Преобразование промпта в UTF-8
             PyObject *pValue = PyUnicode_FromString(prompt_utf8.c_str()); // Преобразование QString в Python-строку
 
-            std::cout << "Prompt: " << prompt_utf8<< std::endl;
+            std::cout << "Prompt: " << prompt_utf8 << std::endl;
 
             PyTuple_SetItem(pArgs, 0, pValue); // Установка первого элемента кортежа аргументов
             PyObject *pResult = PyObject_CallObject(pFunc, pArgs); // Вызов функции get_gpt4_response с передачей аргументов

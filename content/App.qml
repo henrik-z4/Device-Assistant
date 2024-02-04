@@ -142,6 +142,9 @@ Window {
                 mainScreen.displayRefreshRateField.color = "#000000"
             }
         }
+        Component.onCompleted: {
+            mainScreen.recommendations.text = gpt.getRecommendations();
+        }
     }
 
     StackView {

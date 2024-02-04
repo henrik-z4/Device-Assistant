@@ -23,6 +23,16 @@ systeminfo::systeminfo(QObject *parent) : QObject(parent) {
     IWbemLocator* pLoc = nullptr;
     IWbemServices* pSvc = nullptr;
     initializeCOM(hres, pLoc, pSvc);
+
+    m_gpuInfo = retrieveGpuInfo();
+    m_diskInfo = retrieveDiskInfo();
+    m_processorInfo = retrieveProcessorInfo();
+    m_ramInfo = retrieveRAMInfo();
+    m_osInfo = retrieveOSInfo();
+    m_displayRefreshRate = retrieveDisplayRefreshRate();
+    m_pcName = retrievePcName();
+    m_motherboardInfo = retrieveMotherboardInfo();
+    
 }
 
 
@@ -143,7 +153,7 @@ void systeminfo::initializeCOM(HRESULT& hres, IWbemLocator*& pLoc, IWbemServices
  *
  * @return @QString
  */
-Q_INVOKABLE QVariantList systeminfo::getGpuInfo()
+Q_INVOKABLE QVariantList systeminfo::retrieveGpuInfo()
 {
     HRESULT hres;
     IWbemLocator* pLoc = NULL;
@@ -201,6 +211,10 @@ Q_INVOKABLE QVariantList systeminfo::getGpuInfo()
     return gpuList;
 }
 
+Q_INVOKABLE QVariantList systeminfo::getGpuInfo() const {
+    return m_gpuInfo;
+}
+
 
 
 /**
@@ -208,7 +222,7 @@ Q_INVOKABLE QVariantList systeminfo::getGpuInfo()
  *
  * @return QString
  */
-Q_INVOKABLE QString systeminfo::getDiskInfo()
+Q_INVOKABLE QString systeminfo::retrieveDiskInfo()
 {
     // Инфа о накопителе
     HRESULT hres;
@@ -264,6 +278,10 @@ Q_INVOKABLE QString systeminfo::getDiskInfo()
     return storageModel;
 }
 
+Q_INVOKABLE QString systeminfo::getDiskInfo() const {
+    return m_diskInfo;
+}
+
 
 
 /**
@@ -271,7 +289,7 @@ Q_INVOKABLE QString systeminfo::getDiskInfo()
  *
  * @return QString
  */
-Q_INVOKABLE QString systeminfo::getMotherboardInfo()
+Q_INVOKABLE QString systeminfo::retrieveMotherboardInfo()
 {
     // Материнская плата
     HRESULT hres;
@@ -328,6 +346,10 @@ Q_INVOKABLE QString systeminfo::getMotherboardInfo()
     return motherboardInfo;
 }
 
+Q_INVOKABLE QString systeminfo::getMotherboardInfo() const{
+    return m_motherboardInfo;
+}
+
 
 
 /**
@@ -335,7 +357,7 @@ Q_INVOKABLE QString systeminfo::getMotherboardInfo()
  *
  * @return QString
  */
-Q_INVOKABLE QString systeminfo::getProcessorInfo()
+Q_INVOKABLE QString systeminfo::retrieveProcessorInfo()
 {
     // Процессор
     HRESULT hres;
@@ -391,6 +413,9 @@ Q_INVOKABLE QString systeminfo::getProcessorInfo()
     return processorInfo;
 }
 
+Q_INVOKABLE QString systeminfo::getProcessorInfo() const {
+    return m_processorInfo;
+}
 
 
 /**
@@ -398,7 +423,7 @@ Q_INVOKABLE QString systeminfo::getProcessorInfo()
  *
  * @return QString
  */
-Q_INVOKABLE QString systeminfo::getOSInfo()
+Q_INVOKABLE QString systeminfo::retrieveOSInfo()
 {
     // ОС
     HRESULT hres;
@@ -454,6 +479,10 @@ Q_INVOKABLE QString systeminfo::getOSInfo()
     return osInfo;
 }
 
+Q_INVOKABLE QString systeminfo::getOSInfo() const{
+    return m_osInfo;
+}
+
 
 
 /**
@@ -461,7 +490,7 @@ Q_INVOKABLE QString systeminfo::getOSInfo()
  *
  * @return QString
  */
-Q_INVOKABLE QString systeminfo::getRAMInfo()
+Q_INVOKABLE QString systeminfo::retrieveRAMInfo()
 {
     // Оперативка
     HRESULT hres;
@@ -521,12 +550,18 @@ Q_INVOKABLE QString systeminfo::getRAMInfo()
     return ramInfo;
 }
 
+Q_INVOKABLE QString systeminfo::getRAMInfo() const{
+    return m_ramInfo;
+}
+
+
+
 /** Получение имени компьютера
  * 
  * @return QString
  */
 
-Q_INVOKABLE QString systeminfo::getPcName()
+Q_INVOKABLE QString systeminfo::retrievePcName()
 {
     HRESULT hres;
     IWbemLocator* pLoc = NULL;
@@ -581,13 +616,18 @@ Q_INVOKABLE QString systeminfo::getPcName()
     return pcName;
 }
 
+Q_INVOKABLE QString systeminfo::getPcName() const {
+    return m_pcName;
+}
+
+
 
 /**
  * Получение частоты обновления дисплея
  *
  * @return @QString
  */
-Q_INVOKABLE QString systeminfo::getDisplayRefreshRate()
+Q_INVOKABLE QString systeminfo::retrieveDisplayRefreshRate()
 {
     HRESULT hres;
     IWbemLocator* pLoc = NULL;
@@ -645,4 +685,8 @@ Q_INVOKABLE QString systeminfo::getDisplayRefreshRate()
     CoUninitialize();
 
     return refreshRate;
+}
+
+Q_INVOKABLE QString systeminfo::getDisplayRefreshRate() const {
+    return m_displayRefreshRate;
 }
