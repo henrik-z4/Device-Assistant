@@ -9,6 +9,7 @@ Window {
     width: mainScreen.width
     height: mainScreen.height
 
+
     visible: true
     title: "Device_Assistant"
 
