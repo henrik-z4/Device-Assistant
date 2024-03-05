@@ -85,6 +85,7 @@ Rectangle {
                 id: cpuInfoField
                 width: 300
                 height: 70
+                hoverEnabled: true
                 placeholderText: qsTr("Процессор")
                 enabled: false
             }

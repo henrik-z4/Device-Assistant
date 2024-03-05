@@ -5,6 +5,7 @@
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
 #include <QDir>
+#include <QWindow>
 
 #include "app_environment.h"
 #include "import_qml_components_plugins.h"
@@ -18,7 +19,6 @@
 int main(int argc, char *argv[])
 {
     set_qt_environment();
-
     QGuiApplication app(argc, argv);
 
     QQmlApplicationEngine engine;

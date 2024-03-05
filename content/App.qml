@@ -1,6 +1,7 @@
 import QtQuick 6.2
 import QtQuick.Controls 2.15
 import QtQuick.LocalStorage 2.15
+import QtQuick.Layouts 1.15
 import Device_Assistant
 import GPT 1.0
 

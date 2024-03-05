@@ -104,7 +104,7 @@ Rectangle {
         radius: 20
 
         Text {
-            id: label
+            id: labelai
             x: 0
             y: 23
             text: qsTr("Искусственный интеллект")

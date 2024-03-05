@@ -1,12 +1,14 @@
 import QtQuick 6.2
 import QtQuick.Controls 6.2
+import QtQuick.Layouts 1.15
 import Device_Assistant
 
 Rectangle {
     id: rectangle
     width: Constants.width
     height: Constants.height
-    color: "#eaeaea"
+    color: "#ffffff"
+    property alias sendButton: sendButton
 
     property bool goToMainScreen: false
     property bool goToAIScreen: false
@@ -15,122 +17,234 @@ Rectangle {
 
     property alias chatModel: chatView.model
     property alias messageField: messageField
-    property alias sendButton: sendButton
 
-    Button {
-        id: button
-        x: 43
-        y: 212
-        width: 244
-        height: 100
-        text: qsTr("Главная")
-        highlighted: stackView.currentItem === mainScreen
-        onClicked: rectangle.goToMainScreen = !rectangle.goToMainScreen
-    }
+    Rectangle {
+        id: rectangle1
+        x: 322
+        y: 99
+        width: 1598
+        height: 981
+        color: "#eaeaea"
 
-    Button {
-        id: button1
-        x: 43
-        y: 318
-        width: 244
-        height: 100
-        text: qsTr("AI")
-        highlighted: stackView.currentItem === aiScreen
-        onClicked: rectangle.goToAIScreen = !rectangle.goToAIScreen
-    }
+        Text {
+            id: text2
+            x: -220
+            y: 230
+            width: 126
+            height: 55
+            text: qsTr("Главная")
+            font.pixelSize: 35
+            font.styleName: "Semibold Italic"
+        }
 
-    Button {
-        id: button3
-        x: 43
-        y: 422
-        width: 244
-        height: 100
-        text: qsTr("База")
-        onClicked: rectangle.goToDbScreen = !rectangle.goToDbScreen
-        highlighted: stackView.currentItem === dbScreen
-    }
+        Text {
+            id: text3
+            x: -220
+            y: 331
+            width: 126
+            height: 55
+            text: qsTr("AI")
+            font.pixelSize: 35
+            horizontalAlignment: Text.AlignHCenter
+            font.styleName: "Semibold Italic"
+        }
 
-    Button {
-        id: button2
-        x: 43
-        y: 528
-        width: 244
-        height: 100
-        text: qsTr("Настройки")
-        onClicked: rectangle.goToSettingsScreen = !rectangle.goToSettingsScreen
-        highlighted: stackView.currentItem === settingsScreen
+        Text {
+            id: text4
+            x: -220
+            y: 437
+            width: 126
+            height: 55
+            text: qsTr("Комплектующие")
+            font.pixelSize: 35
+            horizontalAlignment: Text.AlignHCenter
+            font.styleName: "Semibold Italic"
+        }
+
+        Text {
+            id: text5
+            x: -220
+            y: 543
+            width: 126
+            height: 55
+            text: qsTr("Настройки")
+            font.pixelSize: 35
+            horizontalAlignment: Text.AlignHCenter
+            font.styleName: "Semibold Italic"
+        }
+
+        Button {
+            id: button
+            x: -277
+            y: 208
+            width: 244
+            height: 100
+            visible: false
+            text: qsTr("Главная")
+            layer.enabled: false
+            font.pointSize: 20
+            highlighted: stackView.currentItem === mainScreen
+            onClicked: rectangle.goToMainScreen = !rectangle.goToMainScreen
+        }
+
+        Button {
+            id: button1
+            x: -277
+            y: 311
+            width: 244
+            height: 100
+            visible: false
+            text: qsTr("AI")
+            layer.enabled: false
+            font.pointSize: 20
+            highlighted: stackView.currentItem === aiScreen
+            onClicked: rectangle.goToAIScreen = !rectangle.goToAIScreen
+        }
+
+        Button {
+            id: button3
+            x: -277
+            y: 417
+            width: 244
+            height: 100
+            visible: false
+            text: "База"
+            layer.enabled: false
+            font.pointSize: 20
+            onClicked: rectangle.goToDbScreen = !rectangle.goToDbScreen
+            highlighted: stackView.currentItem === dbScreen
+        }
+
+        Button {
+            id: button2
+            x: -277
+            y: 517
+            width: 244
+            height: 100
+            visible: false
+            text: qsTr("Настройки")
+            layer.enabled: false
+            font.pointSize: 20
+            onClicked: rectangle.goToSettingsScreen = !rectangle.goToSettingsScreen
+            highlighted: stackView.currentItem === settingsScreen
+        }
     }
 
     Button {
         id: sendButton
-        x: 886
-        y: 841
-        width: 244
-        height: 100
+        x: 1574
+        y: 940
+        width: 60
+        height: 88
+        visible: false
         text: qsTr("Отправить")
     }
 
     ListView {
         id: chatView
-        x: 545
-        y: 229
-        width: 927
-        height: 470
+        x: 538
+        y: 184
+        width: 1171
+        height: 714
         model: ListModel {
             id: chatModel
         }
         delegate: Text {
             text: model.message
         }
+
+        Rectangle {
+            id: rectangle2
+            x: 1039
+            y: 784
+            width: 56
+            height: 56
+            visible: true
+            color: "#0581df"
+            clip: false
+        }
+
+        Text {
+            id: text6
+            x: 1020
+            y: 633
+            width: 200
+            height: 200
+            color: "#ffffff"
+            text: qsTr(">")
+            font.pixelSize: 60
+            rotation: -90
+        }
+
+        Text {
+            id: text7
+            x: -208
+            y: -141
+            width: 200
+            height: 200
+            color: "#000000"
+            text: qsTr(">")
+            font.pixelSize: 50
+            rotation: 90
+        }
     }
     TextField {
         id: messageField
-        x: 699
-        y: 596
-        width: 617
-        height: 100
+        x: 538
+        y: 946
+        width: 1171
+        height: 106
         anchors.bottom: sendButton.top
-        anchors.bottomMargin: 14
-        placeholderText: qsTr("Введите сообщение для GPT-4")
+        anchors.bottomMargin: -100
+        font.pointSize: 20
+        placeholderText: qsTr("Введите сообщение...")
     }
 
-    Rectangle {
-        id: rectangle2
-        x: 377
-        y: 98
-        width: 1217
-        height: 96
-        color: "#ffffff"
-        radius: 20
+    Text {
+        id: text1
+        x: 370
+        y: 31
+        width: 103
+        height: 47
+        text: qsTr("GPT-4")
+        font.pixelSize: 35
+        font.styleName: "Semibold Italic"
+    }
+
+    Image {
+        id: image
+        x: 43
+        y: 99
+        width: 69
+        height: 69
+        source: "../../../OneDrive/Изображения/Screenshots/Снимок экрана 2024-03-01 222331.png"
+        fillMode: Image.PreserveAspectFit
 
         Text {
-            id: label
-            x: 0
-            y: 23
-            text: qsTr("Искусственный интеллект")
-            anchors.topMargin: 45
-            font.pointSize: 28
-            font.family: Constants.font.family
-            SequentialAnimation {
-                id: animation
-                ColorAnimation {
-                    id: colorAnimation1
-                    target: rectangle
-                    property: "color"
-                    to: "#2294c6"
-                    from: Constants.backgroundColor
-                }
+            id: text8
+            x: 66
+            y: 17
+            text: qsTr("Device Assistant")
+            font.pixelSize: 25
+            font.styleName: "Semibold Italic"
+        }
+    }
 
-                ColorAnimation {
-                    id: colorAnimation2
-                    target: rectangle
-                    property: "color"
-                    to: Constants.backgroundColor
-                    from: "#2294c6"
-                }
-            }
-            anchors.horizontalCenterOffset: -368
-            anchors.horizontalCenter: parent.horizontalCenter
+    Image {
+        id: image1
+        x: 43
+        y: 99
+        width: 69
+        height: 69
+        source: "../assets/Icons/DeviceAssistant.jpg"
+        fillMode: Image.PreserveAspectFit
+        Text {
+            id: text9
+            x: 66
+            y: 17
+            text: qsTr("Device Assistant")
+            font.pixelSize: 25
+            font.styleName: "Semibold Italic"
         }
     }
 }
