@@ -17,6 +17,7 @@ Rectangle {
 
     property alias chatModel: chatView.model
     property alias messageField: messageField
+    property alias text3: text3
 
     Rectangle {
         id: rectangle1

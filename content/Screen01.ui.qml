@@ -15,7 +15,6 @@ Rectangle {
     width: Constants.width
     height: Constants.height
     color: "#ffffff"
-    property alias imageSource: image.source
 
     property bool goToMainScreen: false
     property bool goToAIScreen: false
@@ -23,11 +22,23 @@ Rectangle {
     property bool goToDbScreen: false
 
     property alias gpuInfoField: gpuInfoField
+    property alias gpuInfoText: gpuInfoText
+
     property alias diskInfoField: diskInfoField
+    property alias diskInfoText: diskInfoText
+
     property alias motherboardInfoField: motherboardInfoField
+    property alias motherboardInfoText: motherboardInfoText
+
     property alias cpuInfoField: cpuInfoField
+    property alias cpuInfoText: cpuInfoText
+
     property alias osInfoField: osInfoField
+    property alias osInfoText: osInfoText
+
     property alias ramInfoField: ramInfoField
+    property alias ramInfoText: ramInfoText
+    property alias text2: text2
 
     Rectangle {
         id: rectangle1
@@ -85,6 +96,7 @@ Rectangle {
                 id: cpuInfoField
                 width: 300
                 height: 70
+                hoverEnabled: true
                 placeholderText: qsTr("Процессор")
                 enabled: false
             }
@@ -105,16 +117,6 @@ Rectangle {
                 enabled: false
                 placeholderText: qsTr("Операционная система")
             }
-        }
-
-        Image {
-            id: image
-            x: 75
-            y: 34
-            width: 45
-            height: 45
-            source: "qrc:/images/assets/Icons/pc.svg"
-            fillMode: Image.PreserveAspectFit
         }
 
         Text {
@@ -268,6 +270,64 @@ Rectangle {
             source: "qrc:/images/assets/Icons/pc.svg"
             fillMode: Image.PreserveAspectFit
         }
+    }
+
+    Text {
+        id: motherboardInfoText
+        x: 742
+        y: 299
+        text: qsTr("")
+        font.pixelSize: 35
+        font.styleName: "Semibold Italic"
+    }
+
+    Text {
+        id: diskInfoText
+        x: 758
+        y: 422
+        text: qsTr("")
+        font.pixelSize: 35
+        font.styleName: "Semibold Italic"
+    }
+
+    Text {
+        id: ramInfoText
+        x: 806
+        y: 279
+        width: 43
+        height: 47
+        text: qsTr("")
+        font.pixelSize: 35
+        font.styleName: "Semibold Italic"
+    }
+
+    Text {
+        id: osInfoText
+        x: 850
+        y: 385
+        width: 65
+        height: 47
+        text: qsTr("")
+        font.pixelSize: 35
+        font.styleName: "Semibold Italic"
+    }
+
+    Text {
+        id: cpuInfoText
+        x: 758
+        y: 484
+        text: qsTr("")
+        font.pixelSize: 35
+        font.styleName: "Semibold Italic"
+    }
+
+    Text {
+        id: gpuInfoText
+        x: 758
+        y: 554
+        text: qsTr("")
+        font.pixelSize: 35
+        font.styleName: "Semibold Italic"
     }
 
     states: [

@@ -8,8 +8,6 @@ import GPT 1.0
 Window {
     width: mainScreen.width
     height: mainScreen.height
-
-
     visible: true
     title: "Device_Assistant"
 
@@ -19,12 +17,14 @@ Window {
         onGoToMainScreenChanged: {
             if (goToMainScreen) {
                 stackView.replace(mainScreen);
+                mainScreen.text2.color = "#cb1b1b";
             }
         }
 
         onGoToAIScreenChanged: {
             if (goToAIScreen) {
                 stackView.replace(aiScreen);
+                aiScreen.text3.color = "#0d53fd";
             }
         }
 
@@ -47,12 +47,14 @@ Window {
         onGoToMainScreenChanged: {
             if (goToMainScreen) {
                 stackView.replace(mainScreen);
+                mainScreen.text2.color = "#cb1b1b";
             }
         }
 
         onGoToAIScreenChanged: {
             if (goToAIScreen) {
                 stackView.replace(aiScreen);
+                aiScreen.text3.color = "#0d53fd";
             }
         }
 
@@ -90,12 +92,14 @@ Window {
         onGoToMainScreenChanged: {
             if (goToMainScreen) {
                 stackView.replace(mainScreen);
+                mainScreen.text2.color = "#cb1b1b";
             }
         }
 
         onGoToAIScreenChanged: {
             if (goToAIScreen) {
                 stackView.replace(aiScreen);
+                aiScreen.text3.color = "#0d53fd";
             }
         }
 
@@ -154,12 +158,14 @@ Window {
         onGoToMainScreenChanged: {
             if (goToMainScreen) {
                 stackView.replace(mainScreen);
+                mainScreen.text2.color = "#cb1b1b";
             }
         }
 
         onGoToAIScreenChanged: {
             if (goToAIScreen) {
                 stackView.replace(aiScreen);
+                aiScreen.text3.color = "#0d53fd";
             }
         }
 
@@ -193,10 +199,23 @@ Window {
 
     Component.onCompleted: {
         mainScreen.gpuInfoField.text = sysInfo.getGpuInfo();
+        mainScreen.gpuInfoText.text = sysInfo.getGpuInfo();
+
         mainScreen.diskInfoField.text = sysInfo.getDiskInfo();
+        mainScreen.diskInfoText.text = sysInfo.getDiskInfo();
+
         mainScreen.cpuInfoField.text = sysInfo.getProcessorInfo();
+        mainScreen.cpuInfoText.text = sysInfo.getProcessorInfo();
+
         mainScreen.motherboardInfoField.text = sysInfo.getMotherboardInfo();
+        mainScreen.motherboardInfoText.text = sysInfo.getMotherboardInfo();
+
         mainScreen.osInfoField.text = sysInfo.getOSInfo();
+        mainScreen.osInfoText.text = sysInfo.getOSInfo();
+
         mainScreen.ramInfoField.text = sysInfo.getRAMInfo();
+        mainScreen.ramInfoText.text = sysInfo.getRAMInfo();
+        
+        mainScreen.text2.color = "#cb1b1b";
     }
 }
