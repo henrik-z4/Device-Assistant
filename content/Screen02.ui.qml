@@ -18,6 +18,14 @@ Rectangle {
     property alias chatModel: chatView.model
     property alias messageField: messageField
     property alias text3: text3
+    property alias rectangle1: rectangle1
+    property alias text1: text1
+    property alias text2: text2
+    property alias text4: text4
+    property alias text5: text5
+    property alias text7: text7
+    property alias text9: text9
+    property alias text10: text10
 
     Rectangle {
         id: rectangle1
@@ -153,11 +161,20 @@ Rectangle {
         delegate: Text {
             text: model.message
         }
+    }
+    TextField {
+        id: messageField
+        x: 538
+        y: 946
+        width: 1171
+        height: 106
+        font.pointSize: 20
+        placeholderText: qsTr("")
 
         Rectangle {
             id: rectangle2
             x: 1039
-            y: 784
+            y: 22
             width: 56
             height: 56
             visible: true
@@ -168,7 +185,7 @@ Rectangle {
         Text {
             id: text6
             x: 1020
-            y: 633
+            y: -129
             width: 200
             height: 200
             color: "#ffffff"
@@ -178,27 +195,16 @@ Rectangle {
         }
 
         Text {
-            id: text7
-            x: -208
-            y: -141
-            width: 200
-            height: 200
-            color: "#000000"
-            text: qsTr(">")
-            font.pixelSize: 50
-            rotation: 90
+            id: text10
+            x: 63
+            y: 38
+            width: 126
+            height: 55
+            text: qsTr("Введите сообщение...")
+            font.pixelSize: 20
+            horizontalAlignment: Text.AlignHCenter
+            font.styleName: "Обычный"
         }
-    }
-    TextField {
-        id: messageField
-        x: 538
-        y: 946
-        width: 1171
-        height: 106
-        anchors.bottom: sendButton.top
-        anchors.bottomMargin: -100
-        font.pointSize: 20
-        placeholderText: qsTr("Введите сообщение...")
     }
 
     Text {
@@ -210,6 +216,18 @@ Rectangle {
         text: qsTr("GPT-4")
         font.pixelSize: 35
         font.styleName: "Semibold Italic"
+
+        Text {
+            id: text7
+            x: -40
+            y: 12
+            width: 200
+            height: 200
+            color: "#000000"
+            text: qsTr(">")
+            font.pixelSize: 50
+            rotation: 90
+        }
     }
 
     Image {

@@ -6,10 +6,11 @@ import Device_Assistant
 import GPT 1.0
 
 Window {
-    width: mainScreen.width
-    height: mainScreen.height
+    width: Screen.desktopAvailableWidth
+    height: Screen.desktopAvailableHeight
     visible: true
-    title: "Device_Assistant"
+    title: "DeviceAssistant"
+    visibility: Window.FullScreen
 
     Screen01 {
         id: mainScreen
@@ -31,6 +32,7 @@ Window {
         onGoToSettingsScreenChanged: {
             if (goToSettingsScreen) {
                 stackView.replace(settingsScreen);
+                settingsScreen.text5.color = "#ddf107";
             }
         }
 
@@ -61,6 +63,7 @@ Window {
         onGoToSettingsScreenChanged: {
             if (goToSettingsScreen) {
                 stackView.replace(settingsScreen);
+                settingsScreen.text5.color = "#ddf107";
             }
         }
 
@@ -106,6 +109,7 @@ Window {
         onGoToSettingsScreenChanged: {
             if (goToSettingsScreen) {
                 stackView.replace(settingsScreen);
+                settingsScreen.text5.color = "#ddf107";
             }
         }
 
@@ -172,6 +176,7 @@ Window {
         onGoToSettingsScreenChanged: {
             if (goToSettingsScreen) {
                 stackView.replace(settingsScreen);
+                settingsScreen.text5.color = "#ddf107";
             }
         }
         onGoToDbScreenChanged: {
@@ -182,11 +187,43 @@ Window {
 
         onGoToDarkmodeChanged: {
             if (goToDarkmode) {
-                settingsScreen.color = "#292626";
-                settingsScreen.rectangle2.color = "#3f3c3c";
+                settingsScreen.color = "#2e2e2e";
+                settingsScreen.text1.color = "#ffffff";
+                settingsScreen.text2.color = "#ffffff";
+                settingsScreen.text3.color = "#ffffff";
+                settingsScreen.text4.color = "#ffffff";
+                settingsScreen.text6.color = "#ffffff";
+                settingsScreen.text9.color = "#ffffff";
+
+                aiScreen.color = "#2e2e2e";
+                aiScreen.rectangle1.color = "#2e2e2e";
+                aiScreen.text1.color = "#ffffff";
+                aiScreen.text2.color = "#ffffff";
+                aiScreen.text4.color = "#ffffff";
+                aiScreen.text5.color = "#ffffff";
+                aiScreen.text7.color = "#ffffff";
+                aiScreen.text9.color = "#ffffff";
+                aiScreen.text10.color = "#ffffff";
+                aiScreen.messageField.placeholderText.color = "#60000000";
             } else {
-                settingsScreen.color = "#eaeaea";
-                settingsScreen.rectangle2.color = "#ffffff";
+                settingsScreen.color = "#ffffff";
+                settingsScreen.text1.color = "#000000";
+                settingsScreen.text2.color = "#000000";
+                settingsScreen.text3.color = "#000000";
+                settingsScreen.text4.color = "#000000";
+                settingsScreen.text6.color = "#000000";
+                settingsScreen.text9.color = "#000000";
+
+                aiScreen.color = "#ffffff";
+                aiScreen.rectangle1.color = "#ffffff";
+                aiScreen.text1.color = "#000000";
+                aiScreen.text2.color = "#000000";
+                aiScreen.text4.color = "#000000";
+                aiScreen.text5.color = "#000000";
+                aiScreen.text7.color = "#000000";
+                aiScreen.text9.color = "#000000";
+                aiScreen.text10.color = "#000000";
+                aiScreen.messageField.placeholderText.color = "#000000";
             }
         }
     }
@@ -198,22 +235,16 @@ Window {
     }
 
     Component.onCompleted: {
-        mainScreen.gpuInfoField.text = sysInfo.getGpuInfo();
         mainScreen.gpuInfoText.text = sysInfo.getGpuInfo();
 
-        mainScreen.diskInfoField.text = sysInfo.getDiskInfo();
         mainScreen.diskInfoText.text = sysInfo.getDiskInfo();
 
-        mainScreen.cpuInfoField.text = sysInfo.getProcessorInfo();
         mainScreen.cpuInfoText.text = sysInfo.getProcessorInfo();
 
-        mainScreen.motherboardInfoField.text = sysInfo.getMotherboardInfo();
         mainScreen.motherboardInfoText.text = sysInfo.getMotherboardInfo();
 
-        mainScreen.osInfoField.text = sysInfo.getOSInfo();
         mainScreen.osInfoText.text = sysInfo.getOSInfo();
 
-        mainScreen.ramInfoField.text = sysInfo.getRAMInfo();
         mainScreen.ramInfoText.text = sysInfo.getRAMInfo();
         
         mainScreen.text2.color = "#cb1b1b";

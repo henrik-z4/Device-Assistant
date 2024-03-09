@@ -6,7 +6,7 @@ Rectangle {
     id: rectangle
     width: Constants.width
     height: Constants.height
-    color: "#eaeaea"
+    color: "#ffffff"
 
     property bool goToMainScreen: false
     property bool goToAIScreen: false
@@ -15,100 +15,183 @@ Rectangle {
 
     property bool goToDarkmode: false
 
-    property alias rectangle2: rectangle2
     property alias switch1: switch1
-
-    Rectangle {
-        id: rectangle2
-        x: 377
-        y: 98
-        width: 1217
-        height: 96
-        color: "#ffffff"
-        radius: 20
-
-        Button {
-            id: button
-            x: -327
-            y: 96
-            width: 244
-            height: 100
-            text: qsTr("Главная")
-            onClicked: rectangle.goToMainScreen = !rectangle.goToMainScreen
-            highlighted: stackView.currentItem === mainScreen
-        }
-
-        Button {
-            id: button1
-            x: -327
-            y: 202
-            width: 244
-            height: 100
-            text: qsTr("AI")
-            onClicked: rectangle.goToAIScreen = !rectangle.goToAIScreen
-            highlighted: stackView.currentItem === aiScreen
-        }
-
-        Button {
-            id: button3
-            x: -327
-            y: 305
-            width: 244
-            height: 100
-            text: qsTr("База")
-            onClicked: rectangle.goToDbScreen = !rectangle.goToDbScreen
-            highlighted: stackView.currentItem === dbScreen
-        }
-
-        Button {
-            id: button2
-            x: -327
-            y: 415
-            width: 244
-            height: 100
-            text: qsTr("Настройки")
-            onClicked: rectangle.goToSettingsScreen = !rectangle.goToSettingsScreen
-            highlighted: stackView.currentItem === settingsScreen
-        }
-
-        Text {
-            id: label
-            x: 0
-            y: 23
-            text: qsTr("Настройки")
-            anchors.topMargin: 45
-            font.pointSize: 28
-            font.family: Constants.font.family
-            SequentialAnimation {
-                id: animation
-                ColorAnimation {
-                    id: colorAnimation1
-                    target: rectangle
-                    property: "color"
-                    to: "#2294c6"
-                    from: Constants.backgroundColor
-                }
-
-                ColorAnimation {
-                    id: colorAnimation2
-                    target: rectangle
-                    property: "color"
-                    to: Constants.backgroundColor
-                    from: "#2294c6"
-                }
-            }
-            anchors.horizontalCenterOffset: -497
-            anchors.horizontalCenter: parent.horizontalCenter
-        }
-    }
+    property alias text1: text1
+    property alias text2: text2
+    property alias text3: text3
+    property alias text4: text4
+    property alias text5: text5
+    property alias text6: text6
+    property alias text9: text9
 
     Switch {
         id: switch1
-        x: 433
-        y: 289
-        text: qsTr("Включить тёмную тему")
+        x: 372
+        y: 271
+        text: qsTr("")
+        font.pointSize: 20
         checked: false
         onCheckedChanged: rectangle.goToDarkmode = !rectangle.goToDarkmode
+
+        Text {
+            id: text6
+            x: 78
+            y: 8
+            width: 103
+            height: 47
+            text: qsTr("Включить ночной режим")
+            font.pixelSize: 25
+            font.styleName: "Обычный"
+        }
     }
 
+    Text {
+        id: text2
+        x: 100
+        y: 341
+        width: 126
+        height: 55
+        text: qsTr("Главная")
+        font.pixelSize: 35
+        font.styleName: "Semibold Italic"
+
+        Button {
+            id: button
+            x: -57
+            y: -22
+            width: 244
+            height: 100
+            visible: false
+            text: qsTr("Главная")
+            onClicked: rectangle.goToMainScreen = !rectangle.goToMainScreen
+            layer.enabled: false
+            highlighted: stackView.currentItem === mainScreen
+            font.pointSize: 20
+        }
+    }
+
+    Text {
+        id: text3
+        x: 100
+        y: 442
+        width: 126
+        height: 55
+        text: qsTr("AI")
+        font.pixelSize: 35
+        horizontalAlignment: Text.AlignHCenter
+        font.styleName: "Semibold Italic"
+
+        Button {
+            id: button1
+            x: -57
+            y: -20
+            width: 244
+            height: 100
+            visible: false
+            text: qsTr("AI")
+            onClicked: rectangle.goToAIScreen = !rectangle.goToAIScreen
+            layer.enabled: false
+            highlighted: stackView.currentItem === aiScreen
+            font.pointSize: 20
+        }
+    }
+
+    Text {
+        id: text4
+        x: 100
+        y: 548
+        width: 126
+        height: 55
+        text: qsTr("Комплектующие")
+        font.pixelSize: 35
+        horizontalAlignment: Text.AlignHCenter
+        font.styleName: "Semibold Italic"
+
+        Button {
+            id: button3
+            x: -57
+            y: -20
+            width: 244
+            height: 100
+            visible: false
+            text: "База"
+            onClicked: rectangle.goToDbScreen = !rectangle.goToDbScreen
+            layer.enabled: false
+            highlighted: stackView.currentItem === dbScreen
+            font.pointSize: 20
+        }
+    }
+
+    Text {
+        id: text5
+        x: 100
+        y: 654
+        width: 126
+        height: 55
+        text: qsTr("Настройки")
+        font.pixelSize: 35
+        horizontalAlignment: Text.AlignHCenter
+        font.styleName: "Semibold Italic"
+
+        Button {
+            id: button2
+            x: -57
+            y: -26
+            width: 244
+            height: 100
+            visible: false
+            text: qsTr("Настройки")
+            onClicked: rectangle.goToSettingsScreen = !rectangle.goToSettingsScreen
+            layer.enabled: false
+            highlighted: stackView.currentItem === settingsScreen
+            font.pointSize: 20
+        }
+    }
+
+    Image {
+        id: image
+        x: 43
+        y: 99
+        width: 69
+        height: 69
+        source: "../../../OneDrive/Изображения/Screenshots/Снимок экрана 2024-03-01 222331.png"
+        fillMode: Image.PreserveAspectFit
+        Text {
+            id: text8
+            x: 66
+            y: 17
+            text: qsTr("Device Assistant")
+            font.pixelSize: 25
+            font.styleName: "Semibold Italic"
+        }
+    }
+
+    Image {
+        id: image1
+        x: 43
+        y: 99
+        width: 69
+        height: 69
+        source: "../assets/Icons/DeviceAssistant.jpg"
+        fillMode: Image.PreserveAspectFit
+        Text {
+            id: text9
+            x: 66
+            y: 17
+            text: qsTr("Device Assistant")
+            font.pixelSize: 25
+            font.styleName: "Semibold Italic"
+        }
+    }
+
+    Text {
+        id: text1
+        x: 370
+        y: 169
+        width: 103
+        height: 47
+        text: qsTr("Настройки")
+        font.pixelSize: 35
+        font.styleName: "Semibold Italic"
+    }
 }

@@ -9,6 +9,7 @@ Check out https://doc.qt.io/qtcreator/creator-quick-ui-forms.html for details on
 import QtQuick 6.2
 import QtQuick.Controls 6.2
 import Device_Assistant
+import QtQuick.Layouts
 
 Rectangle {
     id: rectangle
@@ -21,22 +22,11 @@ Rectangle {
     property bool goToSettingsScreen: false
     property bool goToDbScreen: false
 
-    property alias gpuInfoField: gpuInfoField
     property alias gpuInfoText: gpuInfoText
-
-    property alias diskInfoField: diskInfoField
     property alias diskInfoText: diskInfoText
-
-    property alias motherboardInfoField: motherboardInfoField
     property alias motherboardInfoText: motherboardInfoText
-
-    property alias cpuInfoField: cpuInfoField
     property alias cpuInfoText: cpuInfoText
-
-    property alias osInfoField: osInfoField
     property alias osInfoText: osInfoText
-
-    property alias ramInfoField: ramInfoField
     property alias ramInfoText: ramInfoText
     property alias text2: text2
 
@@ -56,67 +46,6 @@ Rectangle {
             text: qsTr("Ваше устройство")
             font.pixelSize: 35
             font.styleName: "Semibold Italic"
-        }
-
-        Grid {
-            id: grid
-            x: 75
-            y: 247
-            width: 461
-            height: 678
-            rows: 0
-            spacing: 30
-            columns: 1
-
-            TextArea {
-                id: diskInfoField
-                width: 300
-                height: 70
-                placeholderText: qsTr("Носитель")
-                enabled: false
-            }
-
-            TextArea {
-                id: motherboardInfoField
-                width: 300
-                height: 70
-                placeholderText: qsTr("Материнская плата")
-                enabled: false
-            }
-
-            TextArea {
-                id: ramInfoField
-                width: 300
-                height: 70
-                placeholderText: qsTr("Оперативная память")
-                enabled: false
-            }
-
-            TextArea {
-                id: cpuInfoField
-                width: 300
-                height: 70
-                hoverEnabled: true
-                placeholderText: qsTr("Процессор")
-                enabled: false
-            }
-
-            TextArea {
-                id: gpuInfoField
-                width: 300
-                height: 70
-                placeholderTextColor: "#60000000"
-                enabled: false
-                placeholderText: qsTr("Видеокарта")
-            }
-
-            TextArea {
-                id: osInfoField
-                width: 300
-                height: 70
-                enabled: false
-                placeholderText: qsTr("Операционная система")
-            }
         }
 
         Text {
@@ -147,109 +76,6 @@ Rectangle {
         }
     }
 
-    Text {
-        id: text2
-        x: 100
-        y: 341
-        width: 126
-        height: 55
-        text: qsTr("Главная")
-        font.pixelSize: 35
-        font.styleName: "Semibold Italic"
-    }
-
-    Button {
-        id: button
-        x: 43
-        y: 319
-        width: 244
-        height: 100
-        visible: false
-        text: qsTr("Главная")
-        onClicked: rectangle.goToMainScreen = !rectangle.goToMainScreen
-        layer.enabled: false
-        highlighted: stackView.currentItem === mainScreen
-        font.pointSize: 20
-    }
-
-    Text {
-        id: text3
-        x: 100
-        y: 442
-        width: 126
-        height: 55
-        text: qsTr("AI")
-        font.pixelSize: 35
-        horizontalAlignment: Text.AlignHCenter
-        font.styleName: "Semibold Italic"
-    }
-
-    Button {
-        id: button1
-        x: 43
-        y: 422
-        width: 244
-        height: 100
-        visible: false
-        text: qsTr("AI")
-        onClicked: rectangle.goToAIScreen = !rectangle.goToAIScreen
-        layer.enabled: false
-        highlighted: stackView.currentItem === aiScreen
-        font.pointSize: 20
-    }
-
-    Text {
-        id: text4
-        x: 100
-        y: 548
-        width: 126
-        height: 55
-        text: qsTr("Комплектующие")
-        font.pixelSize: 35
-        horizontalAlignment: Text.AlignHCenter
-        font.styleName: "Semibold Italic"
-    }
-
-    Button {
-        id: button3
-        x: 43
-        y: 528
-        width: 244
-        height: 100
-        visible: false
-        text: "База"
-        onClicked: rectangle.goToDbScreen = !rectangle.goToDbScreen
-        layer.enabled: false
-        highlighted: stackView.currentItem === dbScreen
-        font.pointSize: 20
-    }
-
-    Text {
-        id: text5
-        x: 100
-        y: 654
-        width: 126
-        height: 55
-        text: qsTr("Настройки")
-        font.pixelSize: 35
-        horizontalAlignment: Text.AlignHCenter
-        font.styleName: "Semibold Italic"
-    }
-
-    Button {
-        id: button2
-        x: 43
-        y: 628
-        width: 244
-        height: 100
-        visible: false
-        text: qsTr("Настройки")
-        onClicked: rectangle.goToSettingsScreen = !rectangle.goToSettingsScreen
-        layer.enabled: false
-        highlighted: stackView.currentItem === settingsScreen
-        font.pointSize: 20
-    }
-
     Rectangle {
         id: rectangle2
         x: 941
@@ -272,62 +98,16 @@ Rectangle {
         }
     }
 
-    Text {
-        id: motherboardInfoText
-        x: 742
-        y: 299
-        text: qsTr("")
-        font.pixelSize: 35
-        font.styleName: "Semibold Italic"
-    }
-
-    Text {
-        id: diskInfoText
-        x: 758
-        y: 422
-        text: qsTr("")
-        font.pixelSize: 35
-        font.styleName: "Semibold Italic"
-    }
-
-    Text {
-        id: ramInfoText
-        x: 806
-        y: 279
-        width: 43
-        height: 47
-        text: qsTr("")
-        font.pixelSize: 35
-        font.styleName: "Semibold Italic"
-    }
-
-    Text {
-        id: osInfoText
-        x: 850
-        y: 385
-        width: 65
-        height: 47
-        text: qsTr("")
-        font.pixelSize: 35
-        font.styleName: "Semibold Italic"
-    }
-
-    Text {
-        id: cpuInfoText
-        x: 758
-        y: 484
-        text: qsTr("")
-        font.pixelSize: 35
-        font.styleName: "Semibold Italic"
-    }
-
-    Text {
-        id: gpuInfoText
-        x: 758
-        y: 554
-        text: qsTr("")
-        font.pixelSize: 35
-        font.styleName: "Semibold Italic"
+    Rectangle {
+        id: rectangle3
+        x: 360
+        y: 185
+        width: 464
+        height: 132
+        color: "#ffffff"
+        radius: 20
+        border.color: "#de2424"
+        border.width: 3
     }
 
     states: [
@@ -335,4 +115,286 @@ Rectangle {
             name: "clicked"
         }
     ]
+
+    Text {
+        id: cpuText
+        x: 514
+        y: 193
+        width: 165
+        height: 40
+        text: qsTr("Процессор")
+        font.pixelSize: 30
+        font.styleName: "Semibold Italic"
+
+        Text {
+            id: cpuInfoText
+            x: -107
+            y: 55
+            width: 100
+            height: 50
+            text: qsTr("")
+            font.pixelSize: 20
+            font.styleName: "Обычный"
+        }
+    }
+
+    Rectangle {
+        id: rectangle4
+        x: 360
+        y: 329
+        width: 464
+        height: 132
+        color: "#ffffff"
+        radius: 20
+        border.color: "#4024d8"
+        border.width: 3
+    }
+    Text {
+        id: gpuText
+        x: 514
+        y: 349
+        text: qsTr("Видеокарта")
+        font.pixelSize: 30
+        font.styleName: "Semibold Italic"
+
+        Text {
+            id: gpuInfoText
+            x: -107
+            y: 55
+            width: 100
+            height: 50
+            text: qsTr("")
+            font.pixelSize: 20
+            font.styleName: "Обычный"
+        }
+    }
+
+    Rectangle {
+        id: rectangle5
+        x: 361
+        y: 476
+        width: 464
+        height: 132
+        color: "#ffffff"
+        radius: 20
+        border.color: "#8f0fe8"
+        border.width: 3
+    }
+
+    Text {
+        id: diskText
+        x: 508
+        y: 504
+        width: 165
+        text: qsTr("Накопитель")
+        font.pixelSize: 30
+        font.styleName: "Semibold Italic"
+
+        Text {
+            id: diskInfoText
+            x: -107
+            y: 46
+            width: 100
+            height: 50
+            text: qsTr("")
+            font.pixelSize: 20
+            font.styleName: "Обычный"
+        }
+    }
+
+    Rectangle {
+        id: rectangle6
+        x: 360
+        y: 626
+        width: 464
+        height: 132
+        color: "#ffffff"
+        radius: 20
+        border.color: "#ddf107"
+        border.width: 3
+    }
+
+    Rectangle {
+        id: rectangle7
+        x: 360
+        y: 773
+        width: 464
+        height: 132
+        color: "#ffffff"
+        radius: 20
+        border.color: "#2e8737"
+        border.width: 3
+    }
+
+    Rectangle {
+        id: rectangle8
+        x: 360
+        y: 920
+        width: 464
+        height: 132
+        color: "#ffffff"
+        radius: 20
+        border.color: "#ea3590"
+        border.width: 3
+    }
+    Text {
+        id: motherboardText
+        x: 459
+        y: 785
+        text: qsTr("Материнская плата")
+        font.pixelSize: 30
+        font.styleName: "Semibold Italic"
+
+        Text {
+            id: motherboardInfoText
+            x: -61
+            y: 50
+            width: 100
+            height: 50
+            text: qsTr("")
+            font.pixelSize: 20
+            font.styleName: "Обычный"
+        }
+    }
+    Text {
+        id: osText
+        x: 430
+        y: 929
+        text: qsTr("Операционная система")
+        font.pixelSize: 30
+        font.styleName: "Semibold Italic"
+
+        Text {
+            id: osInfoText
+            x: -48
+            y: 50
+            width: 100
+            height: 50
+            text: qsTr("")
+            font.pixelSize: 17
+            font.styleName: "Обычный"
+        }
+    }
+    Text {
+        id: ramText
+        x: 449
+        y: 633
+        text: qsTr("Оперативная память")
+        font.pixelSize: 30
+        font.styleName: "Semibold Italic"
+
+        Text {
+            id: ramInfoText
+            x: 97
+            y: 50
+            width: 100
+            height: 50
+            text: qsTr("")
+            font.pixelSize: 20
+            font.styleName: "Обычный"
+        }
+    }
+
+    Text {
+        id: text2
+        x: 100
+        y: 355
+        width: 126
+        height: 55
+        text: qsTr("Главная")
+        font.pixelSize: 35
+        font.styleName: "Semibold Italic"
+
+        Button {
+            id: button
+            x: -57
+            y: -22
+            width: 244
+            height: 100
+            visible: false
+            text: qsTr("Главная")
+            onClicked: rectangle.goToMainScreen = !rectangle.goToMainScreen
+            layer.enabled: false
+            highlighted: stackView.currentItem === mainScreen
+            font.pointSize: 20
+        }
+    }
+
+    Text {
+        id: text3
+        x: 100
+        y: 456
+        width: 126
+        height: 55
+        text: qsTr("AI")
+        font.pixelSize: 35
+        horizontalAlignment: Text.AlignHCenter
+        font.styleName: "Semibold Italic"
+
+        Button {
+            id: button1
+            x: -57
+            y: -20
+            width: 244
+            height: 100
+            visible: false
+            text: qsTr("AI")
+            onClicked: rectangle.goToAIScreen = !rectangle.goToAIScreen
+            layer.enabled: false
+            highlighted: stackView.currentItem === aiScreen
+            font.pointSize: 20
+        }
+    }
+
+    Text {
+        id: text4
+        x: 100
+        y: 562
+        width: 126
+        height: 55
+        text: qsTr("Комплектующие")
+        font.pixelSize: 35
+        horizontalAlignment: Text.AlignHCenter
+        font.styleName: "Semibold Italic"
+
+        Button {
+            id: button3
+            x: -57
+            y: -20
+            width: 244
+            height: 100
+            visible: false
+            text: "База"
+            onClicked: rectangle.goToDbScreen = !rectangle.goToDbScreen
+            layer.enabled: false
+            highlighted: stackView.currentItem === dbScreen
+            font.pointSize: 20
+        }
+    }
+
+    Text {
+        id: text5
+        x: 100
+        y: 668
+        width: 126
+        height: 55
+        text: qsTr("Настройки")
+        font.pixelSize: 35
+        horizontalAlignment: Text.AlignHCenter
+        font.styleName: "Semibold Italic"
+
+        Button {
+            id: button2
+            x: -57
+            y: -26
+            width: 244
+            height: 100
+            visible: false
+            text: qsTr("Настройки")
+            onClicked: rectangle.goToSettingsScreen = !rectangle.goToSettingsScreen
+            layer.enabled: false
+            highlighted: stackView.currentItem === settingsScreen
+            font.pointSize: 20
+        }
+    }
 }
