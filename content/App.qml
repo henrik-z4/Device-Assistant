@@ -193,7 +193,7 @@ Window {
                 settingsScreen.text3.color = "#ffffff";
                 settingsScreen.text4.color = "#ffffff";
                 settingsScreen.text6.color = "#ffffff";
-                settingsScreen.text9.color = "#ffffff";
+                settingsScreen.text8.color = "#ffffff";
 
                 aiScreen.color = "#2e2e2e";
                 aiScreen.rectangle1.color = "#2e2e2e";
@@ -202,7 +202,7 @@ Window {
                 aiScreen.text4.color = "#ffffff";
                 aiScreen.text5.color = "#ffffff";
                 aiScreen.text7.color = "#ffffff";
-                aiScreen.text9.color = "#ffffff";
+                aiScreen.text8.color = "#ffffff";
                 aiScreen.text10.color = "#ffffff";
                 aiScreen.messageField.placeholderText.color = "#60000000";
             } else {
@@ -212,7 +212,7 @@ Window {
                 settingsScreen.text3.color = "#000000";
                 settingsScreen.text4.color = "#000000";
                 settingsScreen.text6.color = "#000000";
-                settingsScreen.text9.color = "#000000";
+                settingsScreen.text8.color = "#000000";
 
                 aiScreen.color = "#ffffff";
                 aiScreen.rectangle1.color = "#ffffff";
@@ -221,7 +221,7 @@ Window {
                 aiScreen.text4.color = "#000000";
                 aiScreen.text5.color = "#000000";
                 aiScreen.text7.color = "#000000";
-                aiScreen.text9.color = "#000000";
+                aiScreen.text8.color = "#000000";
                 aiScreen.text10.color = "#000000";
                 aiScreen.messageField.placeholderText.color = "#000000";
             }

@@ -22,7 +22,7 @@ Rectangle {
     property alias text4: text4
     property alias text5: text5
     property alias text6: text6
-    property alias text9: text9
+    property alias text8: text8
 
     Switch {
         id: switch1
@@ -148,42 +148,6 @@ Rectangle {
         }
     }
 
-    Image {
-        id: image
-        x: 43
-        y: 99
-        width: 69
-        height: 69
-        source: "../../../OneDrive/Изображения/Screenshots/Снимок экрана 2024-03-01 222331.png"
-        fillMode: Image.PreserveAspectFit
-        Text {
-            id: text8
-            x: 66
-            y: 17
-            text: qsTr("Device Assistant")
-            font.pixelSize: 25
-            font.styleName: "Semibold Italic"
-        }
-    }
-
-    Image {
-        id: image1
-        x: 43
-        y: 99
-        width: 69
-        height: 69
-        source: "../assets/Icons/DeviceAssistant.jpg"
-        fillMode: Image.PreserveAspectFit
-        Text {
-            id: text9
-            x: 66
-            y: 17
-            text: qsTr("Device Assistant")
-            font.pixelSize: 25
-            font.styleName: "Semibold Italic"
-        }
-    }
-
     Text {
         id: text1
         x: 370
@@ -193,5 +157,23 @@ Rectangle {
         text: qsTr("Настройки")
         font.pixelSize: 35
         font.styleName: "Semibold Italic"
+    }
+
+    Text {
+        id: text8
+        x: 115
+        y: 116
+        text: qsTr("Device Assistant")
+        font.pixelSize: 25
+        font.styleName: "Semibold Italic"
+        Image {
+            id: image1
+            x: -72
+            y: -17
+            width: 69
+            height: 69
+            source: "qrc:/assets/icons/DeviceAssistant.jpg"
+            fillMode: Image.PreserveAspectFit
+        }
     }
 }

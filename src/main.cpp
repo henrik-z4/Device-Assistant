@@ -20,8 +20,12 @@ int main(int argc, char *argv[])
 {
     set_qt_environment();
     QGuiApplication app(argc, argv);
+    app.setWindowIcon(QIcon(":/assets/icons/DeviceAssistant.jpg"));
+
 
     QQmlApplicationEngine engine;
+    engine.load(QUrl(QStringLiteral("qrc:/assets/icons/DeviceAssistant.jpg")));
+
 
     engine.rootContext()->setContextProperty("applicationDirPath", QDir::toNativeSeparators(QCoreApplication::applicationDirPath()));
 

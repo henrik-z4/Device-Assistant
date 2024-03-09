@@ -58,21 +58,22 @@ Rectangle {
         }
     }
 
-    Image {
-        id: image1
-        x: 43
-        y: 99
-        width: 69
-        height: 69
-        source: "../assets/Icons/DeviceAssistant.jpg"
-        fillMode: Image.PreserveAspectFit
-        Text {
-            id: text9
-            x: 66
-            y: 17
-            text: qsTr("Device Assistant")
-            font.pixelSize: 25
-            font.styleName: "Semibold Italic"
+    Text {
+        id: text8
+        x: 115
+        y: 116
+        text: qsTr("Device Assistant")
+        font.pixelSize: 25
+        font.styleName: "Semibold Italic"
+
+        Image {
+            id: image1
+            x: -72
+            y: -17
+            width: 69
+            height: 69
+            source: "qrc:/assets/icons/DeviceAssistant.jpg"
+            fillMode: Image.PreserveAspectFit
         }
     }
 
@@ -86,16 +87,6 @@ Rectangle {
         radius: 20
         border.color: "#000000"
         border.width: 2
-
-        Image {
-            id: image2
-            x: 75
-            y: 34
-            width: 45
-            height: 45
-            source: "qrc:/images/assets/Icons/pc.svg"
-            fillMode: Image.PreserveAspectFit
-        }
     }
 
     Rectangle {

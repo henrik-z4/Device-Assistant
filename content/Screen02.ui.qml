@@ -24,8 +24,7 @@ Rectangle {
     property alias text4: text4
     property alias text5: text5
     property alias text7: text7
-    property alias text9: text9
-    property alias text10: text10
+    property alias text8: text8
 
     Rectangle {
         id: rectangle1
@@ -168,8 +167,9 @@ Rectangle {
         y: 946
         width: 1171
         height: 106
+        font.styleName: "Semibold Italic"
         font.pointSize: 20
-        placeholderText: qsTr("")
+        placeholderText: qsTr("Введите сообщение...")
 
         Rectangle {
             id: rectangle2
@@ -192,18 +192,6 @@ Rectangle {
             text: qsTr(">")
             font.pixelSize: 60
             rotation: -90
-        }
-
-        Text {
-            id: text10
-            x: 63
-            y: 38
-            width: 126
-            height: 55
-            text: qsTr("Введите сообщение...")
-            font.pixelSize: 20
-            horizontalAlignment: Text.AlignHCenter
-            font.styleName: "Обычный"
         }
     }
 
@@ -230,40 +218,21 @@ Rectangle {
         }
     }
 
-    Image {
-        id: image
-        x: 43
-        y: 99
-        width: 69
-        height: 69
-        source: "../../../OneDrive/Изображения/Screenshots/Снимок экрана 2024-03-01 222331.png"
-        fillMode: Image.PreserveAspectFit
-
-        Text {
-            id: text8
-            x: 66
-            y: 17
-            text: qsTr("Device Assistant")
-            font.pixelSize: 25
-            font.styleName: "Semibold Italic"
-        }
-    }
-
-    Image {
-        id: image1
-        x: 43
-        y: 99
-        width: 69
-        height: 69
-        source: "../assets/Icons/DeviceAssistant.jpg"
-        fillMode: Image.PreserveAspectFit
-        Text {
-            id: text9
-            x: 66
-            y: 17
-            text: qsTr("Device Assistant")
-            font.pixelSize: 25
-            font.styleName: "Semibold Italic"
+    Text {
+        id: text8
+        x: 120
+        y: 116
+        text: qsTr("Device Assistant")
+        font.pixelSize: 25
+        font.styleName: "Semibold Italic"
+        Image {
+            id: image1
+            x: -72
+            y: -17
+            width: 69
+            height: 69
+            source: "qrc:/assets/icons/DeviceAssistant.jpg"
+            fillMode: Image.PreserveAspectFit
         }
     }
 }

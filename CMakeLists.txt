@@ -6,6 +6,8 @@ option(BUILD_QDS_COMPONENTS "Build design studio components" ON)
 project(Device_AssistantApp LANGUAGES CXX)
 
 set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTORCC ON)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(Qt6 6.2 REQUIRED COMPONENTS Core Gui Qml Quick Sql)
 
