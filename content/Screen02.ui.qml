@@ -179,6 +179,7 @@ Rectangle {
             height: 56
             visible: true
             color: "#0581df"
+            radius: 15
             clip: false
         }
 
