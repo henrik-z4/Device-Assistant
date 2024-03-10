@@ -11,6 +11,7 @@ public:
     explicit GPT(QObject *parent = nullptr);
 
     Q_INVOKABLE QString getResponse(const QString &prompt);
+    Q_INVOKABLE QString getRecommendations();
 
 signals:
     void responseReceived(const QString &response);

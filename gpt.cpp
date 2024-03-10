@@ -13,10 +13,16 @@
 #endif
 
 #include "gpt.h"
+#include "systeminfo.h"
 #include <QProcess>
 #include <QCoreApplication>
+#include <QString>
+#include <QVariant>
 
 #include <iostream>
+#include <fstream>
+
+systeminfo sysInfo;
 
 GPT::GPT(QObject *parent) : QObject(parent) {
     // Конструктор класса GPT
@@ -27,6 +33,34 @@ QString GPT::getResponse(const QString &prompt) {
     QString response = get_response_from_gpt(prompt);
     emit responseReceived(response);
     return response;
+}
+
+QString GPT::getRecommendations() {
+    // Получение рекомендаций от GPT модели на основе характеристик ПК
+
+    QString gpuInfoStr;
+    auto gpuInfoList = sysInfo.getGpuInfo();
+    for (const auto& gpuInfo : gpuInfoList) {
+        if (!gpuInfoStr.isEmpty())
+            gpuInfoStr += ", ";
+        gpuInfoStr += QString(gpuInfo);
+    }
+
+    QString systemInfoStr = QString("GPU: %1\nCPU: %2\nMotherboard: %3\nOS: %4\nRAM: %5\nDisk: %6")
+    .arg(gpuInfoStr)
+    .arg(sysInfo.getProcessorInfo())
+    .arg(sysInfo.getMotherboardInfo())
+    .arg(sysInfo.getOSInfo())
+    .arg(sysInfo.getRAMInfo())
+    .arg(sysInfo.getDiskInfo());
+
+    std::ofstream outFile("systemInfo.txt");
+    std::string systemInfoString = systemInfoStr.toStdString(); // На всякий случай пусть пока будет, может пригодиться (!! ПРИГОДИЛОСЬ !!)
+    outFile << systemInfoString;
+    outFile.close();
+    QString info_prompt = "Ниже приведена информация об аппаратном обеспечении пользователя. Пожалуйста, используйте эту информацию и дайте персональные рекомендации о том, что можно обновить/улучшить. Обязательно в начале укажите, для каких целей скорее всего предназначено данное устройство. Ответьте только списком рекомендаций, ничего лишнего, отвечайте на русском языке: " + systemInfoStr;
+    QString recommendations = get_response_from_gpt(info_prompt);
+    return recommendations;
 }
 
 // Функция get_response_from_gpt получает ответ от модели GPT на основе заданного промпта

@@ -13,16 +13,11 @@ Rectangle {
     property bool goToMainScreen: false
     property bool goToAIScreen: false
     property bool goToSettingsScreen: false
-    property bool goToDbScreen: false
 
     property alias chatModel: chatView.model
     property alias messageField: messageField
-    property alias text3: text3
     property alias rectangle1: rectangle1
     property alias text1: text1
-    property alias text2: text2
-    property alias text4: text4
-    property alias text5: text5
     property alias text7: text7
     property alias text8: text8
 
@@ -34,118 +29,97 @@ Rectangle {
         height: 981
         color: "#eaeaea"
 
-        Text {
-            id: text2
-            x: -220
-            y: 230
-            width: 126
-            height: 55
-            text: qsTr("Главная")
-            font.pixelSize: 35
-            font.styleName: "Semibold Italic"
-        }
-
-        Text {
-            id: text3
-            x: -220
-            y: 331
-            width: 126
-            height: 55
-            text: qsTr("AI")
-            font.pixelSize: 35
-            horizontalAlignment: Text.AlignHCenter
-            font.styleName: "Semibold Italic"
-        }
-
-        Text {
-            id: text4
-            x: -220
-            y: 437
-            width: 126
-            height: 55
-            text: qsTr("Комплектующие")
-            font.pixelSize: 35
-            horizontalAlignment: Text.AlignHCenter
-            font.styleName: "Semibold Italic"
-        }
-
-        Text {
-            id: text5
-            x: -220
-            y: 543
-            width: 126
-            height: 55
-            text: qsTr("Настройки")
-            font.pixelSize: 35
-            horizontalAlignment: Text.AlignHCenter
-            font.styleName: "Semibold Italic"
-        }
-
         Button {
             id: button
-            x: -277
-            y: 208
+            x: -282
+            y: 209
             width: 244
             height: 100
-            visible: false
+            visible: true
             text: qsTr("Главная")
-            layer.enabled: false
-            font.pointSize: 20
-            highlighted: stackView.currentItem === mainScreen
             onClicked: rectangle.goToMainScreen = !rectangle.goToMainScreen
+            layer.enabled: true
+            highlighted: stackView.currentItem === mainScreen
+            font.pointSize: 25
+
+            background: Rectangle {
+                radius: 20
+                border.color: button.hovered ? "#cb1b1b" : "transparent"
+                border.width: 3
+            }
+
+            contentItem: Text {
+                text: button.text
+                font.family: "Roboto"
+                font.bold: true
+                font.pixelSize: 25
+                font.weight: Font.SemiBold
+                color: button.hovered ? "#cb1b1b" : "black"
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
+            }
         }
 
         Button {
             id: button1
-            x: -277
-            y: 311
+            x: -282
+            y: 343
             width: 244
             height: 100
-            visible: false
+            visible: true
             text: qsTr("AI")
             layer.enabled: false
-            font.pointSize: 20
             highlighted: stackView.currentItem === aiScreen
-            onClicked: rectangle.goToAIScreen = !rectangle.goToAIScreen
-        }
+            font.pointSize: 25
 
-        Button {
-            id: button3
-            x: -277
-            y: 417
-            width: 244
-            height: 100
-            visible: false
-            text: "База"
-            layer.enabled: false
-            font.pointSize: 20
-            onClicked: rectangle.goToDbScreen = !rectangle.goToDbScreen
-            highlighted: stackView.currentItem === dbScreen
+            background: Rectangle {
+                radius: 20
+                border.width: 3
+                border.color: "#0d53fd"
+            }
+
+            contentItem: Text {
+                text: button1.text
+                font.family: "Roboto"
+                font.bold: true
+                font.pixelSize: 25
+                font.weight: Font.SemiBold
+                color: "#0d53fd"
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
+            }
         }
 
         Button {
             id: button2
-            x: -277
-            y: 517
+            x: -282
+            y: 460
             width: 244
             height: 100
-            visible: false
+            visible: true
             text: qsTr("Настройки")
-            layer.enabled: false
-            font.pointSize: 20
             onClicked: rectangle.goToSettingsScreen = !rectangle.goToSettingsScreen
+            layer.enabled: false
             highlighted: stackView.currentItem === settingsScreen
-        }
-    }
+            font.pixelSize: 25
 
-    Button {
-        id: sendButton
-        x: 1574
-        y: 940
-        width: 60
-        height: 88
-        visible: false
-        text: qsTr("Отправить")
+            background: Rectangle {
+                radius: 20
+                border.width: 3
+                border.color: button2.hovered ? "#ab116b" : "transparent"
+            }
+
+            contentItem: Text {
+                text: button2.text
+                font.family: "Roboto"
+                font.bold: true
+                font.pixelSize: 25
+                font.weight: Font.SemiBold
+                color: button2.hovered ? "#ab116b" : "black"
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
+            }
+        }
     }
 
     ListView {
@@ -154,11 +128,16 @@ Rectangle {
         y: 184
         width: 1171
         height: 714
+        clip: true
+        anchors.bottomMargin: messageField.height
         model: ListModel {
             id: chatModel
         }
         delegate: Text {
+            width: chatView.width
+            wrapMode: Text.WordWrap
             text: model.message
+            font.pixelSize: 24
         }
     }
     TextField {
@@ -171,28 +150,28 @@ Rectangle {
         font.pointSize: 20
         placeholderText: qsTr("Введите сообщение...")
 
-        Rectangle {
-            id: rectangle2
-            x: 1039
-            y: 22
-            width: 56
-            height: 56
+        Button {
+            id: sendButton
+            x: 1183
+            y: 6
+            width: 174
+            height: 98
             visible: true
-            color: "#0581df"
-            radius: 15
+            flat: true
             clip: false
-        }
-
-        Text {
-            id: text6
-            x: 1020
-            y: -129
-            width: 200
-            height: 200
-            color: "#ffffff"
-            text: qsTr(">")
-            font.pixelSize: 60
-            rotation: -90
+            background: Rectangle {
+                color: sendButton.hovered ? "#230e3b" : "transparent"
+                radius: 28
+                border.color: "#7163db"
+                border.width: 3
+            }
+            contentItem: Text {
+                text: qsTr("Отправить")
+                font.pixelSize: 20
+                color: sendButton.hovered ? "#FFFFFF" : "black"
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
+            }
         }
     }
 

@@ -13,6 +13,4 @@ qt6_add_qml_module(content
         Screen04.ui.qml
     RESOURCES
         fonts/fonts.txt
-        QML_FILES Screen03.ui.qml
-        QML_FILES GpuList.qml
 )

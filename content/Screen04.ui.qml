@@ -10,17 +10,12 @@ Rectangle {
 
     property bool goToMainScreen: false
     property bool goToAIScreen: false
-    property bool goToSettingsScreen: false
-    property bool goToDbScreen: false
+    property bool goToSettingsScreen: true
 
     property bool goToDarkmode: false
 
     property alias switch1: switch1
     property alias text1: text1
-    property alias text2: text2
-    property alias text3: text3
-    property alias text4: text4
-    property alias text5: text5
     property alias text6: text6
     property alias text8: text8
 
@@ -39,112 +34,111 @@ Rectangle {
             y: 8
             width: 103
             height: 47
-            text: qsTr("Включить ночной режим")
+            text: qsTr("Включить ночной режим (ЭКСПЕРИМЕНТАЛЬНАЯ ФУНКЦИЯ)")
             font.pixelSize: 25
             font.styleName: "Обычный"
         }
     }
-
     Text {
-        id: text2
-        x: 100
-        y: 341
-        width: 126
-        height: 55
+        id: text111
+        x: 385
+        y: 353
+        width: 103
+        height: 47
+        text: qsTr("Выбрать нейросеть (СКОРО)")
+        font.pixelSize: 25
+        font.styleName: "Обычный"
+    }
+
+    Button {
+        id: button
+        x: 41
+        y: 310
+        width: 244
+        height: 100
+        visible: true
         text: qsTr("Главная")
-        font.pixelSize: 35
-        font.styleName: "Semibold Italic"
+        onClicked: rectangle.goToMainScreen = !rectangle.goToMainScreen
+        layer.enabled: true
+        highlighted: stackView.currentItem === mainScreen
+        font.pointSize: 25
 
-        Button {
-            id: button
-            x: -57
-            y: -22
-            width: 244
-            height: 100
-            visible: false
-            text: qsTr("Главная")
-            onClicked: rectangle.goToMainScreen = !rectangle.goToMainScreen
-            layer.enabled: false
-            highlighted: stackView.currentItem === mainScreen
-            font.pointSize: 20
+        background: Rectangle {
+            radius: 20
+            border.color: button.hovered ? "#cb1b1b" : "transparent"
+            border.width: 3
+        }
+
+        contentItem: Text {
+            text: button.text
+            font.family: "Roboto"
+            font.bold: true
+            font.pixelSize: 25
+            font.weight: Font.SemiBold
+            color: button.hovered ? "#cb1b1b" : "black"
+            horizontalAlignment: Text.AlignHCenter
+            verticalAlignment: Text.AlignVCenter
         }
     }
 
-    Text {
-        id: text3
-        x: 100
-        y: 442
-        width: 126
-        height: 55
+    Button {
+        id: button1
+        x: 41
+        y: 428
+        width: 244
+        height: 100
+        visible: true
         text: qsTr("AI")
-        font.pixelSize: 35
-        horizontalAlignment: Text.AlignHCenter
-        font.styleName: "Semibold Italic"
+        onClicked: rectangle.goToAIScreen = !rectangle.goToAIScreen
+        layer.enabled: false
+        highlighted: stackView.currentItem === aiScreen
+        font.pointSize: 25
 
-        Button {
-            id: button1
-            x: -57
-            y: -20
-            width: 244
-            height: 100
-            visible: false
-            text: qsTr("AI")
-            onClicked: rectangle.goToAIScreen = !rectangle.goToAIScreen
-            layer.enabled: false
-            highlighted: stackView.currentItem === aiScreen
-            font.pointSize: 20
+        background: Rectangle {
+            radius: 20
+            border.width: 3
+            border.color: button1.hovered ? "#0d53fd" : "transparent"
+        }
+
+        contentItem: Text {
+            text: button1.text
+            font.family: "Roboto"
+            font.bold: true
+            font.pixelSize: 25
+            font.weight: Font.SemiBold
+            color: button1.hovered ? "#0d53fd" : "black"
+            horizontalAlignment: Text.AlignHCenter
+            verticalAlignment: Text.AlignVCenter
         }
     }
 
-    Text {
-        id: text4
-        x: 100
-        y: 548
-        width: 126
-        height: 55
-        text: qsTr("Комплектующие")
-        font.pixelSize: 35
-        horizontalAlignment: Text.AlignHCenter
-        font.styleName: "Semibold Italic"
-
-        Button {
-            id: button3
-            x: -57
-            y: -20
-            width: 244
-            height: 100
-            visible: false
-            text: "База"
-            onClicked: rectangle.goToDbScreen = !rectangle.goToDbScreen
-            layer.enabled: false
-            highlighted: stackView.currentItem === dbScreen
-            font.pointSize: 20
-        }
-    }
-
-    Text {
-        id: text5
-        x: 100
-        y: 654
-        width: 126
-        height: 55
+    Button {
+        id: button2
+        x: 41
+        y: 540
+        width: 244
+        height: 100
+        visible: true
         text: qsTr("Настройки")
-        font.pixelSize: 35
-        horizontalAlignment: Text.AlignHCenter
-        font.styleName: "Semibold Italic"
+        layer.enabled: false
+        highlighted: stackView.currentItem === settingsScreen
+        font.pixelSize: 25
 
-        Button {
-            id: button2
-            x: -57
-            y: -26
-            width: 244
-            height: 100
-            visible: false
-            text: qsTr("Настройки")
-            onClicked: rectangle.goToSettingsScreen = !rectangle.goToSettingsScreen
-            layer.enabled: false
-            highlighted: stackView.currentItem === settingsScreen
-            font.pointSize: 20
+        background: Rectangle {
+            radius: 20
+            border.width: 3
+            border.color: "#ab116b"
+        }
+
+        contentItem: Text {
+            text: button2.text
+            font.family: "Roboto"
+            font.bold: true
+            font.pixelSize: 25
+            font.weight: Font.SemiBold
+            color: "#ab116b"
+            horizontalAlignment: Text.AlignHCenter
+            verticalAlignment: Text.AlignVCenter
         }
     }
 
