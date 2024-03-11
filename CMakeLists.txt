@@ -6,8 +6,10 @@ option(BUILD_QDS_COMPONENTS "Build design studio components" ON)
 project(Device_AssistantApp LANGUAGES CXX)
 
 set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTORCC ON)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(Qt6 6.2 REQUIRED COMPONENTS Core Gui Qml Quick)
+find_package(Qt6 6.2 REQUIRED COMPONENTS Core Gui Qml Quick Sql)
 
 find_package(PythonLibs REQUIRED)
 include_directories(${PYTHON_INCLUDE_DIRS})
@@ -23,7 +25,6 @@ qt_add_executable(Device_AssistantApp src/main.cpp
 )
 
 configure_file(${CMAKE_SOURCE_DIR}/GPTWrapper.py ${CMAKE_BINARY_DIR}/GPTWrapper.py COPYONLY)
-configure_file(${CMAKE_SOURCE_DIR}/gpt4prompt.txt ${CMAKE_BINARY_DIR}/gpt4prompt.txt COPYONLY)
 
 qt_add_resources(Device_AssistantApp "configuration"
     PREFIX "/"
@@ -36,6 +37,7 @@ target_link_libraries(Device_AssistantApp PRIVATE
     Qt6::Gui
     Qt6::Qml
     Qt6::Quick
+    Qt6::Sql
     wbemuuid
     ${PYTHON_LIBRARIES}
 )
