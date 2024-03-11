@@ -1,9 +1,6 @@
 /* Данный код лицензирован GNU General Public Licence v3.0
 Автор: Мурадян Генрик, редакция: Курчин Михаил
-По всем вопросам обращайтесь: muradyango@student.bmstu.ru
-
-Этот файл содержит реализацию класса systeminfo, который предоставляет методы для получения информации о системе.
- */
+По всем вопросам обращайтесь: muradyango@student.bmstu.ru */
 
 #define _WIN32_DCOM
 
@@ -14,7 +11,6 @@
 
 #include <QDebug>
 #include <QString>
-#include <QVariant>
 
 #pragma comment(lib, "wbemuuid.lib")
 
@@ -23,16 +19,6 @@ systeminfo::systeminfo(QObject *parent) : QObject(parent) {
     IWbemLocator* pLoc = nullptr;
     IWbemServices* pSvc = nullptr;
     initializeCOM(hres, pLoc, pSvc);
-
-    m_gpuInfo = retrieveGpuInfo();
-    m_diskInfo = retrieveDiskInfo();
-    m_processorInfo = retrieveProcessorInfo();
-    m_ramInfo = retrieveRAMInfo();
-    m_osInfo = retrieveOSInfo();
-    m_displayRefreshRate = retrieveDisplayRefreshRate();
-    m_pcName = retrievePcName();
-    m_motherboardInfo = retrieveMotherboardInfo();
-    
 }
 
 
@@ -153,7 +139,7 @@ void systeminfo::initializeCOM(HRESULT& hres, IWbemLocator*& pLoc, IWbemServices
  *
  * @return @QString
  */
-Q_INVOKABLE QVariantList systeminfo::retrieveGpuInfo()
+Q_INVOKABLE QString systeminfo::getGpuInfo()
 {
     HRESULT hres;
     IWbemLocator* pLoc = NULL;
@@ -175,14 +161,13 @@ Q_INVOKABLE QVariantList systeminfo::retrieveGpuInfo()
         pSvc->Release();
         pLoc->Release();
         CoUninitialize();
-        return QVariantList(); // В случае ошибки возвращает пустую строку
+        return QString(); // В случае ошибки возвращает пустую строку
     }
 
     IWbemClassObject* pclsObj = NULL;
     ULONG uReturn = 0;
     QString gpuInfo;
 
-    QVariantList gpuList;
     while (pEnumerator) {
         HRESULT hr = pEnumerator->Next(WBEM_INFINITE, 1, &pclsObj, &uReturn);
 
@@ -195,9 +180,8 @@ Q_INVOKABLE QVariantList systeminfo::retrieveGpuInfo()
 
         // Получения названия видеокарты
         hr = pclsObj->Get(L"Name", 0, &vtProp, 0, 0);
-        QString gpuInfo = QString::fromWCharArray(vtProp.bstrVal);
+        gpuInfo = QString::fromWCharArray(vtProp.bstrVal);
         qDebug() << "GPU: " << gpuInfo;
-        gpuList.append(QVariant::fromValue(gpuInfo));
         VariantClear(&vtProp);
         pclsObj->Release();
     }
@@ -208,11 +192,7 @@ Q_INVOKABLE QVariantList systeminfo::retrieveGpuInfo()
     pLoc->Release();
     pEnumerator->Release();
     CoUninitialize();
-    return gpuList;
-}
-
-Q_INVOKABLE QVariantList systeminfo::getGpuInfo() const {
-    return m_gpuInfo;
+    return gpuInfo;
 }
 
 
@@ -222,7 +202,7 @@ Q_INVOKABLE QVariantList systeminfo::getGpuInfo() const {
  *
  * @return QString
  */
-Q_INVOKABLE QString systeminfo::retrieveDiskInfo()
+Q_INVOKABLE QString systeminfo::getDiskInfo()
 {
     // Инфа о накопителе
     HRESULT hres;
@@ -278,10 +258,6 @@ Q_INVOKABLE QString systeminfo::retrieveDiskInfo()
     return storageModel;
 }
 
-Q_INVOKABLE QString systeminfo::getDiskInfo() const {
-    return m_diskInfo;
-}
-
 
 
 /**
@@ -289,7 +265,7 @@ Q_INVOKABLE QString systeminfo::getDiskInfo() const {
  *
  * @return QString
  */
-Q_INVOKABLE QString systeminfo::retrieveMotherboardInfo()
+Q_INVOKABLE QString systeminfo::getMotherboardInfo()
 {
     // Материнская плата
     HRESULT hres;
@@ -346,10 +322,6 @@ Q_INVOKABLE QString systeminfo::retrieveMotherboardInfo()
     return motherboardInfo;
 }
 
-Q_INVOKABLE QString systeminfo::getMotherboardInfo() const{
-    return m_motherboardInfo;
-}
-
 
 
 /**
@@ -357,7 +329,7 @@ Q_INVOKABLE QString systeminfo::getMotherboardInfo() const{
  *
  * @return QString
  */
-Q_INVOKABLE QString systeminfo::retrieveProcessorInfo()
+Q_INVOKABLE QString systeminfo::getProcessorInfo()
 {
     // Процессор
     HRESULT hres;
@@ -413,9 +385,6 @@ Q_INVOKABLE QString systeminfo::retrieveProcessorInfo()
     return processorInfo;
 }
 
-Q_INVOKABLE QString systeminfo::getProcessorInfo() const {
-    return m_processorInfo;
-}
 
 
 /**
@@ -423,7 +392,7 @@ Q_INVOKABLE QString systeminfo::getProcessorInfo() const {
  *
  * @return QString
  */
-Q_INVOKABLE QString systeminfo::retrieveOSInfo()
+Q_INVOKABLE QString systeminfo::getOSInfo()
 {
     // ОС
     HRESULT hres;
@@ -479,10 +448,6 @@ Q_INVOKABLE QString systeminfo::retrieveOSInfo()
     return osInfo;
 }
 
-Q_INVOKABLE QString systeminfo::getOSInfo() const{
-    return m_osInfo;
-}
-
 
 
 /**
@@ -490,7 +455,7 @@ Q_INVOKABLE QString systeminfo::getOSInfo() const{
  *
  * @return QString
  */
-Q_INVOKABLE QString systeminfo::retrieveRAMInfo()
+Q_INVOKABLE QString systeminfo::getRAMInfo()
 {
     // Оперативка
     HRESULT hres;
@@ -532,7 +497,7 @@ Q_INVOKABLE QString systeminfo::retrieveRAMInfo()
         hr = pclsObj->Get(L"TotalVisibleMemorySize", 0, &vtProp, 0, 0);
         
         unsigned long long totalMemorySize = _wtoi64(vtProp.bstrVal);
-        unsigned long long totalMemorySizeGB = totalMemorySize / (1000 * 1000);
+        unsigned long long totalMemorySizeGB = totalMemorySize / (1024 * 1024);
 
         ramInfo = QString::number(totalMemorySizeGB) + " ГБ";
         qDebug() << "RAM: " << ramInfo;
@@ -548,145 +513,4 @@ Q_INVOKABLE QString systeminfo::retrieveRAMInfo()
     CoUninitialize();
 
     return ramInfo;
-}
-
-Q_INVOKABLE QString systeminfo::getRAMInfo() const{
-    return m_ramInfo;
-}
-
-
-
-/** Получение имени компьютера
- * 
- * @return QString
- */
-
-Q_INVOKABLE QString systeminfo::retrievePcName()
-{
-    HRESULT hres;
-    IWbemLocator* pLoc = NULL;
-    IWbemServices* pSvc = NULL;
-
-    initializeCOM(hres, pLoc, pSvc);
-
-    IEnumWbemClassObject* pEnumerator = NULL;
-    hres = pSvc->ExecQuery(
-        ConvertStringToBSTR("WQL"),
-        ConvertStringToBSTR("SELECT * FROM Win32_OperatingSystem"),
-        WBEM_FLAG_FORWARD_ONLY | WBEM_FLAG_RETURN_IMMEDIATELY,
-        NULL,
-        &pEnumerator);
-
-    if (FAILED(hres)) {
-        std::cout << "Ошибка при выполнении запроса. Error code = 0x" << std::hex << hres << std::endl;
-        pSvc->Release();
-        pLoc->Release();
-        CoUninitialize();
-        return QString(); // Возвращает пустую строку при ошибке
-    }
-
-    // Получение данных.
-    QString pcName;
-    while (pEnumerator) {
-        IWbemClassObject* pclsObj = NULL;
-        ULONG uReturn = 0;
-        HRESULT hr = pEnumerator->Next(WBEM_INFINITE, 1, &pclsObj, &uReturn);
-
-        if (0 == uReturn) {
-            break;
-        }
-
-        VARIANT vtProp;
-
-        // Получение имени компьютера.
-        hr = pclsObj->Get(L"CSName", 0, &vtProp, 0, 0);
-        pcName = QString::fromWCharArray(vtProp.bstrVal);
-        qDebug() << "PC name: " << pcName;
-        VariantClear(&vtProp);
-
-        pclsObj->Release();
-    }
-
-    // Очистка.
-    pSvc->Release();
-    pLoc->Release();
-    pEnumerator->Release();
-    CoUninitialize();
-
-    return pcName;
-}
-
-Q_INVOKABLE QString systeminfo::getPcName() const {
-    return m_pcName;
-}
-
-
-
-/**
- * Получение частоты обновления дисплея
- *
- * @return @QString
- */
-Q_INVOKABLE QString systeminfo::retrieveDisplayRefreshRate()
-{
-    HRESULT hres;
-    IWbemLocator* pLoc = NULL;
-    IWbemServices* pSvc = NULL;
-
-    initializeCOM(hres, pLoc, pSvc);
-
-    IEnumWbemClassObject* pEnumerator = NULL;
-    hres = pSvc->ExecQuery(
-        ConvertStringToBSTR("WQL"),
-        ConvertStringToBSTR("SELECT * FROM Win32_VideoController"),
-        WBEM_FLAG_FORWARD_ONLY | WBEM_FLAG_RETURN_IMMEDIATELY,
-        NULL,
-        &pEnumerator);
-
-    if (FAILED(hres)) {
-        std::cout << "Ошибка при выполнении запроса. Error code = 0x" << std::hex << hres << std::endl;
-        pSvc->Release();
-        pLoc->Release();
-        CoUninitialize();
-        return QString(); // Возвращает пустую строку при ошибке
-    }
-
-    // Получение данных.
-    QString refreshRate;
-    while (pEnumerator) {
-        IWbemClassObject* pclsObj = NULL;
-        ULONG uReturn = 0;
-        HRESULT hr = pEnumerator->Next(WBEM_INFINITE, 1, &pclsObj, &uReturn);
-
-        if (0 == uReturn) {
-            break;
-        }
-
-        VARIANT vtProp;
-
-        // Получение частоты обновления дисплея.
-        hr = pclsObj->Get(L"CurrentRefreshRate", 0, &vtProp, 0, 0);
-        if (vtProp.uintVal != 0) {
-            refreshRate = QString::number(vtProp.uintVal) + " Гц";
-            qDebug() << "Hertz: " << refreshRate;
-            VariantClear(&vtProp);
-            pclsObj->Release();
-            break;
-        }
-
-        VariantClear(&vtProp);
-        pclsObj->Release();
-    }
-
-    // Очистка.
-    pSvc->Release();
-    pLoc->Release();
-    pEnumerator->Release();
-    CoUninitialize();
-
-    return refreshRate;
-}
-
-Q_INVOKABLE QString systeminfo::getDisplayRefreshRate() const {
-    return m_displayRefreshRate;
 }
