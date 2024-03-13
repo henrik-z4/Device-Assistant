@@ -135,6 +135,7 @@ Rectangle {
             id: chatModel
         }
         delegate: Text {
+            color: "#000000"
             width: chatView.width
             wrapMode: Text.WordWrap
             text: model.message
