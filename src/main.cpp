@@ -4,6 +4,8 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
+#include <QDir>
+#include <QWindow>
 
 #include "app_environment.h"
 #include "import_qml_components_plugins.h"
@@ -15,10 +17,15 @@
 int main(int argc, char *argv[])
 {
     set_qt_environment();
-
     QGuiApplication app(argc, argv);
+    app.setWindowIcon(QIcon(":/assets/icons/DeviceAssistant.jpg"));
+
 
     QQmlApplicationEngine engine;
+    engine.load(QUrl(QStringLiteral("qrc:/assets/icons/DeviceAssistant.jpg")));
+
+
+    engine.rootContext()->setContextProperty("applicationDirPath", QDir::toNativeSeparators(QCoreApplication::applicationDirPath()));
 
     systeminfo sysInfo;
     engine.rootContext()->setContextProperty("sysInfo", &sysInfo);
