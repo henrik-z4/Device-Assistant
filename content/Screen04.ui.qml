@@ -18,6 +18,7 @@ Rectangle {
     property alias text1: text1
     property alias text6: text6
     property alias text8: text8
+    property alias text111: text111
 
     Switch {
         id: switch1

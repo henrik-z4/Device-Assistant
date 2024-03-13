@@ -113,41 +113,107 @@ Window {
             if (goToDarkmode) {
                 settingsScreen.color = "#2e2e2e";
                 settingsScreen.text1.color = "#ffffff";
-                settingsScreen.text2.color = "#ffffff";
-                settingsScreen.text3.color = "#ffffff";
-                settingsScreen.text4.color = "#ffffff";
                 settingsScreen.text6.color = "#ffffff";
                 settingsScreen.text8.color = "#ffffff";
+                settingsScreen.text111.color = "#ffffff";
+
+
 
                 aiScreen.color = "#2e2e2e";
                 aiScreen.rectangle1.color = "#2e2e2e";
                 aiScreen.text1.color = "#ffffff";
-                aiScreen.text2.color = "#ffffff";
-                aiScreen.text4.color = "#ffffff";
-                aiScreen.text5.color = "#ffffff";
                 aiScreen.text7.color = "#ffffff";
                 aiScreen.text8.color = "#ffffff";
-                aiScreen.text10.color = "#ffffff";
                 aiScreen.messageField.placeholderText.color = "#60000000";
+                aiScreen.sendButtonText.color = "#ffffff";
+
+
+
+                mainScreen.color = "#2e2e2e";
+                mainScreen.rectangle1.color = "#2e2e2e";
+                mainScreen.rectangle2.color = "#2e2e2e";
+                mainScreen.rectangle3.color = "#2e2e2e";
+                mainScreen.rectangle4.color = "#2e2e2e";
+                mainScreen.rectangle5.color = "#2e2e2e";
+                mainScreen.rectangle6.color = "#2e2e2e";
+                mainScreen.rectangle7.color = "#2e2e2e";
+                mainScreen.rectangle8.color = "#2e2e2e";
+
+                mainScreen.text1.color = "#ffffff";
+                mainScreen.text6.color = "#ffffff";
+                mainScreen.text8.color = "#ffffff";
+
+                mainScreen.recommendations.color = "#ffffff";
+
+                mainScreen.cpuText.color = "#ffffff";
+                mainScreen.cpuInfoText.color = "#ffffff";
+
+                mainScreen.gpuText.color = "#ffffff";
+                mainScreen.gpuInfoText.color = "#ffffff";
+
+                mainScreen.diskText.color = "#ffffff";
+                mainScreen.diskInfoText.color = "#ffffff";
+
+                mainScreen.ramText.color = "#ffffff";
+                mainScreen.ramInfoText.color = "#ffffff";
+
+                mainScreen.motherboardText.color = "#ffffff";
+                mainScreen.motherboardInfoText.color = "#ffffff";
+
+                mainScreen.osText.color = "#ffffff";
+                mainScreen.osInfoText.color = "#ffffff";
             } else {
                 settingsScreen.color = "#ffffff";
                 settingsScreen.text1.color = "#000000";
-                settingsScreen.text2.color = "#000000";
-                settingsScreen.text3.color = "#000000";
-                settingsScreen.text4.color = "#000000";
                 settingsScreen.text6.color = "#000000";
                 settingsScreen.text8.color = "#000000";
+                settingsScreen.text111.color = "#00000";
+
+
 
                 aiScreen.color = "#ffffff";
                 aiScreen.rectangle1.color = "#ffffff";
                 aiScreen.text1.color = "#000000";
-                aiScreen.text2.color = "#000000";
-                aiScreen.text4.color = "#000000";
-                aiScreen.text5.color = "#000000";
                 aiScreen.text7.color = "#000000";
                 aiScreen.text8.color = "#000000";
-                aiScreen.text10.color = "#000000";
                 aiScreen.messageField.placeholderText.color = "#000000";
+                aiScreen.sendButtonText.color = "#000000";
+
+
+
+                mainScreen.color = "#ffffff";
+                mainScreen.rectangle1.color = "#ffffff";
+                mainScreen.rectangle2.color = "#ffffff";
+                mainScreen.rectangle3.color = "#ffffff";
+                mainScreen.rectangle4.color = "#ffffff";
+                mainScreen.rectangle5.color = "#ffffff";
+                mainScreen.rectangle6.color = "#ffffff";
+                mainScreen.rectangle7.color = "#ffffff";
+                mainScreen.rectangle8.color = "#ffffff";
+
+                mainScreen.text1.color = "#000000";
+                mainScreen.text6.color = "#000000";
+                mainScreen.text8.color = "#000000";
+
+                mainScreen.recommendations.color = "#000000";
+
+                mainScreen.cpuText.color = "#000000";
+                mainScreen.cpuInfoText.color = "#000000";
+
+                mainScreen.gpuText.color = "#000000";
+                mainScreen.gpuInfoText.color = "#000000";
+
+                mainScreen.diskText.color = "#000000";
+                mainScreen.diskInfoText.color =  "#000000";
+
+                mainScreen.ramText.color = "#000000";
+                mainScreen.ramInfoText.color = "#000000";
+
+                mainScreen.motherboardText.color = "#000000";
+                mainScreen.motherboardInfoText.color = "#000000";
+
+                mainScreen.osText.color = "#000000";
+                mainScreen.osInfoText.color = "#000000";
             }
         }
     }

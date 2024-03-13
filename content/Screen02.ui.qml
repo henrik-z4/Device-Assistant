@@ -20,6 +20,7 @@ Rectangle {
     property alias text1: text1
     property alias text7: text7
     property alias text8: text8
+    property alias sendButtonText: sendButtonText
 
     Rectangle {
         id: rectangle1
@@ -166,6 +167,7 @@ Rectangle {
                 border.width: 3
             }
             contentItem: Text {
+                id: sendButtonText
                 text: qsTr("Отправить")
                 font.pixelSize: 20
                 color: sendButton.hovered ? "#FFFFFF" : "black"
