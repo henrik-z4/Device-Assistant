@@ -22,13 +22,35 @@ Rectangle {
     property bool goToSettingsScreen: false
 
     property alias gpuInfoText: gpuInfoText
-    property alias diskInfoText: diskInfoText
-    property alias motherboardInfoText: motherboardInfoText
-    property alias cpuInfoText: cpuInfoText
-    property alias osInfoText: osInfoText
-    property alias ramInfoText: ramInfoText
+    property alias gpuText: gpuText
 
+    property alias diskInfoText: diskInfoText
+    property alias diskText: diskText
+
+    property alias motherboardInfoText: motherboardInfoText
+    property alias motherboardText: motherboardText
+
+    property alias cpuInfoText: cpuInfoText
+    property alias cpuText: cpuText
+
+    property alias osInfoText: osInfoText
+    property alias osText: osText
+
+    property alias ramInfoText: ramInfoText
+    property alias ramText: ramText
+
+    property alias text1: text1
+    property alias text6: text6
+    property alias text8: text8
     property alias recommendations: recommendations
+    property alias rectangle1: rectangle1
+    property alias rectangle2: rectangle2
+    property alias rectangle3: rectangle3
+    property alias rectangle4: rectangle4
+    property alias rectangle5: rectangle5
+    property alias rectangle6: rectangle6
+    property alias rectangle7: rectangle7
+    property alias rectangle8: rectangle8
 
     Rectangle {
         id: rectangle1
