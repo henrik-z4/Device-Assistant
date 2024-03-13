@@ -138,7 +138,6 @@ Window {
                 mainScreen.rectangle6.color = "#2e2e2e";
                 mainScreen.rectangle7.color = "#2e2e2e";
                 mainScreen.rectangle8.color = "#2e2e2e";
-
                 mainScreen.text1.color = "#ffffff";
                 mainScreen.text6.color = "#ffffff";
                 mainScreen.text8.color = "#ffffff";
