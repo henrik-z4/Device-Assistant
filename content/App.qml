@@ -1,14 +1,16 @@
 import QtQuick 6.2
 import QtQuick.Controls 2.15
+import QtQuick.LocalStorage 2.15
+import QtQuick.Layouts 1.15
 import Device_Assistant
 import GPT 1.0
 
 Window {
-    width: mainScreen.width
-    height: mainScreen.height
-
+    width: Screen.desktopAvailableWidth
+    height: Screen.desktopAvailableHeight
     visible: true
-    title: "Device_Assistant"
+    title: "DeviceAssistant"
+    visibility: Window.FullScreen
 
     Screen01 {
         id: mainScreen
@@ -16,20 +18,24 @@ Window {
         onGoToMainScreenChanged: {
             if (goToMainScreen) {
                 stackView.replace(mainScreen);
+                goToMainScreen = false;
             }
         }
 
         onGoToAIScreenChanged: {
             if (goToAIScreen) {
                 stackView.replace(aiScreen);
+                goToAIScreen = false;
             }
         }
 
         onGoToSettingsScreenChanged: {
             if (goToSettingsScreen) {
                 stackView.replace(settingsScreen);
+                goToSettingsScreen = false;
             }
         }
+
     }
 
     Screen02 {
@@ -38,20 +44,24 @@ Window {
         onGoToMainScreenChanged: {
             if (goToMainScreen) {
                 stackView.replace(mainScreen);
+                goToMainScreen = false;
             }
         }
 
         onGoToAIScreenChanged: {
             if (goToAIScreen) {
                 stackView.replace(aiScreen);
+                goToAIScreen = false;
             }
         }
 
         onGoToSettingsScreenChanged: {
             if (goToSettingsScreen) {
                 stackView.replace(settingsScreen);
+                goToSettingsScreen = false;
             }
         }
+
 
         GPT {
             id: gpt
@@ -70,7 +80,13 @@ Window {
 
     }
 
-    Screen03 {
+
+        ListModel {
+            id: gpuListModel
+        }
+
+
+    Screen04 {
         id: settingsScreen
 
         onGoToMainScreenChanged: {
@@ -82,68 +98,57 @@ Window {
         onGoToAIScreenChanged: {
             if (goToAIScreen) {
                 stackView.replace(aiScreen);
+                aiScreen.text3.color = "#0d53fd";
             }
         }
 
         onGoToSettingsScreenChanged: {
             if (goToSettingsScreen) {
                 stackView.replace(settingsScreen);
+                settingsScreen.text5.color = "#ddf107";
             }
         }
 
         onGoToDarkmodeChanged: {
             if (goToDarkmode) {
-                settingsScreen.color = "#292626";
-                settingsScreen.rectangle2.color = "#3f3c3c";
-                settingsScreen.label.color = "#ffffff";
+                settingsScreen.color = "#2e2e2e";
+                settingsScreen.text1.color = "#ffffff";
+                settingsScreen.text2.color = "#ffffff";
+                settingsScreen.text3.color = "#ffffff";
+                settingsScreen.text4.color = "#ffffff";
+                settingsScreen.text6.color = "#ffffff";
+                settingsScreen.text8.color = "#ffffff";
 
-                aiScreen.color = "#292626";
-                aiScreen.rectangle2.color = "#3f3c3c";
-                aiScreen.label.color = "#ffffff";
-                aiScreen.messageField.placeholderTextColor = "#ffffff";
-
-                mainScreen.color = "#292626";
-                mainScreen.rectangle1.color = "#3f3c3c";
-                mainScreen.rectangle2.color = "#3f3c3c";
-                mainScreen.label.color = "#ffffff";
-                mainScreen.text1.color = "#ffffff";
-
-                mainScreen.gpuInfoField.color = "#ffffff";
-                mainScreen.diskInfoField.color = "#ffffff";
-                mainScreen.motherboardInfoField.color = "#ffffff";
-                mainScreen.cpuInfoField.color = "#ffffff";
-                mainScreen.osInfoField.color = "#ffffff";
-                mainScreen.ramInfoField.color = "#ffffff";
-                mainScreen.pcNameField.color = "#ffffff"
-                mainScreen.displayRefreshRateField.color = "#ffffff"
+                aiScreen.color = "#2e2e2e";
+                aiScreen.rectangle1.color = "#2e2e2e";
+                aiScreen.text1.color = "#ffffff";
+                aiScreen.text2.color = "#ffffff";
+                aiScreen.text4.color = "#ffffff";
+                aiScreen.text5.color = "#ffffff";
+                aiScreen.text7.color = "#ffffff";
+                aiScreen.text8.color = "#ffffff";
+                aiScreen.text10.color = "#ffffff";
+                aiScreen.messageField.placeholderText.color = "#60000000";
             } else {
-                settingsScreen.color = "#eaeaea";
-                settingsScreen.rectangle2.color = "#ffffff";
-                settingsScreen.label.color = "#000000";
+                settingsScreen.color = "#ffffff";
+                settingsScreen.text1.color = "#000000";
+                settingsScreen.text2.color = "#000000";
+                settingsScreen.text3.color = "#000000";
+                settingsScreen.text4.color = "#000000";
+                settingsScreen.text6.color = "#000000";
+                settingsScreen.text8.color = "#000000";
 
-                aiScreen.color = "#eaeaea";
-                aiScreen.rectangle2.color = "#ffffff";
-                aiScreen.label.color = "#000000";
-                aiScreen.messageField.placeholderTextColor = "#000000";
-
-                mainScreen.color = "#eaeaea";
-                mainScreen.rectangle1.color = "#ffffff";
-                mainScreen.rectangle2.color = "#ffffff";
-                mainScreen.label.color = "#000000";
-                mainScreen.text1.color = "#000000";
-
-                mainScreen.gpuInfoField.color = "#000000";
-                mainScreen.diskInfoField.color = "#000000";
-                mainScreen.motherboardInfoField.color = "#000000";
-                mainScreen.cpuInfoField.color = "#000000";
-                mainScreen.osInfoField.color = "#000000";
-                mainScreen.ramInfoField.color = "#000000";
-                mainScreen.pcNameField.color = "#000000"
-                mainScreen.displayRefreshRateField.color = "#000000"
+                aiScreen.color = "#ffffff";
+                aiScreen.rectangle1.color = "#ffffff";
+                aiScreen.text1.color = "#000000";
+                aiScreen.text2.color = "#000000";
+                aiScreen.text4.color = "#000000";
+                aiScreen.text5.color = "#000000";
+                aiScreen.text7.color = "#000000";
+                aiScreen.text8.color = "#000000";
+                aiScreen.text10.color = "#000000";
+                aiScreen.messageField.placeholderText.color = "#000000";
             }
-        }
-        Component.onCompleted: {
-            mainScreen.recommendations.text = gpt.getRecommendations();
         }
     }
 
@@ -153,5 +158,19 @@ Window {
         initialItem: mainScreen
     }
 
-}
+    Component.onCompleted: {
+        mainScreen.gpuInfoText.text = sysInfo.getGpuInfo();
 
+        mainScreen.diskInfoText.text = sysInfo.getDiskInfo();
+
+        mainScreen.cpuInfoText.text = sysInfo.getProcessorInfo();
+
+        mainScreen.motherboardInfoText.text = sysInfo.getMotherboardInfo();
+
+        mainScreen.osInfoText.text = sysInfo.getOSInfo();
+
+        mainScreen.ramInfoText.text = sysInfo.getRAMInfo();
+        
+        mainScreen.recommendations.text = gpt.getRecommendations();
+    }
+}

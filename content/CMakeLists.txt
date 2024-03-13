@@ -10,8 +10,7 @@ qt6_add_qml_module(content
         App.qml
         Screen01.ui.qml
         Screen02.ui.qml
-        Screen03.ui.qml
+        Screen04.ui.qml
     RESOURCES
         fonts/fonts.txt
-        QML_FILES SystemInfoList.qml
 )
