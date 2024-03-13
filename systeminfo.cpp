@@ -497,7 +497,7 @@ Q_INVOKABLE QString systeminfo::getRAMInfo()
         hr = pclsObj->Get(L"TotalVisibleMemorySize", 0, &vtProp, 0, 0);
         
         unsigned long long totalMemorySize = _wtoi64(vtProp.bstrVal);
-        unsigned long long totalMemorySizeGB = totalMemorySize / (1024 * 1024);
+        unsigned long long totalMemorySizeGB = totalMemorySize / (1000 * 1000);
 
         ramInfo = QString::number(totalMemorySizeGB) + " ГБ";
         qDebug() << "RAM: " << ramInfo;
