@@ -122,6 +122,7 @@ Window {
                 aiScreen.color = "#2e2e2e";
                 aiScreen.rectangle1.color = "#2e2e2e";
                 aiScreen.text1.color = "#ffffff";
+                aiScreen.text2.color = "#ffffff";
                 aiScreen.text7.color = "#ffffff";
                 aiScreen.text8.color = "#ffffff";
                 aiScreen.messageField.placeholderText.color = "#60000000";
@@ -174,6 +175,7 @@ Window {
                 aiScreen.color = "#ffffff";
                 aiScreen.rectangle1.color = "#ffffff";
                 aiScreen.text1.color = "#000000";
+                aiScreen.text2.color = "#000000";
                 aiScreen.text7.color = "#000000";
                 aiScreen.text8.color = "#000000";
                 aiScreen.messageField.placeholderText.color = "#000000";
@@ -226,17 +228,12 @@ Window {
 
     Component.onCompleted: {
         mainScreen.gpuInfoText.text = sysInfo.getGpuInfo();
-
         mainScreen.diskInfoText.text = sysInfo.getDiskInfo();
-
         mainScreen.cpuInfoText.text = sysInfo.getProcessorInfo();
-
         mainScreen.motherboardInfoText.text = sysInfo.getMotherboardInfo();
-
         mainScreen.osInfoText.text = sysInfo.getOSInfo();
-
         mainScreen.ramInfoText.text = sysInfo.getRAMInfo();
-        
+        aiScreen.text2.text = sysInfo.getConnectionInfo();
         mainScreen.recommendations.text = gpt.getRecommendations();
     }
 }

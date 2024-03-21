@@ -21,6 +21,7 @@ Rectangle {
     property alias text7: text7
     property alias text8: text8
     property alias sendButtonText: sendButtonText
+    property alias text2: text2
 
     Rectangle {
         id: rectangle1
@@ -216,5 +217,16 @@ Rectangle {
             source: "qrc:/assets/icons/DeviceAssistant.jpg"
             fillMode: Image.PreserveAspectFit
         }
+    }
+
+    Text {
+        id: text2
+        x: 538
+        y: 31
+        width: 199
+        height: 47
+        text: qsTr("")
+        font.pixelSize: 35
+        font.styleName: "Semibold Italic"
     }
 }

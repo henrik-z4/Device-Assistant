@@ -24,6 +24,7 @@ public:
     Q_INVOKABLE QString getProcessorInfo();
     Q_INVOKABLE QString getOSInfo();
     Q_INVOKABLE QString getRAMInfo();
+    Q_INVOKABLE QString getConnectionInfo();
 
 private:
     void initializeCOM(HRESULT& hres, IWbemLocator*& pLoc, IWbemServices*& pSvc);

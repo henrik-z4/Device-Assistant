@@ -8,6 +8,9 @@
 #include <comdef.h>
 #include <Wbemidl.h>
 #include "systeminfo.h"
+#include <QNetworkAccessManager>
+#include <QNetworkReply>
+#include <QEventLoop>
 
 #include <QDebug>
 #include <QString>
@@ -513,4 +516,32 @@ Q_INVOKABLE QString systeminfo::getRAMInfo()
     CoUninitialize();
 
     return ramInfo;
+}
+
+
+
+/**
+ * Получение статуса интернет соединения
+ *
+ * @return QString
+ */
+Q_INVOKABLE QString systeminfo::getConnectionInfo()
+{
+    QNetworkAccessManager nam;
+    QNetworkRequest req(QUrl("http://www.google.com"));
+    QNetworkReply* reply = nam.get(req);
+    QEventLoop loop;
+    QObject::connect(reply, SIGNAL(finished()), &loop, SLOT(quit()));
+    loop.exec();
+
+    QString connectionInfo;
+    if(reply->bytesAvailable()) {
+        connectionInfo = QString("Интернет соединение установлено");
+        qDebug() << "Wi-Fi: " << connectionInfo;
+        return connectionInfo;
+    } else {
+        connectionInfo = QString("Интернет соединение не установлено");
+        qDebug() << "Wi-Fi: " << connectionInfo;
+        return connectionInfo;
+    }
 }
