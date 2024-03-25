@@ -6,8 +6,10 @@
 #include <QQmlContext>
 #include <QDir>
 #include <QWindow>
+#include <QSqlDatabase>
 
 #include "app_environment.h"
+#include "databasemanager.h"
 #include "import_qml_components_plugins.h"
 #include "import_qml_plugins.h"
 #include "../systeminfo.h"
@@ -29,6 +31,10 @@ int main(int argc, char *argv[])
 
     systeminfo sysInfo;
     engine.rootContext()->setContextProperty("sysInfo", &sysInfo);
+
+    databasemanager dbManager;
+    dbManager.queryData();
+
 
     GPT gpt;
     engine.rootContext()->setContextProperty("gpt", &gpt);
@@ -53,6 +59,11 @@ int main(int argc, char *argv[])
     if (engine.rootObjects().isEmpty()) {
         return -1;
     }
+
+    foreach(QString driver, QSqlDatabase::drivers()) {
+        qDebug() << driver;
+    }
+
 
     return app.exec();
 }

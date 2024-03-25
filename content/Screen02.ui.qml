@@ -13,6 +13,8 @@ Rectangle {
     property bool goToMainScreen: false
     property bool goToAIScreen: false
     property bool goToSettingsScreen: false
+    property bool goToСomponentsScreen: false
+
 
     property alias chatModel: chatView.model
     property alias messageField: messageField
@@ -62,13 +64,45 @@ Rectangle {
         }
 
         Button {
+            id: button3
+            x: -282
+            y: 468
+            width: 244
+            height: 100
+            visible: true
+            text: qsTr("Комплектующие")
+            onClicked: rectangle.goToСomponentsScreen = !rectangle.goToСomponentsScreen
+            layer.enabled: false
+            highlighted: stackView.currentItem === componentsScreen
+            font.pointSize: 25
+
+            background: Rectangle {
+                radius: 20
+                border.width: 3
+                border.color: button3.hovered ? "#8f0fe8" : "transparent"
+            }
+
+            contentItem: Text {
+                font.family: "Roboto"
+                font.bold: true
+                font.pixelSize: 25
+                font.weight: Font.SemiBold
+                color: button3.hovered ? "#8f0fe8" : "black"
+                text: "Комплектующие"
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
+            }
+        }
+
+        Button {
             id: button1
             x: -282
-            y: 343
+            y: 328
             width: 244
             height: 100
             visible: true
             text: qsTr("AI")
+            onClicked: rectangle.goToAIScreen = !rectangle.goToAIScreen
             layer.enabled: false
             highlighted: stackView.currentItem === aiScreen
             font.pointSize: 25
@@ -76,16 +110,16 @@ Rectangle {
             background: Rectangle {
                 radius: 20
                 border.width: 3
-                border.color: "#0d53fd"
+                border.color: button1.hovered ? "#0d53fd" : "transparent"
             }
 
             contentItem: Text {
-                text: button1.text
                 font.family: "Roboto"
                 font.bold: true
                 font.pixelSize: 25
                 font.weight: Font.SemiBold
-                color: "#0d53fd"
+                color: button1.hovered ? "#0d53fd" : "black"
+                text: "AI"
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
             }
@@ -94,7 +128,7 @@ Rectangle {
         Button {
             id: button2
             x: -282
-            y: 460
+            y: 610
             width: 244
             height: 100
             visible: true

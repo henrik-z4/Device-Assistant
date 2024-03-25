@@ -22,6 +22,7 @@ qt_add_executable(Device_AssistantApp src/main.cpp
     systeminfo.h systeminfo.cpp
     images.qrc
     gpt.h gpt.cpp GPTWrapper.py __init__.py
+    databasemanager.h databasemanager.cpp
 )
 
 configure_file(${CMAKE_SOURCE_DIR}/GPTWrapper.py ${CMAKE_BINARY_DIR}/GPTWrapper.py COPYONLY)

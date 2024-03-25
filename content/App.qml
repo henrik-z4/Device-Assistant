@@ -36,6 +36,14 @@ Window {
             }
         }
 
+        onGoToСomponentsScreenChanged: {
+            if (goToСomponentsScreen) {
+                stackView.replace(componentsScreen);
+                goToСomponentsScreen = false;
+            }
+        }
+
+
     }
 
     Screen02 {
@@ -62,6 +70,13 @@ Window {
             }
         }
 
+        onGoToСomponentsScreenChanged: {
+            if (goToСomponentsScreen) {
+                stackView.replace(componentsScreen);
+                goToСomponentsScreen = false;
+            }
+        }
+
 
         GPT {
             id: gpt
@@ -78,6 +93,38 @@ Window {
             });
         }
 
+    }
+
+    Screen05 {
+        id: componentsScreen
+
+        onGoToMainScreenChanged: {
+            if (goToMainScreen) {
+                stackView.replace(mainScreen);
+                goToMainScreen = false;
+            }
+        }
+
+        onGoToAIScreenChanged: {
+            if (goToAIScreen) {
+                stackView.replace(aiScreen);
+                goToAIScreen = false;
+            }
+        }
+
+        onGoToSettingsScreenChanged: {
+            if (goToSettingsScreen) {
+                stackView.replace(settingsScreen);
+                goToSettingsScreen = false;
+            }
+        }
+
+        onGoToСomponentsScreenChanged: {
+            if (goToСomponentsScreen) {
+                stackView.replace(componentsScreen);
+                goToСomponentsScreen = false;
+            }
+        }
     }
 
 
@@ -106,6 +153,13 @@ Window {
             if (goToSettingsScreen) {
                 stackView.replace(settingsScreen);
                 settingsScreen.text5.color = "#ddf107";
+            }
+        }
+
+        onGoToСomponentsScreenChanged: {
+            if (goToСomponentsScreen) {
+                stackView.replace(componentsScreen);
+                goToСomponentsScreen = false;
             }
         }
 
@@ -138,7 +192,7 @@ Window {
                 mainScreen.rectangle6.color = "#2e2e2e";
                 mainScreen.rectangle7.color = "#2e2e2e";
                 mainScreen.rectangle8.color = "#2e2e2e";
-                
+
                 mainScreen.text1.color = "#ffffff";
                 mainScreen.text6.color = "#ffffff";
                 mainScreen.text8.color = "#ffffff";
@@ -236,7 +290,7 @@ Window {
         mainScreen.osInfoText.text = sysInfo.getOSInfo();
 
         mainScreen.ramInfoText.text = sysInfo.getRAMInfo();
-        
+
         mainScreen.recommendations.text = gpt.getRecommendations();
     }
 }

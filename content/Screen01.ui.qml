@@ -20,6 +20,7 @@ Rectangle {
     property bool goToMainScreen: false
     property bool goToAIScreen: false
     property bool goToSettingsScreen: false
+    property bool goToСomponentsScreen: false
 
     property alias gpuInfoText: gpuInfoText
     property alias gpuText: gpuText
@@ -351,6 +352,37 @@ Rectangle {
     }
 
     Button {
+        id: button3
+        x: 41
+        y: 568
+        width: 244
+        height: 100
+        visible: true
+        text: qsTr("Комплектующие")
+        onClicked: rectangle.goToСomponentsScreen = !rectangle.goToСomponentsScreen
+        layer.enabled: false
+        highlighted: stackView.currentItem === componentsScreen
+        font.pointSize: 25
+
+        background: Rectangle {
+            radius: 20
+            border.width: 3
+            border.color: button3.hovered ? "#8f0fe8" : "transparent"
+        }
+
+        contentItem: Text {
+            font.family: "Roboto"
+            font.bold: true
+            font.pixelSize: 25
+            font.weight: Font.SemiBold
+            color: button3.hovered ? "#8f0fe8" : "black"
+            text: "Комплектующие"
+            horizontalAlignment: Text.AlignHCenter
+            verticalAlignment: Text.AlignVCenter
+        }
+    }
+
+    Button {
         id: button1
         x: 41
         y: 428
@@ -370,12 +402,12 @@ Rectangle {
         }
 
         contentItem: Text {
-            text: button1.text
             font.family: "Roboto"
             font.bold: true
             font.pixelSize: 25
             font.weight: Font.SemiBold
             color: button1.hovered ? "#0d53fd" : "black"
+            text: "AI"
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
         }
@@ -384,7 +416,7 @@ Rectangle {
     Button {
         id: button2
         x: 41
-        y: 545
+        y: 710
         width: 244
         height: 100
         visible: true

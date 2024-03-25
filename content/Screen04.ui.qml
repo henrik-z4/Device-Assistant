@@ -11,8 +11,8 @@ Rectangle {
     property bool goToMainScreen: false
     property bool goToAIScreen: false
     property bool goToSettingsScreen: true
-
     property bool goToDarkmode: false
+    property bool goToСomponentsScreen: false
 
     property alias switch1: switch1
     property alias text1: text1
@@ -83,6 +83,37 @@ Rectangle {
     }
 
     Button {
+        id: button3
+        x: 41
+        y: 568
+        width: 244
+        height: 100
+        visible: true
+        text: qsTr("Комплектующие")
+        onClicked: rectangle.goToСomponentsScreen = !rectangle.goToСomponentsScreen
+        layer.enabled: false
+        highlighted: stackView.currentItem === componentsScreen
+        font.pointSize: 25
+
+        background: Rectangle {
+            radius: 20
+            border.width: 3
+            border.color: button3.hovered ? "#8f0fe8" : "transparent"
+        }
+
+        contentItem: Text {
+            font.family: "Roboto"
+            font.bold: true
+            font.pixelSize: 25
+            font.weight: Font.SemiBold
+            color: button3.hovered ? "#8f0fe8" : "black"
+            text: "Комплектующие"
+            horizontalAlignment: Text.AlignHCenter
+            verticalAlignment: Text.AlignVCenter
+        }
+    }
+
+    Button {
         id: button1
         x: 41
         y: 428
@@ -102,12 +133,12 @@ Rectangle {
         }
 
         contentItem: Text {
-            text: button1.text
             font.family: "Roboto"
             font.bold: true
             font.pixelSize: 25
             font.weight: Font.SemiBold
             color: button1.hovered ? "#0d53fd" : "black"
+            text: "AI"
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
         }
@@ -116,11 +147,12 @@ Rectangle {
     Button {
         id: button2
         x: 41
-        y: 540
+        y: 710
         width: 244
         height: 100
         visible: true
         text: qsTr("Настройки")
+        onClicked: rectangle.goToSettingsScreen = !rectangle.goToSettingsScreen
         layer.enabled: false
         highlighted: stackView.currentItem === settingsScreen
         font.pixelSize: 25
@@ -128,7 +160,7 @@ Rectangle {
         background: Rectangle {
             radius: 20
             border.width: 3
-            border.color: "#ab116b"
+            border.color: button2.hovered ? "#ab116b" : "transparent"
         }
 
         contentItem: Text {
@@ -137,7 +169,7 @@ Rectangle {
             font.bold: true
             font.pixelSize: 25
             font.weight: Font.SemiBold
-            color: "#ab116b"
+            color: button2.hovered ? "#ab116b" : "black"
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
         }
