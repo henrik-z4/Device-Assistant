@@ -262,7 +262,7 @@ Rectangle {
         id: text2
         x: 520
         y: 31
-        width: 594
+        width: 615
         height: 47
         text: qsTr("")
         font.pixelSize: 35
