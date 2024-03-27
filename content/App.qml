@@ -186,44 +186,44 @@ Window {
                 mainScreen.osText.color = "#ffffff";
                 mainScreen.osInfoText.color = "#ffffff";
             } else {
-                settingsScreen.color = "#ffffff";
+                settingsScreen.color = "#eff4f9";
                 settingsScreen.text1.color = "#000000";
                 settingsScreen.text6.color = "#000000";
                 settingsScreen.text8.color = "#000000";
                 settingsScreen.text111.color = "#00000";
 
-                settingsScreen.buttonrectangle.color = "#ffffff";
-                settingsScreen.button1rectangle.color = "#ffffff";
-                settingsScreen.button2rectangle.color = "#ffffff";
+                settingsScreen.buttonrectangle.color = "#fbfcfd";
+                settingsScreen.button1rectangle.color = "#fbfcfd";
+                settingsScreen.button2rectangle.color = "#fbfcfd";
 
 
 
-                aiScreen.color = "#ffffff";
-                aiScreen.rectangle1.color = "#eaeaea";
+                aiScreen.color = "#eff4f9";
+                aiScreen.rectangle1.color = "#fbfcfd";
                 aiScreen.text1.color = "#000000";
                 aiScreen.text2.color = "#000000";
                 aiScreen.text8.color = "#000000";
                 aiScreen.messageField.placeholderText.color = "#000000";
 
-                aiScreen.buttonrectangle.color = "#ffffff";
-                aiScreen.button1rectangle.color = "#ffffff";
-                aiScreen.button2rectangle.color = "#ffffff";
+                aiScreen.buttonrectangle.color = "#fbfcfd";
+                aiScreen.button1rectangle.color = "#fbfcfd";
+                aiScreen.button2rectangle.color = "#fbfcfd";
 
 
 
-                mainScreen.color = "#ffffff";
-                mainScreen.rectangle1.color = "#eaeaea";
-                mainScreen.rectangle2.color = "#eaeaea";
-                mainScreen.rectangle3.color = "#ffffff";
-                mainScreen.rectangle4.color = "#ffffff";
-                mainScreen.rectangle5.color = "#ffffff";
-                mainScreen.rectangle6.color = "#ffffff";
-                mainScreen.rectangle7.color = "#ffffff";
-                mainScreen.rectangle8.color = "#ffffff";
+                mainScreen.color = "#eff4f9";
+                mainScreen.rectangle1.color = "#fbfcfd";
+                mainScreen.rectangle2.color = "#fbfcfd";
+                mainScreen.rectangle3.color = "#fbfcfd";
+                mainScreen.rectangle4.color = "#fbfcfd";
+                mainScreen.rectangle5.color = "#fbfcfd";
+                mainScreen.rectangle6.color = "#fbfcfd";
+                mainScreen.rectangle7.color = "#fbfcfd";
+                mainScreen.rectangle8.color = "#fbfcfd";
 
-                mainScreen.buttonrectangle.color = "#ffffff";
-                mainScreen.button1rectangle.color = "#ffffff";
-                mainScreen.button2rectangle.color = "#ffffff";
+                mainScreen.buttonrectangle.color = "#fbfcfd";
+                mainScreen.button1rectangle.color = "#fbfcfd";
+                mainScreen.button2rectangle.color = "#fbfcfd";
 
                 mainScreen.text1.color = "#000000";
                 mainScreen.text6.color = "#000000";

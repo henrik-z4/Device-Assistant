@@ -15,7 +15,7 @@ Rectangle {
     id: rectangle
     width: Constants.width
     height: Constants.height
-    color: "#ffffff"
+    color: "#eff4f9"
 
     property bool goToMainScreen: false
     property bool goToAIScreen: false
@@ -63,7 +63,7 @@ Rectangle {
         y: 17
         width: 557
         height: 1046
-        color: "#eaeaea"
+        color: "#fbfcfd"
         radius: 20
     }
 
@@ -120,7 +120,7 @@ Rectangle {
         y: 265
         width: 926
         height: 724
-        color: "#eaeaea"
+        color: "#fbfcfd"
         radius: 20
         border.color: "#000000"
         border.width: 2
@@ -132,7 +132,7 @@ Rectangle {
         y: 185
         width: 464
         height: 132
-        color: "#ffffff"
+        color: "#fbfcfd"
         radius: 20
         border.color: "#de2424"
         border.width: 3
@@ -172,7 +172,7 @@ Rectangle {
         y: 329
         width: 464
         height: 132
-        color: "#ffffff"
+        color: "#fbfcfd"
         radius: 20
         border.color: "#4024d8"
         border.width: 3
@@ -215,7 +215,7 @@ Rectangle {
         y: 476
         width: 464
         height: 132
-        color: "#ffffff"
+        color: "#fbfcfd"
         radius: 20
         border.color: "#8f0fe8"
         border.width: 3
@@ -248,7 +248,7 @@ Rectangle {
         y: 626
         width: 464
         height: 132
-        color: "#ffffff"
+        color: "#fbfcfd"
         radius: 20
         border.color: "#ddf107"
         border.width: 3
@@ -260,7 +260,7 @@ Rectangle {
         y: 773
         width: 464
         height: 132
-        color: "#ffffff"
+        color: "#fbfcfd"
         radius: 20
         border.color: "#2e8737"
         border.width: 3
@@ -272,7 +272,7 @@ Rectangle {
         y: 920
         width: 464
         height: 132
-        color: "#ffffff"
+        color: "#fbfcfd"
         radius: 20
         border.color: "#ea3590"
         border.width: 3
@@ -339,7 +339,7 @@ Rectangle {
     Button {
         id: button
         x: 41
-        y: 294
+        y: 311
         width: 244
         height: 100
         visible: true
@@ -350,6 +350,7 @@ Rectangle {
 
         background: Rectangle {
             id: buttonrectangle
+            color: "#fbfcfd"
             radius: 20
             border.color: "#cb1b1b"
             border.width: 3
@@ -382,6 +383,7 @@ Rectangle {
 
         background: Rectangle {
             id: button1rectangle
+            color: "#fbfcfd"
             radius: 20
             border.width: 3
             border.color: button1.hovered ? "#0d53fd" : "transparent"
@@ -414,6 +416,7 @@ Rectangle {
 
         background: Rectangle {
             id: button2rectangle
+            color: "#fbfcfd"
             radius: 20
             border.width: 3
             border.color: button2.hovered ? "#ab116b" : "transparent"
@@ -454,7 +457,7 @@ Rectangle {
     Image {
         id: image3
         x: 56
-        y: 329
+        y: 346
         width: 32
         height: 32
         source: "qrc:/assets/Icons/User.ico"

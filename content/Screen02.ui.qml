@@ -7,7 +7,7 @@ Rectangle {
     id: rectangle
     width: Constants.width
     height: Constants.height
-    color: "#ffffff"
+    color: "#eff4f9"
     property alias sendButton: sendButton
 
     property bool goToMainScreen: false
@@ -36,7 +36,7 @@ Rectangle {
         y: 99
         width: 1598
         height: 981
-        color: "#eaeaea"
+        color: "#fbfcfd"
         radius: 10
 
         Button {
@@ -74,7 +74,7 @@ Rectangle {
         Button {
             id: button1
             x: -282
-            y: 343
+            y: 326
             width: 244
             height: 100
             visible: true
@@ -105,7 +105,7 @@ Rectangle {
         Button {
             id: button2
             x: -282
-            y: 460
+            y: 443
             width: 244
             height: 100
             visible: true
@@ -275,7 +275,7 @@ Rectangle {
         y: 43
         width: 27
         height: 27
-        color: "#ffffff"
+        color: "#eff4f9"
         radius: 49
     }
 
@@ -292,7 +292,7 @@ Rectangle {
     Image {
         id: image2
         x: 56
-        y: 477
+        y: 460
         width: 32
         height: 32
         source: "qrc:/assets/Icons/Network.ico"
@@ -302,7 +302,7 @@ Rectangle {
     Image {
         id: image
         x: 56
-        y: 594
+        y: 578
         width: 32
         height: 32
         source: "qrc:/assets/Icons/Settings.ico"

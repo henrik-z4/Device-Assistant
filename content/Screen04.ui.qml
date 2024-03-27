@@ -6,7 +6,7 @@ Rectangle {
     id: rectangle
     width: Constants.width
     height: Constants.height
-    color: "#ffffff"
+    color: "#eff4f9"
 
     property bool goToMainScreen: false
     property bool goToAIScreen: false
@@ -38,7 +38,7 @@ Rectangle {
             y: 8
             width: 103
             height: 47
-            text: qsTr("Включить ночной режим (ЭКСПЕРИМЕНТАЛЬНАЯ ФУНКЦИЯ)")
+            text: qsTr("Включить тёмную тему")
             font.pixelSize: 25
             font.styleName: "Обычный"
         }
@@ -89,7 +89,7 @@ Rectangle {
     Button {
         id: button1
         x: 41
-        y: 428
+        y: 427
         width: 244
         height: 100
         visible: true
@@ -121,7 +121,7 @@ Rectangle {
     Button {
         id: button2
         x: 41
-        y: 540
+        y: 544
         width: 244
         height: 100
         visible: true
@@ -191,7 +191,7 @@ Rectangle {
     Image {
         id: image
         x: 56
-        y: 575
+        y: 579
         width: 32
         height: 32
         source: "qrc:/assets/Icons/Settings.ico"
