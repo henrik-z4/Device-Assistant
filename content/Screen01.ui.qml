@@ -20,6 +20,7 @@ Rectangle {
     property bool goToMainScreen: false
     property bool goToAIScreen: false
     property bool goToSettingsScreen: false
+    property bool goToDarkmode: false
 
     property alias gpuInfoText: gpuInfoText
     property alias gpuText: gpuText

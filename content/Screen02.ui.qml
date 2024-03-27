@@ -13,6 +13,8 @@ Rectangle {
     property bool goToMainScreen: false
     property bool goToAIScreen: false
     property bool goToSettingsScreen: false
+    property bool goToDarkmode: false
+    property bool executeReconnectivity: false
 
     property alias chatModel: chatView.model
     property alias messageField: messageField
@@ -21,7 +23,9 @@ Rectangle {
     property alias text7: text7
     property alias text8: text8
     property alias sendButtonText: sendButtonText
+    property alias reconnectivityButtonText: reconnectivityButtonText
     property alias text2: text2
+    property alias connectivityIndicator: connectivityIndicator
 
     Rectangle {
         id: rectangle1
@@ -122,6 +126,39 @@ Rectangle {
                 verticalAlignment: Text.AlignVCenter
             }
         }
+
+        Button {
+            id: button3
+            x: 884
+            y: -88
+            width: 207
+            height: 85
+            visible: true
+            text: qsTr("Обновить")
+            onClicked: rectangle.executeReconnectivity = !rectangle.executeReconnectivity
+            layer.enabled: false
+            highlighted: stackView.currentItem === aiScreen
+            font.pointSize: 25
+
+            background: Rectangle {
+                radius: 20
+                border.color: "#000000"
+                border.width: 3
+                color: button3.hovered ? "#230e3b" : "transparent"
+            }
+
+            contentItem: Text {
+                id: reconnectivityButtonText
+                text: button3.text
+                font.family: "Roboto"
+                font.bold: true
+                font.pixelSize: 25
+                font.weight: Font.SemiBold
+                color: button3.hovered ? "#ffffff" : "black"
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
+            }
+        }
     }
 
     ListView {
@@ -142,6 +179,7 @@ Rectangle {
             font.pixelSize: 24
         }
     }
+
     TextField {
         id: messageField
         x: 538
@@ -159,21 +197,27 @@ Rectangle {
             width: 174
             height: 98
             visible: true
+            text: qsTr("Отправить")
             flat: true
             clip: false
+
             background: Rectangle {
-                color: sendButton.hovered ? "#230e3b" : "transparent"
                 radius: 28
                 border.color: "#7163db"
                 border.width: 3
+                color: sendButton.hovered ? "#230e3b" : "transparent"
             }
+
             contentItem: Text {
                 id: sendButtonText
-                text: qsTr("Отправить")
-                font.pixelSize: 20
+                text: sendButton.text
+                font.pixelSize: 25
                 color: sendButton.hovered ? "#FFFFFF" : "black"
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
+                font.weight: Font.SemiBold
+                font.family: "Roboto"
+                font.bold: true
             }
         }
     }
@@ -221,12 +265,22 @@ Rectangle {
 
     Text {
         id: text2
-        x: 538
+        x: 559
         y: 31
-        width: 199
+        width: 594
         height: 47
         text: qsTr("")
         font.pixelSize: 35
         font.styleName: "Semibold Italic"
+    }
+
+    Rectangle {
+        id: connectivityIndicator
+        x: 517
+        y: 41
+        width: 27
+        height: 27
+        color: "#ffffff"
+        radius: 49
     }
 }

@@ -62,6 +62,20 @@ Window {
             }
         }
 
+        onExecuteReconnectivityChanged: {
+            if (executeReconnectivity) {
+                aiScreen.text2.text = sysInfo.getConnectionInfo();
+
+                if(sysInfo.getConnectionInfo() == "Интернет соединение установлено") {
+                    aiScreen.connectivityIndicator.color = "#4dea15";
+                }
+                else {
+                    aiScreen.connectivityIndicator.color = "#e82525";
+                }
+
+                executeReconnectivity = false;
+            }
+        }
 
         GPT {
             id: gpt
@@ -126,7 +140,6 @@ Window {
                 aiScreen.text7.color = "#ffffff";
                 aiScreen.text8.color = "#ffffff";
                 aiScreen.messageField.placeholderText.color = "#60000000";
-                aiScreen.sendButtonText.color = "#ffffff";
 
 
 
@@ -179,7 +192,6 @@ Window {
                 aiScreen.text7.color = "#000000";
                 aiScreen.text8.color = "#000000";
                 aiScreen.messageField.placeholderText.color = "#000000";
-                aiScreen.sendButtonText.color = "#000000";
 
 
 
@@ -235,5 +247,12 @@ Window {
         mainScreen.ramInfoText.text = sysInfo.getRAMInfo();
         aiScreen.text2.text = sysInfo.getConnectionInfo();
         mainScreen.recommendations.text = gpt.getRecommendations();
+
+        if(sysInfo.getConnectionInfo() == "Интернет соединение установлено") {
+            aiScreen.connectivityIndicator.color = "#4dea15";
+        }
+        else {
+            aiScreen.connectivityIndicator.color = "#e82525";
+        }
     }
 }
