@@ -125,33 +125,45 @@ Window {
 
         onGoToDarkmodeChanged: {
             if (goToDarkmode) {
-                settingsScreen.color = "#2e2e2e";
+                settingsScreen.color = "#1A2030";
                 settingsScreen.text1.color = "#ffffff";
                 settingsScreen.text6.color = "#ffffff";
                 settingsScreen.text8.color = "#ffffff";
                 settingsScreen.text111.color = "#ffffff";
 
+                settingsScreen.buttonrectangle.color = "#262B3D";
+                settingsScreen.button1rectangle.color = "#262B3D";
+                settingsScreen.button2rectangle.color = "#262B3D";
 
 
-                aiScreen.color = "#2e2e2e";
-                aiScreen.rectangle1.color = "#2e2e2e";
+
+                aiScreen.color = "#1A2030";
+                aiScreen.rectangle1.color = "#262B3D";
                 aiScreen.text1.color = "#ffffff";
                 aiScreen.text2.color = "#ffffff";
                 aiScreen.text7.color = "#ffffff";
                 aiScreen.text8.color = "#ffffff";
                 aiScreen.messageField.placeholderText.color = "#60000000";
 
+                aiScreen.buttonrectangle.color = "#262B3D";
+                aiScreen.button1rectangle.color = "#262B3D";
+                aiScreen.button2rectangle.color = "#262B3D";
 
 
-                mainScreen.color = "#2e2e2e";
-                mainScreen.rectangle1.color = "#2e2e2e";
-                mainScreen.rectangle2.color = "#2e2e2e";
-                mainScreen.rectangle3.color = "#2e2e2e";
-                mainScreen.rectangle4.color = "#2e2e2e";
-                mainScreen.rectangle5.color = "#2e2e2e";
-                mainScreen.rectangle6.color = "#2e2e2e";
-                mainScreen.rectangle7.color = "#2e2e2e";
-                mainScreen.rectangle8.color = "#2e2e2e";
+
+                mainScreen.color = "#1A2030";
+                mainScreen.rectangle1.color = "#262B3D";
+                mainScreen.rectangle2.color = "#262B3D";
+                mainScreen.rectangle3.color = "#1A2030";
+                mainScreen.rectangle4.color = "#1A2030";
+                mainScreen.rectangle5.color = "#1A2030";
+                mainScreen.rectangle6.color = "#1A2030";
+                mainScreen.rectangle7.color = "#1A2030";
+                mainScreen.rectangle8.color = "#1A2030";
+
+                mainScreen.buttonrectangle.color = "#262B3D";
+                mainScreen.button1rectangle.color = "#262B3D";
+                mainScreen.button2rectangle.color = "#262B3D";
                 
                 mainScreen.text1.color = "#ffffff";
                 mainScreen.text6.color = "#ffffff";
@@ -183,27 +195,39 @@ Window {
                 settingsScreen.text8.color = "#000000";
                 settingsScreen.text111.color = "#00000";
 
+                settingsScreen.buttonrectangle.color = "#ffffff";
+                settingsScreen.button1rectangle.color = "#ffffff";
+                settingsScreen.button2rectangle.color = "#ffffff";
+
 
 
                 aiScreen.color = "#ffffff";
-                aiScreen.rectangle1.color = "#ffffff";
+                aiScreen.rectangle1.color = "#eaeaea";
                 aiScreen.text1.color = "#000000";
                 aiScreen.text2.color = "#000000";
                 aiScreen.text7.color = "#000000";
                 aiScreen.text8.color = "#000000";
                 aiScreen.messageField.placeholderText.color = "#000000";
 
+                aiScreen.buttonrectangle.color = "#ffffff";
+                aiScreen.button1rectangle.color = "#ffffff";
+                aiScreen.button2rectangle.color = "#ffffff";
+
 
 
                 mainScreen.color = "#ffffff";
-                mainScreen.rectangle1.color = "#ffffff";
-                mainScreen.rectangle2.color = "#ffffff";
+                mainScreen.rectangle1.color = "#eaeaea";
+                mainScreen.rectangle2.color = "#eaeaea";
                 mainScreen.rectangle3.color = "#ffffff";
                 mainScreen.rectangle4.color = "#ffffff";
                 mainScreen.rectangle5.color = "#ffffff";
                 mainScreen.rectangle6.color = "#ffffff";
                 mainScreen.rectangle7.color = "#ffffff";
                 mainScreen.rectangle8.color = "#ffffff";
+
+                mainScreen.buttonrectangle.color = "#ffffff";
+                mainScreen.button1rectangle.color = "#ffffff";
+                mainScreen.button2rectangle.color = "#ffffff";
 
                 mainScreen.text1.color = "#000000";
                 mainScreen.text6.color = "#000000";

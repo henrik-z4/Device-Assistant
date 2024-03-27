@@ -53,6 +53,10 @@ Rectangle {
     property alias rectangle7: rectangle7
     property alias rectangle8: rectangle8
 
+    property alias buttonrectangle: buttonrectangle
+    property alias button1rectangle: button1rectangle
+    property alias button2rectangle: button2rectangle
+
     Rectangle {
         id: rectangle1
         x: 314
@@ -61,24 +65,34 @@ Rectangle {
         height: 1046
         color: "#eaeaea"
         radius: 20
+    }
 
-        Text {
-            id: text1
-            x: 75
-            y: 102
-            text: qsTr("Ваше устройство")
-            font.pixelSize: 35
-            font.styleName: "Semibold Italic"
-        }
+    Text {
+        id: text6
+        x: 1002
+        y: 179
+        text: qsTr("Персональные рекомендации")
+        font.pixelSize: 35
+        font.styleName: "Semibold Italic"
 
-        Text {
-            id: text6
-            x: 632
-            y: 162
-            text: qsTr("Персональные рекомендации")
-            font.pixelSize: 35
-            font.styleName: "Semibold Italic"
+        Image {
+            id: image5
+            x: -60
+            y: 6
+            width: 42
+            height: 42
+            source: "qrc:/assets/Icons/Info.ico"
+            fillMode: Image.PreserveAspectFit
         }
+    }
+
+    Text {
+        id: text1
+        x: 452
+        y: 115
+        text: qsTr("Ваше устройство")
+        font.pixelSize: 35
+        font.styleName: "Semibold Italic"
     }
 
     Text {
@@ -106,7 +120,7 @@ Rectangle {
         y: 265
         width: 926
         height: 724
-        color: "#ffffff"
+        color: "#eaeaea"
         radius: 20
         border.color: "#000000"
         border.width: 2
@@ -282,6 +296,7 @@ Rectangle {
             font.styleName: "Обычный"
         }
     }
+
     Text {
         id: osText
         x: 430
@@ -334,18 +349,19 @@ Rectangle {
         font.pointSize: 25
 
         background: Rectangle {
+            id: buttonrectangle
             radius: 20
             border.color: "#cb1b1b"
             border.width: 3
         }
 
         contentItem: Text {
-            text: button.text
             font.family: "Roboto"
             font.bold: true
             font.pixelSize: 25
             font.weight: Font.SemiBold
             color: "#cb1b1b"
+            text: "Главная"
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
         }
@@ -365,6 +381,7 @@ Rectangle {
         font.pointSize: 25
 
         background: Rectangle {
+            id: button1rectangle
             radius: 20
             border.width: 3
             border.color: button1.hovered ? "#0d53fd" : "transparent"
@@ -396,6 +413,7 @@ Rectangle {
         font.pixelSize: 25
 
         background: Rectangle {
+            id: button2rectangle
             radius: 20
             border.width: 3
             border.color: button2.hovered ? "#ab116b" : "transparent"
@@ -411,5 +429,45 @@ Rectangle {
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
         }
+    }
+
+    Image {
+        id: image
+        x: 56
+        y: 580
+        width: 32
+        height: 32
+        source: "qrc:/assets/Icons/Settings.ico"
+        fillMode: Image.PreserveAspectFit
+    }
+
+    Image {
+        id: image2
+        x: 56
+        y: 462
+        width: 32
+        height: 32
+        source: "qrc:/assets/Icons/Network.ico"
+        fillMode: Image.PreserveAspectFit
+    }
+
+    Image {
+        id: image3
+        x: 56
+        y: 329
+        width: 32
+        height: 32
+        source: "qrc:/assets/Icons/User.ico"
+        fillMode: Image.PreserveAspectFit
+    }
+
+    Image {
+        id: image4
+        x: 392
+        y: 120
+        width: 42
+        height: 42
+        source: "qrc:/assets/Icons/Desktop.ico"
+        fillMode: Image.PreserveAspectFit
     }
 }

@@ -19,6 +19,10 @@ Rectangle {
     property alias text8: text8
     property alias text111: text111
 
+    property alias buttonrectangle: buttonrectangle
+    property alias button1rectangle: button1rectangle
+    property alias button2rectangle: button2rectangle
+
     Switch {
         id: switch1
         x: 372
@@ -64,6 +68,7 @@ Rectangle {
         font.pointSize: 25
 
         background: Rectangle {
+            id: buttonrectangle
             radius: 20
             border.color: button.hovered ? "#cb1b1b" : "transparent"
             border.width: 3
@@ -95,6 +100,7 @@ Rectangle {
         font.pointSize: 25
 
         background: Rectangle {
+            id: button1rectangle
             radius: 20
             border.width: 3
             border.color: button1.hovered ? "#0d53fd" : "transparent"
@@ -125,6 +131,7 @@ Rectangle {
         font.pixelSize: 25
 
         background: Rectangle {
+            id: button2rectangle
             radius: 20
             border.width: 3
             border.color: "#ab116b"
@@ -144,13 +151,23 @@ Rectangle {
 
     Text {
         id: text1
-        x: 370
+        x: 436
         y: 169
-        width: 103
+        width: 186
         height: 47
         text: qsTr("Настройки")
         font.pixelSize: 35
         font.styleName: "Semibold Italic"
+    }
+
+    Image {
+        id: image4
+        x: 380
+        y: 175
+        width: 42
+        height: 42
+        source: "qrc:/assets/Icons/Settings.ico"
+        fillMode: Image.PreserveAspectFit
     }
 
     Text {
@@ -169,5 +186,35 @@ Rectangle {
             source: "qrc:/assets/icons/DeviceAssistant.jpg"
             fillMode: Image.PreserveAspectFit
         }
+    }
+
+    Image {
+        id: image
+        x: 56
+        y: 575
+        width: 32
+        height: 32
+        source: "qrc:/assets/Icons/Settings.ico"
+        fillMode: Image.PreserveAspectFit
+    }
+
+    Image {
+        id: image2
+        x: 56
+        y: 463
+        width: 32
+        height: 32
+        source: "qrc:/assets/Icons/Network.ico"
+        fillMode: Image.PreserveAspectFit
+    }
+
+    Image {
+        id: image3
+        x: 56
+        y: 345
+        width: 32
+        height: 32
+        source: "qrc:/assets/Icons/User.ico"
+        fillMode: Image.PreserveAspectFit
     }
 }

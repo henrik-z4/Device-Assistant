@@ -27,6 +27,10 @@ Rectangle {
     property alias text2: text2
     property alias connectivityIndicator: connectivityIndicator
 
+    property alias buttonrectangle: buttonrectangle
+    property alias button1rectangle: button1rectangle
+    property alias button2rectangle: button2rectangle
+
     Rectangle {
         id: rectangle1
         x: 322
@@ -34,6 +38,7 @@ Rectangle {
         width: 1598
         height: 981
         color: "#eaeaea"
+        radius: 10
 
         Button {
             id: button
@@ -49,6 +54,7 @@ Rectangle {
             font.pointSize: 25
 
             background: Rectangle {
+                id: buttonrectangle
                 radius: 20
                 border.color: button.hovered ? "#cb1b1b" : "transparent"
                 border.width: 3
@@ -79,6 +85,7 @@ Rectangle {
             font.pointSize: 25
 
             background: Rectangle {
+                id: button1rectangle
                 radius: 20
                 border.width: 3
                 border.color: "#0d53fd"
@@ -110,6 +117,7 @@ Rectangle {
             font.pixelSize: 25
 
             background: Rectangle {
+                id: button2rectangle
                 radius: 20
                 border.width: 3
                 border.color: button2.hovered ? "#ab116b" : "transparent"
@@ -282,5 +290,45 @@ Rectangle {
         height: 27
         color: "#ffffff"
         radius: 49
+    }
+
+    Image {
+        id: image3
+        x: 56
+        y: 343
+        width: 32
+        height: 32
+        source: "qrc:/assets/Icons/User.ico"
+        fillMode: Image.PreserveAspectFit
+    }
+
+    Image {
+        id: image2
+        x: 56
+        y: 477
+        width: 32
+        height: 32
+        source: "qrc:/assets/Icons/Network.ico"
+        fillMode: Image.PreserveAspectFit
+    }
+
+    Image {
+        id: image
+        x: 56
+        y: 594
+        width: 32
+        height: 32
+        source: "qrc:/assets/Icons/Settings.ico"
+        fillMode: Image.PreserveAspectFit
+    }
+
+    Image {
+        id: image4
+        x: 332
+        y: 41
+        width: 32
+        height: 32
+        source: "qrc:/assets/Icons/Network.ico"
+        fillMode: Image.PreserveAspectFit
     }
 }
