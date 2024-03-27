@@ -112,14 +112,12 @@ Window {
         onGoToAIScreenChanged: {
             if (goToAIScreen) {
                 stackView.replace(aiScreen);
-                aiScreen.text3.color = "#0d53fd";
             }
         }
 
         onGoToSettingsScreenChanged: {
             if (goToSettingsScreen) {
                 stackView.replace(settingsScreen);
-                settingsScreen.text5.color = "#ddf107";
             }
         }
 
@@ -141,7 +139,6 @@ Window {
                 aiScreen.rectangle1.color = "#262B3D";
                 aiScreen.text1.color = "#ffffff";
                 aiScreen.text2.color = "#ffffff";
-                aiScreen.text7.color = "#ffffff";
                 aiScreen.text8.color = "#ffffff";
                 aiScreen.messageField.placeholderText.color = "#60000000";
 
@@ -205,7 +202,6 @@ Window {
                 aiScreen.rectangle1.color = "#eaeaea";
                 aiScreen.text1.color = "#000000";
                 aiScreen.text2.color = "#000000";
-                aiScreen.text7.color = "#000000";
                 aiScreen.text8.color = "#000000";
                 aiScreen.messageField.placeholderText.color = "#000000";
 

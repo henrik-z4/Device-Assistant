@@ -20,7 +20,6 @@ Rectangle {
     property alias messageField: messageField
     property alias rectangle1: rectangle1
     property alias text1: text1
-    property alias text7: text7
     property alias text8: text8
     property alias sendButtonText: sendButtonText
     property alias reconnectivityButtonText: reconnectivityButtonText
@@ -137,7 +136,7 @@ Rectangle {
 
         Button {
             id: button3
-            x: 884
+            x: 834
             y: -88
             width: 207
             height: 85
@@ -239,18 +238,6 @@ Rectangle {
         text: qsTr("GPT-4")
         font.pixelSize: 35
         font.styleName: "Semibold Italic"
-
-        Text {
-            id: text7
-            x: -40
-            y: 12
-            width: 200
-            height: 200
-            color: "#000000"
-            text: qsTr(">")
-            font.pixelSize: 50
-            rotation: 90
-        }
     }
 
     Text {
@@ -273,7 +260,7 @@ Rectangle {
 
     Text {
         id: text2
-        x: 559
+        x: 520
         y: 31
         width: 594
         height: 47
@@ -284,8 +271,8 @@ Rectangle {
 
     Rectangle {
         id: connectivityIndicator
-        x: 517
-        y: 41
+        x: 478
+        y: 43
         width: 27
         height: 27
         color: "#ffffff"
