@@ -1,7 +1,6 @@
 <RCC>
     <qresource prefix="/">
         <file>assets/icons/DeviceAssistant.jpg</file>
-        <file>../../Downloads/Network.ico</file>
         <file>assets/Icons/Network.ico</file>
         <file>assets/Icons/Desktop.ico</file>
         <file>assets/Icons/Settings.ico</file>

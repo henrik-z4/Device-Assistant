@@ -40,6 +40,7 @@ Window {
 
     Screen02 {
         id: aiScreen
+        focus: true
 
         onGoToMainScreenChanged: {
             if (goToMainScreen) {
@@ -74,6 +75,13 @@ Window {
                 }
 
                 executeReconnectivity = false;
+            }
+        }
+
+        Keys.onPressed: {
+            if (event.key === Qt.Key_R && event.modifiers & Qt.ControlModifier) {
+                console.log("Комбинация Ctrl+R нажата");
+                aiScreen.executeReconnectivity = !aiScreen.executeReconnectivity
             }
         }
 
