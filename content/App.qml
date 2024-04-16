@@ -132,6 +132,7 @@ Window {
         onGoToDarkmodeChanged: {
             if (goToDarkmode) {
                 settingsScreen.color = "#1A2030";
+                settingsScreen.rectangle1.color = "#262B3D";
                 settingsScreen.text1.color = "#ffffff";
                 settingsScreen.text6.color = "#ffffff";
                 settingsScreen.text8.color = "#ffffff";
@@ -140,6 +141,8 @@ Window {
                 settingsScreen.buttonrectangle.color = "#262B3D";
                 settingsScreen.button1rectangle.color = "#262B3D";
                 settingsScreen.button2rectangle.color = "#262B3D";
+                settingsScreen.popupDarkmode.visible = true;
+                settingsScreen.popupDarkmodeTimer.start();
 
 
 
@@ -195,6 +198,7 @@ Window {
                 mainScreen.osInfoText.color = "#ffffff";
             } else {
                 settingsScreen.color = "#eff4f9";
+                settingsScreen.rectangle1.color = "#fbfcfd";
                 settingsScreen.text1.color = "#000000";
                 settingsScreen.text6.color = "#000000";
                 settingsScreen.text8.color = "#000000";
@@ -203,6 +207,8 @@ Window {
                 settingsScreen.buttonrectangle.color = "#fbfcfd";
                 settingsScreen.button1rectangle.color = "#fbfcfd";
                 settingsScreen.button2rectangle.color = "#fbfcfd";
+                settingsScreen.popupWhitemode.visible = true;
+                settingsScreen.popupWhitemodeTimer.start();
 
 
 

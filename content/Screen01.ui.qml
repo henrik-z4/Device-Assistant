@@ -122,8 +122,7 @@ Rectangle {
         height: 724
         color: "#fbfcfd"
         radius: 20
-        border.color: "#000000"
-        border.width: 2
+        border.width: 0
     }
 
     Rectangle {

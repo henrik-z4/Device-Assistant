@@ -22,6 +22,22 @@ Rectangle {
     property alias buttonrectangle: buttonrectangle
     property alias button1rectangle: button1rectangle
     property alias button2rectangle: button2rectangle
+    property alias rectangle1: rectangle1
+
+    property alias popupDarkmode: popupDarkmode
+    property alias popupDarkmodeTimer: popupDarkmodeTimer
+    property alias popupWhitemode: popupWhitemode
+    property alias popupWhitemodeTimer: popupWhitemodeTimer
+
+    Rectangle {
+        id: rectangle1
+        x: 322
+        y: 99
+        width: 1598
+        height: 981
+        color: "#fbfcfd"
+        radius: 10
+    }
 
     Switch {
         id: switch1
@@ -43,6 +59,57 @@ Rectangle {
             font.styleName: "Обычный"
         }
     }
+
+    Popup {
+        id: popupDarkmode
+        x: 1400
+        y: 870
+        width: 400
+        height: 150
+        modal: true
+        visible: false
+        opacity: 0.7
+        contentItem: Rectangle {
+            color: "#262B3D"
+            Text {
+                anchors.centerIn: parent
+                text: "Тёмная тема включена!"
+                color: "#ffffff"
+            }
+        }
+    }
+
+    Popup {
+        id: popupWhitemode
+        x: 1400
+        y: 870
+        width: 400
+        height: 150
+        modal: true
+        visible: false
+        opacity: 0.7
+        contentItem: Rectangle {
+            color: "#eff4f9"
+            Text {
+                anchors.centerIn: parent
+                text: "Тёмная тема выключена!"
+                color: "#000000"
+            }
+        }
+    }
+
+    Timer {
+        id: popupDarkmodeTimer
+        interval: 1300
+        onTriggered: popupDarkmode.visible = false
+    }
+
+        Timer {
+        id: popupWhitemodeTimer
+        interval: 1300
+        onTriggered: popupWhitemode.visible = false
+    }
+
     Text {
         id: text111
         x: 385

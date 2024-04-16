@@ -39,133 +39,6 @@ Rectangle {
         color: "#fbfcfd"
         radius: 10
 
-        Button {
-            id: button
-            x: -282
-            y: 209
-            width: 244
-            height: 100
-            visible: true
-            text: qsTr("Главная")
-            onClicked: rectangle.goToMainScreen = !rectangle.goToMainScreen
-            layer.enabled: true
-            highlighted: stackView.currentItem === mainScreen
-            font.pointSize: 25
-
-            background: Rectangle {
-                id: buttonrectangle
-                radius: 20
-                border.color: button.hovered ? "#cb1b1b" : "transparent"
-                border.width: 3
-            }
-
-            contentItem: Text {
-                text: button.text
-                font.family: "Roboto"
-                font.bold: true
-                font.pixelSize: 25
-                font.weight: Font.SemiBold
-                color: button.hovered ? "#cb1b1b" : "black"
-                horizontalAlignment: Text.AlignHCenter
-                verticalAlignment: Text.AlignVCenter
-            }
-        }
-
-        Button {
-            id: button1
-            x: -282
-            y: 326
-            width: 244
-            height: 100
-            visible: true
-            text: qsTr("AI")
-            layer.enabled: false
-            highlighted: stackView.currentItem === aiScreen
-            font.pointSize: 25
-
-            background: Rectangle {
-                id: button1rectangle
-                radius: 20
-                border.width: 3
-                border.color: "#0d53fd"
-            }
-
-            contentItem: Text {
-                text: button1.text
-                font.family: "Roboto"
-                font.bold: true
-                font.pixelSize: 25
-                font.weight: Font.SemiBold
-                color: "#0d53fd"
-                horizontalAlignment: Text.AlignHCenter
-                verticalAlignment: Text.AlignVCenter
-            }
-        }
-
-        Button {
-            id: button2
-            x: -282
-            y: 443
-            width: 244
-            height: 100
-            visible: true
-            text: qsTr("Настройки")
-            onClicked: rectangle.goToSettingsScreen = !rectangle.goToSettingsScreen
-            layer.enabled: false
-            highlighted: stackView.currentItem === settingsScreen
-            font.pixelSize: 25
-
-            background: Rectangle {
-                id: button2rectangle
-                radius: 20
-                border.width: 3
-                border.color: button2.hovered ? "#ab116b" : "transparent"
-            }
-
-            contentItem: Text {
-                text: button2.text
-                font.family: "Roboto"
-                font.bold: true
-                font.pixelSize: 25
-                font.weight: Font.SemiBold
-                color: button2.hovered ? "#ab116b" : "black"
-                horizontalAlignment: Text.AlignHCenter
-                verticalAlignment: Text.AlignVCenter
-            }
-        }
-
-        Button {
-            id: button3
-            x: 834
-            y: -88
-            width: 207
-            height: 85
-            visible: true
-            text: qsTr("Обновить")
-            onClicked: rectangle.executeReconnectivity = !rectangle.executeReconnectivity
-            layer.enabled: false
-            highlighted: stackView.currentItem === aiScreen
-            font.pointSize: 25
-
-            background: Rectangle {
-                radius: 20
-                border.color: "#000000"
-                border.width: 3
-                color: button3.hovered ? "#230e3b" : "transparent"
-            }
-
-            contentItem: Text {
-                id: reconnectivityButtonText
-                text: button3.text
-                font.family: "Roboto"
-                font.bold: true
-                font.pixelSize: 25
-                font.weight: Font.SemiBold
-                color: button3.hovered ? "#ffffff" : "black"
-                horizontalAlignment: Text.AlignHCenter
-                verticalAlignment: Text.AlignVCenter
-            }
-        }
     }
 
     ListView {
@@ -184,6 +57,134 @@ Rectangle {
             wrapMode: Text.WordWrap
             text: model.message
             font.pixelSize: 24
+        }
+    }
+
+    Button {
+        id: button
+        x: 40
+        y: 308
+        width: 244
+        height: 100
+        visible: true
+        text: qsTr("Главная")
+        onClicked: rectangle.goToMainScreen = !rectangle.goToMainScreen
+        layer.enabled: true
+        highlighted: stackView.currentItem === mainScreen
+        font.pointSize: 25
+
+        background: Rectangle {
+            id: buttonrectangle
+            radius: 20
+            border.color: button.hovered ? "#cb1b1b" : "transparent"
+            border.width: 3
+        }
+
+        contentItem: Text {
+            text: button.text
+            font.family: "Roboto"
+            font.bold: true
+            font.pixelSize: 25
+            font.weight: Font.SemiBold
+            color: button.hovered ? "#cb1b1b" : "black"
+            horizontalAlignment: Text.AlignHCenter
+            verticalAlignment: Text.AlignVCenter
+        }
+    }
+
+    Button {
+        id: button1
+        x: 40
+        y: 425
+        width: 244
+        height: 100
+        visible: true
+        text: qsTr("AI")
+        layer.enabled: false
+        highlighted: stackView.currentItem === aiScreen
+        font.pointSize: 25
+
+        background: Rectangle {
+            id: button1rectangle
+            radius: 20
+            border.width: 3
+            border.color: "#0d53fd"
+        }
+
+        contentItem: Text {
+            text: button1.text
+            font.family: "Roboto"
+            font.bold: true
+            font.pixelSize: 25
+            font.weight: Font.SemiBold
+            color: "#0d53fd"
+            horizontalAlignment: Text.AlignHCenter
+            verticalAlignment: Text.AlignVCenter
+        }
+    }
+
+    Button {
+        id: button2
+        x: 40
+        y: 542
+        width: 244
+        height: 100
+        visible: true
+        text: qsTr("Настройки")
+        onClicked: rectangle.goToSettingsScreen = !rectangle.goToSettingsScreen
+        layer.enabled: false
+        highlighted: stackView.currentItem === settingsScreen
+        font.pixelSize: 25
+
+        background: Rectangle {
+            id: button2rectangle
+            radius: 20
+            border.width: 3
+            border.color: button2.hovered ? "#ab116b" : "transparent"
+        }
+
+        contentItem: Text {
+            text: button2.text
+            font.family: "Roboto"
+            font.bold: true
+            font.pixelSize: 25
+            font.weight: Font.SemiBold
+            color: button2.hovered ? "#ab116b" : "black"
+            horizontalAlignment: Text.AlignHCenter
+            verticalAlignment: Text.AlignVCenter
+        }
+    }
+
+    Button {
+        id: button3
+        x: 1156
+        y: 11
+        width: 207
+        height: 85
+        visible: true
+        text: qsTr("Обновить")
+        onClicked: rectangle.executeReconnectivity = !rectangle.executeReconnectivity
+        layer.enabled: false
+        highlighted: stackView.currentItem === aiScreen
+        font.pointSize: 25
+
+        background: Rectangle {
+            radius: 20
+            border.color: "#000000"
+            border.width: 3
+            color: button3.hovered ? "#230e3b" : "transparent"
+        }
+
+        contentItem: Text {
+            id: reconnectivityButtonText
+            text: button3.text
+            font.family: "Roboto"
+            font.bold: true
+            font.pixelSize: 25
+            font.weight: Font.SemiBold
+            color: button3.hovered ? "#ffffff" : "black"
+            horizontalAlignment: Text.AlignHCenter
+            verticalAlignment: Text.AlignVCenter
         }
     }
 
@@ -318,4 +319,8 @@ Rectangle {
         source: "qrc:/assets/Icons/Network.ico"
         fillMode: Image.PreserveAspectFit
     }
+
+
+
+
 }
