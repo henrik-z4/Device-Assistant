@@ -30,6 +30,10 @@ Rectangle {
     property alias button1rectangle: button1rectangle
     property alias button2rectangle: button2rectangle
 
+    property alias popupReconnectivity: popupReconnectivity
+    property alias reconnectivityTimer: reconnectivityTimer
+    property alias chatView: chatView
+
     Rectangle {
         id: rectangle1
         x: 322
@@ -186,6 +190,31 @@ Rectangle {
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
         }
+    }
+
+    Popup {
+        id: popupReconnectivity
+        x: 1400
+        y: 870
+        width: 400
+        height: 150
+        modal: true
+        visible: false
+        opacity: 0.7
+        contentItem: Rectangle {
+            color: "#262B3D"
+            Text {
+                anchors.centerIn: parent
+                text: "Переподключение..."
+                color: "#ffffff"
+            }
+        }
+    }
+
+    Timer {
+        id: reconnectivityTimer
+        interval: 1300
+        onTriggered: popupReconnectivity.visible = false
     }
 
     TextField {

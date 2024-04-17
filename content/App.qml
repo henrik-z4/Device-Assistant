@@ -65,6 +65,8 @@ Window {
 
         onExecuteReconnectivityChanged: {
             if (executeReconnectivity) {
+                aiScreen.popupReconnectivity.visible = true;
+                aiScreen.reconnectivityTimer.start();
                 aiScreen.text2.text = sysInfo.getConnectionInfo();
 
                 if(sysInfo.getConnectionInfo() == "Интернет соединение установлено") {
@@ -156,6 +158,7 @@ Window {
                 aiScreen.buttonrectangle.color = "#262B3D";
                 aiScreen.button1rectangle.color = "#262B3D";
                 aiScreen.button2rectangle.color = "#262B3D";
+                aiScreen.chatView.text.color = "#ffffff";
 
 
 
@@ -222,6 +225,7 @@ Window {
                 aiScreen.buttonrectangle.color = "#fbfcfd";
                 aiScreen.button1rectangle.color = "#fbfcfd";
                 aiScreen.button2rectangle.color = "#fbfcfd";
+                aiScreen.chatView.text.color = "#000000";
 
 
 
