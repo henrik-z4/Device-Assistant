@@ -545,3 +545,29 @@ Q_INVOKABLE QString systeminfo::getConnectionInfo()
         return connectionInfo;
     }
 }
+
+
+
+/**
+ * Получение языка раскладки клавиатуры пользователя
+ *
+ * @return QString
+ */
+Q_INVOKABLE QString systeminfo::getKeyboardLayout()
+{
+    QLocale locale;
+    QString KeyboardLayout = locale.name();
+    if (KeyboardLayout == "ru_RU") {
+        KeyboardLayout = QString("Русский");
+        qDebug() << "Язык раскладки клавиатуры: " << KeyboardLayout;
+        return KeyboardLayout;
+    } else if (KeyboardLayout == "en_US") {
+        KeyboardLayout = QString("Английский");
+        qDebug() << "Язык раскладки клавиатуры: " << KeyboardLayout;
+        return KeyboardLayout;
+    } else {
+        KeyboardLayout = QString("Неизвестно");
+        qDebug() << "Язык раскладки клавиатуры: " << KeyboardLayout;
+        return KeyboardLayout;
+    }
+}

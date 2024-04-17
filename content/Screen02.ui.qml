@@ -33,6 +33,7 @@ Rectangle {
     property alias popupReconnectivity: popupReconnectivity
     property alias reconnectivityTimer: reconnectivityTimer
     property alias chatView: chatView
+    property alias text3: text3
 
     Rectangle {
         id: rectangle1
@@ -43,6 +44,16 @@ Rectangle {
         color: "#fbfcfd"
         radius: 10
 
+        Text {
+            id: text3
+            x: 16
+            y: 871
+            width: 194
+            height: 59
+            text: qsTr("")
+            font.pixelSize: 35
+            font.styleName: "Semibold Italic"
+        }
     }
 
     ListView {
@@ -348,8 +359,4 @@ Rectangle {
         source: "qrc:/assets/Icons/Network.ico"
         fillMode: Image.PreserveAspectFit
     }
-
-
-
-
 }

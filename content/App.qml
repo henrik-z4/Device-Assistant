@@ -158,7 +158,6 @@ Window {
                 aiScreen.buttonrectangle.color = "#262B3D";
                 aiScreen.button1rectangle.color = "#262B3D";
                 aiScreen.button2rectangle.color = "#262B3D";
-                aiScreen.chatView.text.color = "#ffffff";
 
 
 
@@ -225,7 +224,6 @@ Window {
                 aiScreen.buttonrectangle.color = "#fbfcfd";
                 aiScreen.button1rectangle.color = "#fbfcfd";
                 aiScreen.button2rectangle.color = "#fbfcfd";
-                aiScreen.chatView.text.color = "#000000";
 
 
 
@@ -285,6 +283,7 @@ Window {
         mainScreen.ramInfoText.text = sysInfo.getRAMInfo();
         aiScreen.text2.text = sysInfo.getConnectionInfo();
         mainScreen.recommendations.text = gpt.getRecommendations();
+        aiScreen.text3.text = sysInfo.getKeyboardLayout();
 
         if(sysInfo.getConnectionInfo() == "Интернет соединение установлено") {
             aiScreen.connectivityIndicator.color = "#4dea15";
